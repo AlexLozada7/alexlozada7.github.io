@@ -1,0 +1,1173 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alexandre Lozada — Planeación financiera personal</title>
+<meta name="description" content="Especialista en FP&A que ayuda a personas a ordenar su dinero y avanzar hacia su libertad financiera. Diagnóstico gratuito, calculadora de interés compuesto y planes en español, inglés y francés.">
+<meta name="theme-color" content="#F6F8FB">
+<link rel="canonical" href="https://alexlozada7.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B1B33'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='13' fill='white' text-anchor='middle'%3EAL%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alexandre Lozada">
+<meta property="og:url" content="https://alexlozada7.github.io/">
+<meta property="og:title" content="Alexandre Lozada — Planeación financiera personal">
+<meta property="og:description" content="Especialista en FP&A que ayuda a personas a ordenar su dinero y avanzar hacia su libertad financiera. Diagnóstico gratuito, calculadora de interés compuesto y planes en español, inglés y francés.">
+<meta property="og:image" content="https://alexlozada7.github.io/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_CR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Alexandre Lozada Echenique",
+ "jobTitle": "FP&A Specialist · Personal Financial Planning",
+ "url": "https://alexlozada7.github.io/",
+ "image": "https://alexlozada7.github.io/img/portrait-920.jpg",
+ "sameAs": [
+  "https://www.linkedin.com/in/alexandrelozada"
+ ],
+ "knowsLanguage": [
+  "es",
+  "en",
+  "fr"
+ ],
+ "address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Heredia",
+  "addressCountry": "CR"
+ },
+ "hasCredential": {
+  "@type": "EducationalOccupationalCredential",
+  "name": "Financial Portfolio Management for Boards, Investment and Risk Committees",
+  "recognizedBy": {
+   "@type": "Organization",
+   "name": "Bolsa Nacional de Valores"
+  }
+ }
+}
+</script>
+<style>
+/* ============================================================
+   ALEXANDRE LOZADA — personal financial-freedom site
+   Light theme by choice: cool paper, navy ink, one oxford-blue
+   accent taken from the shirt in the portrait. Layout rhythm
+   follows the reference: oversized name, arch-framed portrait,
+   numbered sections, magnetic buttons, masked reveals.
+   ============================================================ */
+
+:root{
+  --paper:#F6F8FB; --paper-2:#FFFFFF; --paper-3:#EDF1F7;
+  --ink:#0B1B33; --ink-2:#33445E; --mute:#66758C;
+  --line:rgba(11,27,51,.10); --line-2:rgba(11,27,51,.06);
+  --accent:#1F5FA8; --accent-hi:#174A85; --accent-soft:#74B0E8; --wash:#E6EFFA;
+  --ok:#1E8A5A; --warn:#B7791F; --crit:#C0453A;
+  --display:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Open Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --pad:clamp(20px,5vw,72px); --maxw:1240px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--accent);color:#fff}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+[tabindex="-1"]:focus{outline:none}
+p{margin:0}
+[hidden]{display:none!important}   /* a class display rule must never beat hidden */
+.wrap{width:min(var(--maxw),100%);margin-inline:auto;padding-inline:var(--pad)}
+
+h1,h2,h3,h4{font-family:var(--display);color:var(--ink);margin:0;line-height:.98;
+  letter-spacing:-.035em;font-weight:800;text-wrap:balance}
+h2{font-size:clamp(34px,5.6vw,72px);max-width:16ch}
+h3{font-size:clamp(20px,2vw,24px);letter-spacing:-.02em;line-height:1.15}
+
+.eyebrow{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor}
+.lede{font-size:clamp(17px,1.6vw,20px);color:var(--ink-2);max-width:56ch}
+.small{font-size:13.5px;color:var(--mute);line-height:1.6}
+
+/* ---------- header ---------- */
+#nav{position:fixed;inset:0 0 auto;z-index:50;padding-block:16px;
+  transition:background .3s var(--ease),padding .3s var(--ease),box-shadow .3s var(--ease),transform .35s var(--ease)}
+#nav.stuck{background:rgba(246,248,251,.88);backdrop-filter:blur(14px) saturate(1.2);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);padding-block:10px;box-shadow:0 1px 0 var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);
+  font-family:var(--display);font-weight:800;letter-spacing:-.02em;font-size:17px;white-space:nowrap}
+.brand i{width:30px;height:30px;border-radius:9px;background:var(--ink);color:#fff;font-style:normal;
+  display:grid;place-items:center;font-size:12.5px;letter-spacing:.02em}
+.links{display:flex;gap:clamp(12px,1.8vw,26px)}
+.links a{font-family:var(--display);font-weight:500;font-size:14px;color:var(--ink-2);text-decoration:none;position:relative}
+.links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1.5px;background:var(--accent);
+  transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.links a:hover{color:var(--ink)} .links a:hover::after{transform:scaleX(1)}
+.nav-r{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1px solid var(--line);border-radius:100px;padding:3px;background:var(--paper-2)}
+.lang button{border:0;background:none;cursor:pointer;font-family:var(--display);font-weight:600;font-size:11.5px;
+  letter-spacing:.06em;color:var(--mute);padding:5px 10px;border-radius:100px}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
+@media (max-width:1080px){.links{display:none}}
+
+/* ---------- buttons ---------- */
+.btn{position:relative;display:inline-flex;align-items:center;gap:12px;overflow:hidden;cursor:pointer;
+  font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.01em;padding:15px 24px;
+  border-radius:100px;text-decoration:none;border:1px solid transparent;will-change:transform;
+  transition:color .4s var(--ease),border-color .4s var(--ease),box-shadow .4s var(--ease)}
+.btn span{position:relative;z-index:2}
+.btn .dot{position:relative;z-index:2;width:7px;height:7px;border-radius:50%;background:currentColor;
+  transition:transform .5s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit;
+  transform:translate3d(0,101%,0);transition:transform .55s var(--ease)}
+.btn:hover::before{transform:none} .btn:hover .dot{transform:scale(2.4)}
+.btn-solid{background:var(--accent);color:#fff;box-shadow:0 16px 40px -18px rgba(31,95,168,.75)}
+.btn-solid::before{background:var(--ink)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:var(--paper-2)}
+.btn-ghost::before{background:var(--ink)} .btn-ghost:hover{color:#fff;border-color:var(--ink)}
+.btn-sm{padding:10px 16px;font-size:13.5px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+
+/* ---------- hero ---------- */
+#hero{min-height:100svh;display:flex;align-items:center;padding:118px 0 40px;position:relative;overflow:hidden}
+#hero .glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0}
+#hero .glow-a{width:46vw;height:46vw;right:-8vw;top:-10vw;background:radial-gradient(circle,rgba(116,176,232,.42),transparent 65%)}
+#hero .glow-b{width:34vw;height:34vw;left:-12vw;bottom:-14vw;background:radial-gradient(circle,rgba(31,95,168,.16),transparent 65%)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,64px);align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:100px;
+  padding:7px 15px 7px 11px;font-size:12.5px;color:var(--ink-2);background:var(--paper-2);font-family:var(--display);font-weight:500}
+.hero-tag .pulse{width:8px;height:8px;border-radius:50%;background:var(--ok);position:relative}
+.hero-tag .pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1.5px solid var(--ok);
+  animation:ripple 2.2s var(--ease) infinite}
+@keyframes ripple{from{transform:scale(.5);opacity:.9}to{transform:scale(1.9);opacity:0}}
+.hero-hi{font-family:var(--display);font-weight:500;font-size:clamp(15px,1.5vw,18px);color:var(--mute);margin:26px 0 8px}
+.hero-name{font-size:clamp(50px,8.6vw,128px);font-weight:900;letter-spacing:-.055em;line-height:.86;max-width:none}
+.hero-name .o{color:var(--accent);display:block}
+.hero-name .w{display:inline-block;opacity:0;transform:translateY(.4em)}
+.rdy .hero-name .w{animation:wordIn .85s var(--ease) forwards;animation-delay:calc(var(--i)*70ms + .1s)}
+@keyframes wordIn{to{opacity:1;transform:none}}
+.hero-sub{max-width:46ch;margin-top:26px;font-size:clamp(16px,1.5vw,19.5px);line-height:1.6;color:var(--ink-2)}
+.hero-sub b{color:var(--ink);font-weight:600}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-foot{display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,34px);margin-top:42px;padding-top:24px;border-top:1px solid var(--line)}
+.hero-foot div{min-width:96px}
+.hero-foot b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(24px,2.6vw,34px);
+  color:var(--ink);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.hero-foot small{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--mute);display:block;margin-top:8px}
+
+.shot{position:relative;justify-self:end;width:min(100%,460px)}
+.shot .frame{position:relative;border-radius:220px 220px 28px 28px;overflow:hidden;aspect-ratio:1/1.2;
+  background:var(--paper-3);border:1px solid var(--line);box-shadow:0 40px 90px -50px rgba(11,27,51,.55)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 24%;
+  transform:scale(1.04);transition:transform 1.2s var(--ease)}
+.shot:hover img{transform:scale(1.09)}
+.chip{position:absolute;left:-22px;bottom:30px;z-index:3;display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line);border-radius:14px;padding:9px 14px 9px 9px;max-width:250px;
+  box-shadow:0 16px 40px -26px rgba(11,27,51,.45)}
+.chip .seal{width:26px;height:26px;flex:none;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center}
+.chip .seal svg{width:14px;height:14px}
+.chip-txt{display:grid;gap:1px;min-width:0}
+.chip b{font-family:var(--display);font-weight:700;font-size:12.5px;line-height:1.3;letter-spacing:-.005em;color:var(--ink)}
+.chip small{font-size:11px;line-height:1.35;color:var(--mute)}
+@media (max-width:880px){
+  .hero-grid{grid-template-columns:1fr}
+  .shot{justify-self:start;width:min(78%,360px);order:-1}
+  .chip{left:auto;right:-14px;bottom:18px}
+}
+
+/* ---------- employer strip ---------- */
+.strip{border-block:1px solid var(--line);background:var(--paper-2)}
+.strip-in{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip-cell{padding:clamp(20px,2.6vw,30px) 20px clamp(20px,2.6vw,30px) 0;display:grid;gap:6px}
+.strip-cell+.strip-cell{padding-left:22px;border-left:1px solid var(--line)}
+.strip-cell .co{font-family:var(--display);font-weight:800;font-size:clamp(17px,1.8vw,21px);letter-spacing:-.02em;color:var(--ink)}
+.strip-cell .mt{font-size:13px;color:var(--ink-2);line-height:1.45}
+.strip-note{padding:10px 0 14px;font-size:11.5px;color:var(--mute)}
+@media (max-width:760px){
+  .strip-in{grid-template-columns:repeat(2,1fr)}
+  .strip-cell:nth-child(3){padding-left:0;border-left:none}
+  .strip-cell:nth-child(n+3){border-top:1px solid var(--line)}
+}
+
+/* ---------- sections ---------- */
+.sec{padding-block:clamp(72px,10vw,132px);position:relative}
+.sec+.sec{border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,64px)}
+.alt{background:var(--paper-2)}
+
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,80px);align-items:start}
+.about-grid .lede+.lede{margin-top:16px}
+.facts{display:grid;gap:0;border-top:1px solid var(--line)}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-family:var(--display);font-weight:600}
+.facts dd{margin:0;text-align:right;font-family:var(--display);font-weight:600;color:var(--ink)}
+@media (max-width:880px){.about-grid{grid-template-columns:1fr}}
+
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.svc article{background:var(--paper-2);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,3vw,36px);
+  display:grid;gap:14px;align-content:start;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease)}
+.svc article:hover{transform:translateY(-4px);border-color:rgba(31,95,168,.35);box-shadow:0 30px 60px -40px rgba(11,27,51,.5)}
+.svc .no{font-family:var(--display);font-weight:700;font-size:13px;color:var(--accent);letter-spacing:.06em}
+.svc p{color:var(--ink-2);font-size:15.5px}
+.svc ul{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.svc li{font-size:12.5px;font-family:var(--display);font-weight:500;color:var(--ink-2);background:var(--paper-3);
+  border-radius:100px;padding:5px 11px}
+@media (max-width:760px){.svc{grid-template-columns:1fr}}
+
+/* ---------- tools ---------- */
+.tools{display:grid;gap:22px}
+.panel{background:var(--paper-2);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.panel-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:16px 24px;border-bottom:1px solid var(--line);background:var(--paper-3)}
+.panel-top .t{font-family:var(--display);font-weight:700;font-size:15px}
+.step{font-family:var(--display);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-variant-numeric:tabular-nums}
+.track{flex:1 1 100px;max-width:320px;height:3px;border-radius:3px;background:var(--line);position:relative;min-width:0}
+.track span{position:absolute;inset:0 auto 0 0;width:0;background:var(--accent);border-radius:3px;transition:width .5s var(--ease)}
+.panel-body{padding:clamp(24px,3.6vw,44px)}
+
+.q-title{font-family:var(--display);font-weight:700;font-size:clamp(21px,2.6vw,30px);letter-spacing:-.025em;
+  line-height:1.18;max-width:26ch;margin:0 0 24px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:16px 18px;border-radius:14px;
+  background:var(--paper);border:1px solid var(--line);color:var(--ink);font-family:var(--body);font-size:16px;cursor:pointer;
+  transition:border-color .2s var(--ease),background .2s var(--ease),transform .2s var(--ease)}
+.opt:hover{border-color:var(--accent);background:var(--wash);transform:translateX(4px)}
+.opt .key{width:26px;height:26px;flex:none;border-radius:8px;display:grid;place-items:center;background:var(--paper-2);
+  border:1px solid var(--line);font-family:var(--display);font-weight:700;font-size:12px;color:var(--mute)}
+.opt:hover .key{background:var(--accent);color:#fff;border-color:var(--accent)}
+.linkbtn{margin-top:20px;background:none;border:0;padding:0;cursor:pointer;font-family:var(--display);font-weight:600;
+  font-size:13px;color:var(--mute)}
+.linkbtn:hover{color:var(--accent)}
+.linkbtn[hidden]{display:none}
+
+.result{display:grid;gap:30px}
+.score{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.score b{font-family:var(--display);font-weight:900;font-size:clamp(56px,8vw,86px);letter-spacing:-.05em;line-height:.85;
+  color:var(--accent);font-variant-numeric:tabular-nums}
+.score small{font-size:13px;color:var(--mute)}
+.bars{display:grid;gap:16px}
+.bar-meta{display:flex;justify-content:space-between;gap:12px;font-family:var(--display);font-size:13px;font-weight:600}
+.bar-meta .vl{font-variant-numeric:tabular-nums}
+.bar-track{height:8px;border-radius:8px;background:var(--paper-3);overflow:hidden;margin-top:7px}
+.bar-fill{height:100%;width:0;border-radius:8px;transition:width .9s var(--ease)}
+.lv-crit .bar-fill{background:var(--crit)} .lv-crit .vl{color:var(--crit)}
+.lv-warn .bar-fill{background:var(--warn)} .lv-warn .vl{color:var(--warn)}
+.lv-ok .bar-fill{background:var(--ok)}     .lv-ok .vl{color:var(--ok)}
+.move{border-left:3px solid var(--accent);padding:4px 0 4px 20px;display:grid;gap:8px}
+.move .lbl{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.move p{font-size:17px;max-width:58ch}
+.capture{border-top:1px solid var(--line);padding-top:26px;display:grid;gap:14px}
+.capture h4{font-size:19px;letter-spacing:-.02em}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.field{flex:1 1 220px;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--paper);
+  font-family:var(--body);font-size:16px;color:var(--ink)}
+.field:focus{outline:none;border-color:var(--accent);background:#fff;box-shadow:0 0 0 4px var(--wash)}
+.field[aria-invalid="true"]{border-color:var(--crit)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+.err{font-size:13.5px;color:var(--crit)} .err[hidden]{display:none}
+.sent{border:1px solid rgba(30,138,90,.3);background:rgba(30,138,90,.06);border-radius:16px;padding:22px;display:grid;gap:12px}
+.sent .lbl{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ok)}
+
+.calc{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr)}
+.calc-ctl{padding:clamp(22px,3vw,32px);display:grid;gap:22px;align-content:start;background:var(--paper-3);border-right:1px solid var(--line)}
+.ctl{display:grid;gap:8px}
+.ctl label{font-family:var(--display);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ctl .u{display:flex;align-items:center;gap:8px}
+.ctl .u span{color:var(--mute);font-weight:600}
+.ctl input[type=number]{width:100%;padding:11px 13px;border-radius:12px;border:1px solid var(--line);background:#fff;
+  font-family:var(--display);font-weight:700;font-size:19px;color:var(--ink);font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.ctl input::-webkit-outer-spin-button,.ctl input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.ctl input[type=range]{width:100%;accent-color:var(--accent)}
+.yrs{font-family:var(--display);font-weight:800;font-size:20px}
+.toggle{display:flex;gap:11px;align-items:flex-start;cursor:pointer;border-top:1px solid var(--line);padding-top:18px}
+.toggle input{width:18px;height:18px;margin-top:3px;accent-color:var(--accent);flex:none}
+.toggle b{font-family:var(--display);font-size:14.5px;display:block}
+.toggle span{font-size:12.5px;color:var(--mute);line-height:1.45}
+.calc-out{padding:clamp(22px,3vw,32px);display:grid;gap:22px;align-content:start;min-width:0}
+#growth{display:block;width:100%;height:270px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px}
+.lg{display:flex;align-items:center;gap:8px;font-size:12.5px;font-family:var(--display);font-weight:500;color:var(--ink-2)}
+.lg i{width:14px;height:3px;border-radius:3px;display:block}
+.rows{border-top:1px solid var(--line)}
+.rrow{display:grid;grid-template-columns:1fr auto auto;gap:10px 16px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+.rrow .nm{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:15px}
+.rrow .nm i{width:14px;height:3px;border-radius:3px}
+.rrow .rt{display:flex;align-items:center;gap:4px;color:var(--mute);font-size:12.5px}
+.rrow .rt input{width:56px;padding:5px 7px;border-radius:8px;border:1px solid var(--line);text-align:right;
+  font-family:var(--display);font-size:13px;-moz-appearance:textfield}
+.rrow .amt{font-family:var(--display);font-weight:800;font-size:clamp(17px,2vw,21px);letter-spacing:-.03em;text-align:right;font-variant-numeric:tabular-nums}
+.wait{border-left:3px solid var(--warn);padding:4px 0 4px 18px}
+.wait .lbl{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--warn)}
+.wait p{margin-top:6px}
+.wait b{color:var(--accent);font-variant-numeric:tabular-nums}
+.note{margin-top:18px;font-size:12.5px;color:var(--mute);max-width:90ch;line-height:1.65}
+@media (max-width:920px){.calc{grid-template-columns:1fr}.calc-ctl{border-right:none;border-bottom:1px solid var(--line)}}
+@media (max-width:560px){.rrow{grid-template-columns:1fr auto}.rrow .rt{order:3}}
+
+/* ---------- scenarios ---------- */
+.flag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-family:var(--display);font-weight:600;
+  color:var(--warn);background:rgba(183,121,31,.09);border:1px solid rgba(183,121,31,.25);border-radius:100px;padding:6px 13px}
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.case{background:var(--paper-2);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,2.6vw,30px);display:grid;gap:14px;align-content:start}
+.case .who{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.case .big{font-family:var(--display);font-weight:900;font-size:clamp(36px,4vw,50px);letter-spacing:-.05em;line-height:.95;color:var(--accent);font-variant-numeric:tabular-nums}
+.case .cap{font-size:14px;color:var(--ink-2)}
+.case dl{margin:4px 0 0;display:grid;gap:0;border-top:1px solid var(--line)}
+.case dl div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-2);font-size:14px}
+.case dt{color:var(--mute)} .case dd{margin:0;font-family:var(--display);font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:980px){.cases{grid-template-columns:1fr}}
+
+/* ---------- experience ---------- */
+.tl{display:grid;border-top:1px solid var(--line)}
+.job{display:grid;grid-template-columns:200px 1fr;gap:clamp(14px,3vw,40px);padding:26px 0;border-bottom:1px solid var(--line)}
+.job .when{font-family:var(--display);font-weight:600;font-size:13px;color:var(--mute);font-variant-numeric:tabular-nums;padding-top:4px}
+.job h3{font-size:clamp(19px,2vw,23px)}
+.job .co{font-family:var(--display);font-weight:600;color:var(--accent);margin-top:4px;font-size:15px}
+.job p{color:var(--ink-2);margin-top:10px;font-size:15.5px;max-width:70ch}
+.job.edu h3{font-size:18px}
+@media (max-width:720px){.job{grid-template-columns:1fr;gap:6px}}
+
+/* ---------- contact ---------- */
+#contact{background:var(--ink);color:#fff;border-top:none}
+#contact h2{color:#fff}
+#contact .eyebrow{color:var(--accent-soft)}
+#contact .lede{color:rgba(255,255,255,.72)}
+.ct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.ct{display:grid;gap:8px;padding:24px;border-radius:20px;border:1px solid rgba(255,255,255,.12);text-decoration:none;color:#fff;
+  background:rgba(255,255,255,.03);transition:background .3s var(--ease),border-color .3s var(--ease),transform .3s var(--ease)}
+.ct:hover{background:rgba(116,176,232,.1);border-color:rgba(116,176,232,.45);transform:translateY(-3px)}
+.ct svg{width:22px;height:22px;color:var(--accent-soft)}
+.ct .lb{font-family:var(--display);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.ct .vv{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.015em}
+#contact .btn-solid{background:var(--accent-soft);color:var(--ink)}
+#contact .btn-solid::before{background:#fff}
+@media (max-width:760px){.ct-grid{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:rgba(255,255,255,.55);padding:30px 0 44px;border-top:1px solid rgba(255,255,255,.1)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 30px;font-size:13px}
+.disc{margin-top:18px;font-size:12px;line-height:1.65;color:rgba(255,255,255,.4);max-width:100ch}
+
+/* ---------- sign-up ---------- */
+.shot picture{display:contents}            /* let the <img> fill the arch frame */
+.ct-layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:16px;margin-top:40px;align-items:start}
+.ct-side{display:grid;gap:14px}
+.su{background:var(--paper-2);color:var(--ink);border-radius:24px;padding:clamp(22px,3vw,34px);display:grid;gap:18px;
+  box-shadow:0 40px 80px -50px rgba(0,0,0,.6)}
+.su-head{display:grid;gap:8px}
+.su-head h3{font-size:clamp(22px,2.4vw,28px)}
+.su-head p{color:var(--ink-2);font-size:15px}
+.su-attach{justify-self:start;font-family:var(--display);font-weight:600;font-size:12.5px;color:var(--accent);
+  background:var(--wash);border-radius:100px;padding:5px 12px}
+.su-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.su-f{display:grid;gap:6px;align-content:start}
+.su-f>span{font-family:var(--display);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.su .field{width:100%;flex:none}
+select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:38px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2366758C' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center}
+.su-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-2);line-height:1.5;cursor:pointer}
+.su-consent input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:var(--accent)}
+.su-consent input[aria-invalid="true"]{outline:2px solid var(--crit);outline-offset:2px}
+@media (max-width:900px){.ct-layout{grid-template-columns:1fr}}
+@media (max-width:560px){.su-grid{grid-template-columns:1fr}}
+
+/* ---------- narrow phones ---------- */
+@media (max-width:560px){
+  .brand .bt{display:none}                 /* the AL mark carries the brand */
+  .nav-r{gap:8px}
+  .lang button{padding:5px 8px}
+  #nav .btn-sm{padding:9px 13px}
+  #hero{padding-top:92px}
+  .shot{width:min(58%,220px)}              /* name stays on the first screen */
+  .chip{display:none}                      /* same fact lives in About and the timeline */
+}
+
+/* ---------- reveals ---------- */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(22px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.stagger.in>*{opacity:1;transform:none}
+.stagger.in>*:nth-child(2){transition-delay:.08s}
+.stagger.in>*:nth-child(3){transition-delay:.16s}
+.stagger.in>*:nth-child(4){transition-delay:.24s}
+.stagger.in>*:nth-child(5){transition-delay:.32s}
+.stagger.in>*:nth-child(6){transition-delay:.40s}
+.stagger.in>*:nth-child(7){transition-delay:.48s}
+.stagger.in>*:nth-child(8){transition-delay:.56s}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .rv,.stagger>*,.hero-name .w{opacity:1!important;transform:none!important}
+}
+
+</style>
+</head>
+<body>
+<header id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#hero" aria-label="Alexandre Lozada"><i>AL</i><span class="bt">Alexandre Lozada</span></a>
+    <nav class="links" aria-label="Secciones">
+      <a href="#about" data-i18n="nav.about"></a>
+      <a href="#services" data-i18n="nav.services"></a>
+      <a href="#tools" data-i18n="nav.tools"></a>
+      <a href="#cases" data-i18n="nav.cases"></a>
+      <a href="#experience" data-i18n="nav.exp"></a>
+      <a href="#contact" data-i18n="nav.contact"></a>
+    </nav>
+    <div class="nav-r">
+      <div class="lang" id="langSwitch" role="group" aria-label="Idioma / Language / Langue">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      </div>
+      <a class="btn btn-solid btn-sm magnet" href="#contact"><span data-i18n="nav.cta"></span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="hero">
+  <div class="glow glow-a" aria-hidden="true"></div>
+  <div class="glow glow-b" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="hero-tag rv"><span class="pulse" aria-hidden="true"></span><span data-i18n="hero.tag"></span></span>
+      <p class="hero-hi rv" data-i18n="hero.hi"></p>
+      <h1 class="hero-name"><span class="w" style="--i:0">ALEXANDRE</span> <span class="o"><span class="w" style="--i:1">LOZADA</span></span></h1>
+      <p class="hero-sub rv" data-i18n-html="hero.sub"></p>
+      <div class="hero-btns rv">
+        <a class="btn btn-solid magnet" href="#tools"><span data-i18n="hero.cta1"></span><i class="dot" aria-hidden="true"></i></a>
+        <a class="btn btn-ghost magnet" href="#services"><span data-i18n="hero.cta2"></span></a>
+      </div>
+      <div class="hero-foot rv">
+        <div><b data-count="5" data-fmt="{n}+">0+</b><small data-i18n="hero.f1"></small></div>
+        <div><b data-count="750" data-fmt="${n}M+">$0M+</b><small data-i18n="hero.f2"></small></div>
+        <div><b data-count="6.4" data-fmt="${n}M">$0M</b><small data-i18n="hero.f3"></small></div>
+        <div><b data-count="3" data-fmt="{n}">0</b><small data-i18n="hero.f4"></small></div>
+      </div>
+    </div>
+    <div class="shot rv">
+      <div class="frame"><picture><source type="image/webp" srcset="img/portrait-460.webp 460w, img/portrait-920.webp 920w" sizes="(max-width:560px) 220px, (max-width:880px) 360px, 460px"><img src="img/portrait-920.jpg" srcset="img/portrait-460.jpg 460w, img/portrait-920.jpg 920w" sizes="(max-width:560px) 220px, (max-width:880px) 360px, 460px" width="920" height="1150" fetchpriority="high" decoding="async" data-i18n-alt="hero.alt"></picture></div>
+      <div class="chip">
+        <span class="seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <span class="chip-txt"><b data-i18n="chip.t"></b><small data-i18n="chip.s"></small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strip" aria-label="Experiencia">
+  <div class="wrap">
+    <div class="strip-in stagger">
+      <div class="strip-cell"><span class="co">Moody’s</span><span class="mt" data-i18n="strip.m1"></span></div>
+      <div class="strip-cell"><span class="co">Intel</span><span class="mt" data-i18n="strip.m2"></span></div>
+      <div class="strip-cell"><span class="co">Kaiser Permanente</span><span class="mt" data-i18n="strip.m3"></span></div>
+      <div class="strip-cell"><span class="co">Equifax</span><span class="mt" data-i18n="strip.m4"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap about-grid">
+    <div class="sec-head rv" style="margin:0">
+      <span class="eyebrow" data-i18n="about.eyebrow"></span>
+      <h2 data-i18n="about.h2"></h2>
+      <p class="lede" data-i18n="about.p1"></p>
+      <p class="lede" data-i18n="about.p2"></p>
+    </div>
+    <dl class="facts rv">
+      <div><dt data-i18n="fact.base.k"></dt><dd data-i18n="fact.base.v"></dd></div>
+      <div><dt data-i18n="fact.mode.k"></dt><dd data-i18n="fact.mode.v"></dd></div>
+      <div><dt data-i18n="fact.lang.k"></dt><dd>Español · English · Français</dd></div>
+      <div><dt data-i18n="fact.cert.k"></dt><dd data-i18n="fact.cert.v"></dd></div>
+      <div><dt data-i18n="fact.edu.k"></dt><dd data-i18n="fact.edu.v"></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="sec alt" id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-i18n="svc.eyebrow"></span>
+      <h2 data-i18n="svc.h2"></h2>
+      <p class="lede" data-i18n="svc.lede"></p>
+    </div>
+    <div class="svc stagger">
+      <article><span class="no">01</span><h3 data-i18n="svc.1.t"></h3><p data-i18n="svc.1.d"></p>
+        <ul><li data-i18n="svc.1.g1"></li><li data-i18n="svc.1.g2"></li><li data-i18n="svc.1.g3"></li></ul></article>
+      <article><span class="no">02</span><h3 data-i18n="svc.2.t"></h3><p data-i18n="svc.2.d"></p>
+        <ul><li data-i18n="svc.2.g1"></li><li data-i18n="svc.2.g2"></li><li data-i18n="svc.2.g3"></li></ul></article>
+      <article><span class="no">03</span><h3 data-i18n="svc.3.t"></h3><p data-i18n="svc.3.d"></p>
+        <ul><li data-i18n="svc.3.g1"></li><li data-i18n="svc.3.g2"></li><li data-i18n="svc.3.g3"></li></ul></article>
+      <article><span class="no">04</span><h3 data-i18n="svc.4.t"></h3><p data-i18n="svc.4.d"></p>
+        <ul><li data-i18n="svc.4.g1"></li><li data-i18n="svc.4.g2"></li><li data-i18n="svc.4.g3"></li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="tools">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-i18n="tools.eyebrow"></span>
+      <h2 data-i18n="tools.h2"></h2>
+      <p class="lede" data-i18n="tools.lede"></p>
+    </div>
+
+    <div class="tools">
+      <div class="panel rv" id="diag">
+        <div class="panel-top">
+          <span class="t" data-i18n="tools.diagT"></span>
+          <span class="step" id="stepLabel"></span>
+          <div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><span id="progFill"></span></div>
+        </div>
+        <div class="panel-body">
+          <div id="quiz" aria-live="polite">
+            <h3 class="q-title" id="qTitle" tabindex="-1"></h3>
+            <div class="opts" id="qOpts"></div>
+            <button class="linkbtn" id="backBtn" type="button" hidden data-i18n="diag.prev"></button>
+          </div>
+          <div class="result" id="result" hidden tabindex="-1">
+            <div>
+              <span class="eyebrow" data-i18n="diag.readLabel"></span>
+              <div class="score" style="margin-top:12px"><b id="scoreNum">0</b><small data-i18n="diag.outof"></small></div>
+            </div>
+            <div class="bars" id="bars"></div>
+            <div class="move"><span class="lbl" data-i18n="diag.start"></span><p id="moveText"></p></div>
+            <div class="capture" id="capture">
+              <h4 data-i18n="diag.capH"></h4>
+              <p class="small" data-i18n="su.fromDiag"></p>
+              <div class="row">
+                <a class="btn btn-solid" href="#signup"><span data-i18n="su.toForm"></span><i class="dot" aria-hidden="true"></i></a>
+                <button class="btn btn-ghost btn-sm" type="button" id="copyBtn"><span data-i18n="diag.copy"></span></button>
+              </div>
+              <button class="linkbtn" id="retakeBtn" type="button" data-i18n="diag.retake"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel rv" id="calcPanel">
+        <div class="panel-top"><span class="t" data-i18n="tools.calcT"></span></div>
+        <div class="calc">
+          <div class="calc-ctl">
+            <div class="ctl"><label for="cStart" data-i18n="calc.startL"></label>
+              <div class="u"><span>$</span><input type="number" id="cStart" value="5000" min="0" step="500" inputmode="numeric"></div></div>
+            <div class="ctl"><label for="cMonthly" data-i18n="calc.monthlyL"></label>
+              <div class="u"><span>$</span><input type="number" id="cMonthly" value="300" min="0" step="50" inputmode="numeric"></div></div>
+            <div class="ctl"><label for="cYears" data-i18n="calc.yearsL"></label>
+              <span class="yrs" id="cYearsOut">30</span>
+              <input type="range" id="cYears" min="1" max="45" value="30"></div>
+            <label class="toggle" for="cReal"><input type="checkbox" id="cReal" checked>
+              <span><b data-i18n="calc.realT"></b><span data-i18n="calc.realD"></span></span></label>
+          </div>
+          <div class="calc-out">
+            <canvas id="growth" role="img" data-i18n-aria="calc.chartAlt"></canvas>
+            <div class="legend">
+              <span class="lg"><i style="background:#9AA7BA"></i><span data-i18n="calc.n1"></span></span>
+              <span class="lg"><i style="background:#B7791F"></i><span data-i18n="calc.n2"></span></span>
+              <span class="lg"><i style="background:#1F5FA8"></i><span data-i18n="calc.n3"></span></span>
+            </div>
+            <div class="rows">
+              <div class="rrow"><span class="nm"><i style="background:#9AA7BA"></i><span data-i18n="calc.n1"></span></span>
+                <span class="rt"><input type="number" id="r0" value="0" step="0.5" aria-label="%">%</span><span class="amt" id="a0"></span></div>
+              <div class="rrow"><span class="nm"><i style="background:#B7791F"></i><span data-i18n="calc.n2"></span></span>
+                <span class="rt"><input type="number" id="r1" value="2" step="0.5" aria-label="%">%</span><span class="amt" id="a1"></span></div>
+              <div class="rrow"><span class="nm"><i style="background:#1F5FA8"></i><span data-i18n="calc.n3"></span></span>
+                <span class="rt"><input type="number" id="r2" value="10" step="0.5" aria-label="%">%</span><span class="amt" id="a2"></span></div>
+            </div>
+            <div class="wait"><span class="lbl" data-i18n="calc.waitL"></span><p id="waitTxt"></p></div>
+          </div>
+        </div>
+      </div>
+      <p class="note rv" data-i18n="calc.note"></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="cases">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-i18n="cases.eyebrow"></span>
+      <h2 data-i18n="cases.h2"></h2>
+      <p class="lede" data-i18n="cases.lede"></p>
+      <span class="flag" data-i18n="cases.flag"></span>
+    </div>
+    <div class="cases stagger">
+      <article class="case">
+        <span class="who" data-i18n="case1.who"></span>
+        <span class="big" data-i18n="case1.big"></span>
+        <p class="cap" data-i18n="case1.cap"></p>
+        <dl>
+          <div><dt data-i18n="case1.k1"></dt><dd>$12,500</dd></div>
+          <div><dt data-i18n="case1.k2"></dt><dd>36% · 28% · 18%</dd></div>
+          <div><dt data-i18n="case1.k3"></dt><dd>$3,222</dd></div>
+          <div><dt data-i18n="case1.k4"></dt><dd>$174</dd></div>
+        </dl>
+      </article>
+      <article class="case">
+        <span class="who" data-i18n="case2.who"></span>
+        <span class="big" data-i18n="case2.big"></span>
+        <p class="cap" data-i18n="case2.cap"></p>
+        <dl>
+          <div><dt data-i18n="case2.k1"></dt><dd>$2,400</dd></div>
+          <div><dt data-i18n="case2.k2"></dt><dd>$1,200</dd></div>
+          <div><dt data-i18n="case2.k3"></dt><dd>$7,200</dd></div>
+          <div><dt data-i18n="case2.k4"></dt><dd>$500</dd></div>
+        </dl>
+      </article>
+      <article class="case">
+        <span class="who" data-i18n="case3.who"></span>
+        <span class="big">$188,470</span>
+        <p class="cap" data-i18n="case3.cap"></p>
+        <dl>
+          <div><dt data-i18n="case3.k1"></dt><dd>$15,000 + $400</dd></div>
+          <div><dt data-i18n="case3.k2"></dt><dd>$111,000</dd></div>
+          <div><dt data-i18n="case3.k3"></dt><dd>$80,482</dd></div>
+          <div><dt data-i18n="case3.k4"></dt><dd>$268,952</dd></div>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="experience">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-i18n="exp.eyebrow"></span>
+      <h2 data-i18n="exp.h2"></h2>
+    </div>
+    <div class="tl stagger">
+      <article class="job"><span class="when" data-i18n="job1.when"></span>
+        <div><h3 data-i18n="job1.t"></h3><p class="co">Kaiser Permanente</p><p data-i18n="job1.p"></p></div></article>
+      <article class="job"><span class="when" data-i18n="job2.when"></span>
+        <div><h3 data-i18n="job2.t"></h3><p class="co">Moody’s Corporation</p><p data-i18n="job2.p"></p></div></article>
+      <article class="job"><span class="when" data-i18n="job5.when"></span>
+        <div><h3 data-i18n="job5.t"></h3><p class="co">ASEMOODYS · ASEGARFIELD</p><p data-i18n="job5.p"></p></div></article>
+      <article class="job"><span class="when" data-i18n="job3.when"></span>
+        <div><h3 data-i18n="job3.t"></h3><p class="co">Intel Corporation</p><p data-i18n="job3.p"></p></div></article>
+      <article class="job"><span class="when" data-i18n="job4.when"></span>
+        <div><h3 data-i18n="job4.t"></h3><p class="co">Equifax</p><p data-i18n="job4.p"></p></div></article>
+      <article class="job edu"><span class="when">2025</span>
+        <div><h3 data-i18n="edu1.t"></h3><p class="co">Bolsa Nacional de Valores</p></div></article>
+      <article class="job edu"><span class="when" data-i18n="edu2.when"></span>
+        <div><h3 data-i18n="edu2.t"></h3><p class="co">Universidad de Costa Rica</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow" data-i18n="ct.eyebrow"></span>
+      <h2 data-i18n="ct.h2"></h2>
+      <p class="lede" data-i18n="ct.lede"></p>
+    </div>
+    <div class="ct-layout">
+      <form class="su rv" id="signup" novalidate>
+        <div class="su-head">
+          <h3 data-i18n="su.h"></h3>
+          <p data-i18n="su.p"></p>
+          <p class="su-attach" id="suAttach" hidden></p>
+        </div>
+        <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="su-grid">
+          <label class="su-f"><span data-i18n="su.name"></span><input class="field" id="suName" type="text" autocomplete="name" required></label>
+          <label class="su-f"><span data-i18n="su.email"></span><input class="field" id="suEmail" type="email" autocomplete="email" required></label>
+          <label class="su-f"><span data-i18n="su.wa"></span><input class="field" id="suWa" type="tel" autocomplete="tel" inputmode="tel" data-i18n-ph="su.waPh"></label>
+          <label class="su-f"><span data-i18n="su.country"></span><input class="field" id="suCountry" type="text" autocomplete="country-name" list="suCountries"></label>
+          <label class="su-f"><span data-i18n="su.goal"></span>
+            <select class="field" id="suGoal" required>
+              <option value="" data-i18n="su.pick"></option>
+              <option value="debt" data-i18n="su.g.debt"></option>
+              <option value="budget" data-i18n="su.g.budget"></option>
+              <option value="investing" data-i18n="su.g.investing"></option>
+              <option value="plan" data-i18n="su.g.plan"></option>
+            </select></label>
+          <label class="su-f"><span data-i18n="su.time"></span>
+            <select class="field" id="suTime">
+              <option value="" data-i18n="su.any"></option>
+              <option value="morning" data-i18n="su.t.morning"></option>
+              <option value="afternoon" data-i18n="su.t.afternoon"></option>
+              <option value="evening" data-i18n="su.t.evening"></option>
+            </select></label>
+        </div>
+        <label class="su-consent"><input type="checkbox" id="suConsent" required><span data-i18n="su.consent"></span></label>
+        <div class="row su-go">
+          <button class="btn btn-solid" type="submit" id="suSubmit"><span data-i18n="su.submit"></span><i class="dot" aria-hidden="true"></i></button>
+        </div>
+        <p class="err" id="suErr" role="alert" hidden></p>
+        <div class="sent" id="suSent" hidden tabindex="-1">
+          <span class="lbl" data-i18n="su.okL"></span>
+          <p id="suSentMsg"></p>
+        </div>
+        <datalist id="suCountries">
+          <option value="Costa Rica"></option><option value="Panamá"></option><option value="Nicaragua"></option>
+          <option value="México"></option><option value="Colombia"></option><option value="España"></option>
+          <option value="Estados Unidos"></option><option value="Canadá"></option><option value="France"></option>
+        </datalist>
+      </form>
+      <div class="ct-side stagger">
+      <a class="ct" data-wa href="#contact" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.3c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.3 8.3 0 1 1 12 20.3z"/><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-1.4-.6-2.5-1.5-3.4-3-.3-.4.2-.4.6-1.2.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-1 1-1.2 2.3-.6 3.6a11 11 0 0 0 5.5 5.3c1.7.7 3 .6 3.8-.2.4-.4.7-1 .8-1.5.1-.3 0-.5-.2-.6z"/></svg>
+        <span class="lb">WhatsApp</span><span class="vv" data-i18n="ct.waV"></span></a>
+      <a class="ct" href="#tools">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        <span class="lb" data-i18n="ct.diagL"></span><span class="vv" data-i18n="ct.diagV"></span></a>
+      <a class="ct" href="https://www.linkedin.com/in/alexandrelozada" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1a4.2 4.2 0 0 1 3.7-2c4 0 4.7 2.4 4.7 5.4V21h-4v-5.4c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9V21h-4z"/></svg>
+        <span class="lb">LinkedIn</span><span class="vv">/in/alexandrelozada</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot"><span>© 2026 Alexandre Lozada · Heredia, Costa Rica</span><span data-i18n="foot.tag"></span></div>
+    <p class="disc" data-i18n="foot.disc"></p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  "use strict";
+
+  /* ═══════════════ LANGUAGE ═══════════════
+     T is injected by build.py: shared tool copy merged with site copy.
+     Spanish is the default and the fallback for any missing key. */
+  const T = {"es": {"diag.eyebrow": "Diagnóstico", "diag.h2": "Seis preguntas. Una lectura honesta.", "diag.lede": "Sin conexión bancaria. Sin archivos. Responda de memoria; una aproximación basta.", "diag.q": "Pregunta", "diag.prev": "← Pregunta anterior", "diag.complete": "Completado", "diag.readLabel": "Su lectura", "diag.outof": "de 100 · autoevaluado", "diag.start": "Por dónde empezar", "diag.capH": "Reciba la lectura completa y sus próximos tres pasos.", "diag.capP": "Un informe de una página con estos resultados y lo que significa cada puntaje en la práctica. Sin boletín, sin secuencia de correos.", "diag.name": "Nombre", "diag.email": "Correo electrónico", "diag.submit": "Enviar mi diagnóstico", "diag.err": "Ese correo no parece completo — revise si hay un error y vuelva a intentarlo.", "diag.retake": "↺ Repetir el diagnóstico", "diag.retake2": "Repetir el diagnóstico", "diag.sending": "Enviando…", "diag.errSend": "No se pudo enviar. Intente de nuevo o escríbame por WhatsApp — sus respuestas siguen aquí.", "diag.waIntro": "Hola Alexandre, soy {name} y acabo de completar el diagnóstico financiero.", "diag.sentWa": "Se está abriendo WhatsApp con sus resultados ya escritos — solo presione enviar. Si no se abrió, use el botón de copiar y mándelo como prefiera.", "diag.errNoChannel": "Aún no hay un canal de envío configurado. Copie sus resultados abajo y mándelos como le convenga.", "diag.received": "Solicitud recibida", "diag.copy": "Copiar mis resultados", "diag.copied": "Copiado", "diag.copyfail": "No se pudo copiar — seleccione el texto de arriba", "diag.sent": "su diagnóstico va en camino a {email}. Mientras tanto, anote hoy la cifra de su área más débil.", "diag.sentAnon": "Su diagnóstico va en camino a {email}. Mientras tanto, anote hoy la cifra de su área más débil.", "diag.copyHead": "MI DIAGNÓSTICO FINANCIERO", "diag.copyStart": "Por dónde empezar", "lv.crit": "Requiere atención", "lv.warn": "Manejable", "lv.ok": "Sólido", "dim.runway": "Margen de maniobra", "dim.debt": "Posición de deuda", "dim.growth": "Motor de crecimiento", "dim.resilience": "Resiliencia", "dim.process": "Proceso de decisión", "q1": "Si su ingreso se detuviera mañana, ¿cuánto tiempo cubriría lo esencial con el efectivo al que puede acceder esta semana?", "q1a": ["Menos de dos semanas", "Alrededor de un mes", "Dos o tres meses", "Seis meses o más"], "q2": "Dejando de lado la hipoteca, ¿cómo está el resto de su deuda hoy?", "q2a": ["Creciendo, o no sé el total", "Más o menos estable cada mes", "Pequeña y bajando", "Ninguna"], "q3": "De cada colón o dólar que entra a su cuenta, ¿cuánto sigue ahí a fin de mes?", "q3a": ["Nada, o menos que nada", "Un poco, pero varía muchísimo", "Una parte constante", "Una parte significativa, automáticamente"], "q4": "El dinero que no gasta, ¿dónde termina realmente?", "q4a": ["Se queda en la cuenta corriente", "En una cuenta de ahorro", "Solo en un fondo de pensión", "Pensión más inversiones aparte"], "q5": "Este mes se daña algo caro. ¿Qué pasa?", "q5a": ["Va a la tarjeta de crédito", "Pediría prestado o atrasaría otros pagos", "Lo cubriría, pero dolería", "Lo cubriría sin casi notarlo"], "q6": "Cuando tiene enfrente una decisión financiera real, ¿cómo la toma?", "q6a": ["Por intuición, y sigo adelante", "Le pregunto a alguien de confianza", "Busco y comparo opciones", "Corro los números yo mismo"], "mv.runway": "Empiece por el margen de maniobra. Hasta que un mes malo no pueda deshacer un año bueno, cualquier otra optimización está construida sobre arena — y un colchón delgado es justamente lo que obliga a tomar las decisiones caras.", "mv.debt": "Empiece por la presión de la deuda. Ponga el total, la tasa de cada saldo y los pagos mínimos en una sola página. No se puede ordenar lo que no se ha contado.", "mv.growth": "Empiece por su motor de crecimiento. El dinero que se queda en la cuenta corriente es una decisión que usted toma al no tomar ninguna — y la solución es estructural, no de fuerza de voluntad.", "mv.resilience": "Empiece por la resiliencia. Un gasto imprevisto no debería poder borrar un año de avance, y hoy sí puede.", "mv.solid": "Aquí no hay nada que rescatar. Incluso su área más débil se lee como sólida, así que las próximas ganancias vienen de optimizar y no de reparar — estructura de cuentas, el momento de las decisiones grandes y qué hace su dinero mientras usted no lo está viendo.", "mv.process": "Empiece por cómo decide. La intuición sale barata en lo pequeño y cara en lo grande — una forma repetible de comparar dos opciones vale más que acertar en una sola.", "calc.eyebrow": "Cuánto vale realmente el dinero", "calc.h2": "El mismo monto, en tres lugares distintos, durante los años que le quedan.", "calc.lede": "El interés compuesto trabaja mientras usted duerme y castiga la espera. Ajuste los números y vea el efecto del tiempo.", "calc.startL": "Monto inicial", "calc.monthlyL": "Aporte cada mes", "calc.yearsL": "Años de capitalización", "calc.realT": "Mostrar en dinero de hoy", "calc.realD": "Descuenta 3% anual por inflación de largo plazo, para que cada cifra refleje lo que realmente compraría.", "calc.n1": "Guardado en efectivo", "calc.n2": "Cuenta de ahorro", "calc.n3": "Promedio histórico del S&P 500", "calc.splitL": "Del resultado del S&P 500", "calc.spIn": "{v} que usted aportó", "calc.spGrow": "{v} generado por capitalización", "calc.waitL": "El costo de esperar", "calc.waitTxt": "Empezar dentro de cinco años en lugar de hoy le cuesta {v} al año {y} — los mismos aportes, simplemente con menos tiempo para capitalizar.", "calc.waitShort": "Extienda el plazo más allá de seis años para ver lo que cuesta la demora.", "calc.chartAlt": "Gráfico de líneas que compara los mismos aportes guardados en efectivo, en una cuenta de ahorro y al promedio histórico del S&P 500. Las cifras de abajo indican cada resultado en palabras.", "calc.note": "Solo ilustrativo. El retorno total anual promedio de largo plazo del S&P 500 ha rondado el 10% nominal en el período posterior a 1957, cerca de 7% una vez descontada una inflación de largo plazo de aproximadamente 3%. Los promedios esconden una variación enorme de un año a otro — el índice ha perdido más de un tercio de su valor en un solo año — y el desempeño pasado no predice resultados futuros. Todas las tasas de arriba son editables y deben tratarse como supuestos, no como pronósticos. Las cifras no consideran impuestos, comisiones ni efectos cambiarios, y no constituyen una recomendación de invertir en ningún valor.", "nav.about": "Sobre mí", "nav.services": "Servicios", "nav.tools": "Herramientas", "nav.cases": "Escenarios", "nav.exp": "Experiencia", "nav.contact": "Contacto", "nav.cta": "Hablemos", "hero.tag": "Disponible para nuevos clientes · Costa Rica y remoto", "hero.hi": "Hola, soy", "hero.sub": "Especialista en FP&A. Ayudo a personas a tomar el control de su dinero y avanzar hacia su <b>libertad financiera</b> con la misma disciplina que uso en presupuestos corporativos de hasta $750M.", "hero.cta1": "Hacer el diagnóstico", "hero.cta2": "Ver servicios", "hero.f1": "Años en FP&A", "hero.f2": "En presupuestos", "hero.f3": "Portafolio diseñado", "hero.f4": "Idiomas", "hero.alt": "Retrato de Alexandre Lozada", "chip.s": "Bolsa Nacional de Valores de Costa Rica – 2025", "strip.m1": "$750M+ en gastos planificados", "strip.m2": "+30% precisión de pronóstico", "strip.m3": "Programa de proveedores de $350M", "strip.m4": "ROI de 40x en adquisición", "about.eyebrow": "01 — Sobre mí", "about.h2": "El problema no es cuánto gana. Es qué decide con ello.", "about.p1": "Cinco años en planeación financiera corporativa: presupuestos, proyecciones y reportería ejecutiva. Ahí aprendí que el dinero se ordena con un sistema, no con fuerza de voluntad.", "about.p2": "Aplico ese sistema a las finanzas personales: una base clara, prioridades en orden y un plan sostenible. La meta es la libertad financiera — que el dinero deje de decidir por usted.", "fact.base.k": "Ubicación", "fact.base.v": "Heredia, Costa Rica", "fact.mode.k": "Modalidad", "fact.mode.v": "Remoto, en todo el mundo", "fact.lang.k": "Idiomas", "fact.cert.k": "Certificación", "fact.cert.v": "Bolsa Nacional de Valores", "fact.edu.k": "Formación", "fact.edu.v": "Dirección de Empresas, UCR", "svc.eyebrow": "02 — Servicios", "svc.h2": "Cuatro servicios. Un objetivo: control.", "svc.lede": "Cada servicio termina en algo concreto: un plan, un sistema o una fecha.", "svc.1.t": "Diagnóstico y plan financiero", "svc.1.d": "Dónde está hoy, qué decidir primero y en qué orden. Un plan de una página con metas, plazos e indicadores.", "svc.1.g1": "Línea base", "svc.1.g2": "Prioridades", "svc.1.g3": "Plan de una página", "svc.2.t": "Presupuesto y flujo de caja", "svc.2.d": "Un presupuesto construido como un pronóstico corporativo: categorías con dueño, cierre mensual y análisis de variaciones.", "svc.2.g1": "Presupuesto base cero", "svc.2.g2": "Variaciones", "svc.2.g3": "Cierre mensual", "svc.3.t": "Estrategia de pago de deudas", "svc.3.d": "Todas sus deudas en una lista con tasa, saldo y mínimo. Orden de ataque y fecha de salida.", "svc.3.g1": "Avalancha", "svc.3.g2": "Bola de nieve", "svc.3.g3": "Calendario de pago", "svc.4.t": "Educación en inversión y estructura", "svc.4.d": "Cómo estructurar cuentas, horizonte y asignación según su perfil. Educación y marco de decisión: no recomiendo valores ni administro dinero.", "svc.4.g1": "Asignación de activos", "svc.4.g2": "Horizonte", "svc.4.g3": "Riesgo", "tools.eyebrow": "03 — Herramientas", "tools.h2": "Herramientas, no presentaciones.", "tools.lede": "Pruébelas ahora. Sin registro ni conexión bancaria; todo corre en su navegador.", "tools.diagT": "Diagnóstico · 6 preguntas", "tools.calcT": "Calculadora de interés compuesto", "cases.eyebrow": "04 — Escenarios", "cases.h2": "Así se ve un plan en números.", "cases.lede": "Tres perfiles ficticios, cifras calculadas. Muestran el método; no son clientes ni resultados garantizados.", "cases.flag": "Ejemplos ilustrativos · perfiles ficticios", "case1.who": "Perfil 1 · Profesional, 29 años", "case1.big": "25 meses", "case1.cap": "para salir de $12,500 en deudas con $650 al mes, atacando primero la tasa más alta.", "case1.k1": "Deuda total", "case1.k2": "Tasas anuales", "case1.k3": "Intereses pagados", "case1.k4": "Ahorro vs. bola de nieve", "case2.who": "Perfil 2 · Familia de cuatro", "case2.big": "12 meses", "case2.cap": "para pasar de medio mes de colchón a tres meses de gastos esenciales.", "case2.k1": "Gastos esenciales / mes", "case2.k2": "Colchón actual", "case2.k3": "Meta (3 meses)", "case2.k4": "Ahorro mensual", "case3.who": "Perfil 3 · Ahorro en cuenta corriente", "case3.cap": "de diferencia en 20 años entre dejar el dinero quieto e invertirlo al 7% real, en dinero de hoy.", "case3.k1": "Inicial + mensual", "case3.k2": "Total aportado", "case3.k3": "En cuenta corriente", "case3.k4": "Invertido (7% real)", "exp.eyebrow": "05 — Experiencia", "exp.h2": "Trayectoria.", "job1.when": "Jun 2026 — Ago 2026", "job1.t": "Analista Líder, FP&A — Abastecimiento", "job1.p": "Reporte y control de costos de un programa de proveedores de $350M. Presupuesto 2027 de Abastecimiento (~$30M) con modelo por impulsores para ~90 posiciones.", "job2.when": "Jul 2023 — May 2026", "job2.t": "Analista Financiero Senior, Planeación Corporativa", "job2.p": "Planeación, presupuesto y proyecciones para $750M+ en gastos. Contraparte de Tesorería, Impuestos y Planeación de Capital. Reportería en Power BI: 50% menos tiempo.", "job5.when": "Jun 2024 — Ago 2026", "job5.t": "Estrategia de inversión de portafolios", "job5.p": "Asignación de un portafolio de ~$6.4M para asociaciones solidaristas: 81% instrumentos soberanos y bancarios en moneda local, 19% cartera de siete ETF.", "job3.when": "Abr 2022 — Jun 2023", "job3.t": "Analista Senior de Consolidación, FP&A Central", "job3.p": "Modelos de costeo que mejoraron la precisión del pronóstico en 30% y generaron más de $1M en ahorros.", "job4.when": "Ene 2018 — Mar 2022", "job4.t": "Desarrollo de Negocios", "job4.p": "Adquisición de clientes en EE. UU. y Canadá: más de $1M generado con un ROI de 40x.", "edu1.t": "Gestión de Portafolios para Juntas Directivas, Comités de Inversión y de Riesgo", "edu2.when": "2023 — 2026", "edu2.t": "Bachillerato y Licenciatura en Dirección de Empresas", "ct.eyebrow": "06 — Contacto", "ct.h2": "¿Listo para ordenar sus finanzas?", "ct.lede": "Cuénteme qué decisión tiene pendiente. Si no soy la persona indicada, se lo digo en la primera respuesta.", "ct.cta1": "Hablemos por WhatsApp", "ct.cta2": "Hacer el diagnóstico", "ct.waV": "Escribir ahora", "ct.diagL": "Diagnóstico", "ct.diagV": "3 minutos, sin registro", "ct.callAria": "WhatsApp", "foot.tag": "Claridad financiera · Español · English · Français", "foot.disc": "Alexandre Lozada ofrece servicios de educación financiera, planeación y apoyo a la toma de decisiones. No es asesor de inversión registrado, puesto de bolsa, asesor tributario ni firma legal; nada en este sitio constituye asesoría personalizada de inversión, fiscal o legal, ni una oferta de compra o venta de valores. El diagnóstico y la calculadora son herramientas de autoevaluación con resultados direccionales. Los escenarios usan perfiles ficticios. El desempeño pasado no garantiza resultados futuros.", "su.h": "Regístrese para su sesión", "su.p": "Deje sus datos y le contacto para coordinar una primera conversación.", "su.attached": "Diagnóstico adjunto: {n}/100", "su.fromDiag": "Regístrese y su diagnóstico se adjunta automáticamente a su solicitud.", "su.toForm": "Registrarme con mi diagnóstico", "su.name": "Nombre completo", "su.email": "Correo electrónico", "su.wa": "WhatsApp", "su.waPh": "+506 0000 0000", "su.country": "País", "su.goal": "Meta principal", "su.pick": "Seleccione…", "su.g.debt": "Salir de deudas", "su.g.budget": "Ordenar presupuesto y flujo de caja", "su.g.investing": "Empezar a invertir", "su.g.plan": "Plan financiero completo", "su.time": "Mejor horario de contacto", "su.any": "Cualquier horario", "su.t.morning": "Mañana", "su.t.afternoon": "Tarde", "su.t.evening": "Noche", "su.consent": "Autorizo el uso de estos datos únicamente para contactarme sobre servicios de planeación financiera. Puedo pedir su corrección o eliminación en cualquier momento.", "su.submit": "Registrarme", "su.errName": "Escriba su nombre.", "su.errWa": "Revise el número de WhatsApp e incluya el código de país.", "su.errGoal": "Seleccione su meta principal.", "su.errConsent": "Necesito su autorización para guardar sus datos.", "su.errSend": "No se pudo enviar. Intente de nuevo o escríbame por WhatsApp.", "su.okL": "Registro recibido", "su.ok": "Gracias, {name}. Le escribo pronto para coordinar la primera conversación.", "su.okWa": "Se está abriendo WhatsApp con sus datos ya escritos; solo presione enviar.", "su.waIntro": "Hola Alexandre, soy {name}. Me gustaría registrarme.", "chip.t": "Gestor de Portafolios Certificado"}, "en": {"diag.eyebrow": "Diagnostic", "diag.h2": "Six questions. One honest read.", "diag.lede": "No bank connection. No uploads. Answer from memory; an approximation is enough.", "diag.q": "Question", "diag.prev": "← Previous question", "diag.complete": "Complete", "diag.readLabel": "Your reading", "diag.outof": "out of 100 · self-reported", "diag.start": "Where to start", "diag.capH": "Get the full read, plus your next three steps.", "diag.capP": "A one-page write-up of these results and what each score means in practice. No newsletter, no drip sequence.", "diag.name": "First name", "diag.email": "Email address", "diag.submit": "Send my diagnostic", "diag.err": "That email address doesn’t look complete — check for a typo and try again.", "diag.retake": "↺ Retake the diagnostic", "diag.retake2": "Retake the diagnostic", "diag.sending": "Sending…", "diag.errSend": "That didn’t go through. Try again, or reach me on WhatsApp — your answers are still here.", "diag.waIntro": "Hello Alexandre, I’m {name} and I just completed the financial diagnostic.", "diag.sentWa": "WhatsApp is opening with your results already written out — just press send. If it didn’t open, use the copy button below and send it however you prefer.", "diag.errNoChannel": "No delivery channel is configured yet. Copy your results below and send them across however suits you.", "diag.received": "Request received", "diag.copy": "Copy my results", "diag.copied": "Copied", "diag.copyfail": "Couldn’t copy — select the text above instead", "diag.sent": "your diagnostic is on its way to {email}. Meanwhile, write down the figure for your weakest area today.", "diag.sentAnon": "Your diagnostic is on its way to {email}. Meanwhile, write down the figure for your weakest area today.", "diag.copyHead": "MY FINANCIAL DIAGNOSTIC", "diag.copyStart": "Where to start", "lv.crit": "Needs attention", "lv.warn": "Workable", "lv.ok": "Solid", "dim.runway": "Runway", "dim.debt": "Debt position", "dim.growth": "Growth engine", "dim.resilience": "Resilience", "dim.process": "Decision process", "q1": "If your income stopped tomorrow, how long could you cover essentials from cash you can reach this week?", "q1a": ["Less than two weeks", "Roughly one month", "Two to three months", "Six months or more"], "q2": "Setting a mortgage aside, what does the rest of your debt look like right now?", "q2a": ["Growing, or I don’t know the total", "Roughly flat month to month", "Small and shrinking", "None"], "q3": "Of every unit of currency that lands in your account, how much is still there at month’s end?", "q3a": ["Nothing, or less than nothing", "A little, but it varies wildly", "A consistent slice", "A meaningful share, automatically"], "q4": "Money you don’t spend — where does it actually end up?", "q4a": ["It sits in my current account", "A savings account", "A retirement account only", "Retirement plus invested elsewhere"], "q5": "Something expensive breaks this month. What happens?", "q5a": ["It goes on a credit card", "I’d borrow, or delay other bills", "I’d cover it, but it would hurt", "I’d cover it and barely notice"], "q6": "When a real money decision lands in front of you, how do you make it?", "q6a": ["Gut feel, then move on", "Ask someone I trust", "Search around and compare", "I run the numbers myself"], "mv.runway": "Start with runway. Until one bad month can’t undo a good year, every other optimisation is built on sand — and a thin buffer is exactly what forces the expensive decisions.", "mv.debt": "Start with debt pressure. Get the total, the rate on each balance and the minimums onto a single page. You can’t sequence what you haven’t counted.", "mv.growth": "Start with your growth engine. Money left sitting in a current account is a decision you’re making by not making one — and the fix is structural, not a matter of willpower.", "mv.resilience": "Start with resilience. One unplanned expense shouldn’t be able to reset a year of progress, and right now it can.", "mv.solid": "Nothing here needs rescuing. Even your weakest area reads as solid, which means the next gains come from optimisation rather than repair — account structure, the timing of large decisions, and what your money is doing while you are not watching it.", "mv.process": "Start with how you decide. Instinct is cheap on small choices and expensive on large ones — a repeatable way to compare two options is worth more than being right about any single one.", "calc.eyebrow": "What money is actually worth", "calc.h2": "The same amount, in three different places, over the years you have left.", "calc.lede": "Compounding works while you sleep and penalises waiting. Adjust the numbers and see what time does.", "calc.startL": "Starting amount", "calc.monthlyL": "Added every month", "calc.yearsL": "Years of compounding", "calc.realT": "Show in today’s money", "calc.realD": "Subtracts 3% a year for long-run inflation, so every figure reflects what it would actually buy.", "calc.n1": "Held as cash", "calc.n2": "Savings account", "calc.n3": "S&P 500 long-run average", "calc.splitL": "Of the S&P 500 result", "calc.spIn": "{v} you put in", "calc.spGrow": "{v} from compounding", "calc.waitL": "The cost of waiting", "calc.waitTxt": "Starting five years from now instead of today costs you {v} by year {y} — the same contributions, simply given less time to compound.", "calc.waitShort": "Stretch the timeline past six years to see what delay costs.", "calc.chartAlt": "Line chart comparing the same contributions held as cash, in a savings account, and at the S&P 500 long-run average. The figures below state each result in words.", "calc.note": "Illustration only. The S&P 500’s long-run average annual total return has been roughly 10% in nominal terms over the post-1957 period, which is near 7% once long-run inflation of about 3% is removed. Averages conceal enormous year-to-year variation — the index has lost more than a third of its value in a single year — and past performance does not predict future returns. Every rate above is editable and should be treated as an assumption, not a forecast. Figures ignore taxes, fees, and currency effects, and are not a recommendation to invest in any security.", "nav.about": "About", "nav.services": "Services", "nav.tools": "Tools", "nav.cases": "Scenarios", "nav.exp": "Experience", "nav.contact": "Contact", "nav.cta": "Let’s talk", "hero.tag": "Taking new clients · Costa Rica & remote", "hero.hi": "Hi, I’m", "hero.sub": "FP&A specialist. I help people take control of their money and move toward <b>financial freedom</b> with the same discipline I use on corporate budgets of up to $750M.", "hero.cta1": "Take the diagnostic", "hero.cta2": "See services", "hero.f1": "Years in FP&A", "hero.f2": "In budgets", "hero.f3": "Portfolio designed", "hero.f4": "Languages", "hero.alt": "Portrait of Alexandre Lozada", "chip.s": "Bolsa Nacional de Valores de Costa Rica – 2025", "strip.m1": "$750M+ in planned expenses", "strip.m2": "+30% forecast accuracy", "strip.m3": "$350M supplier programme", "strip.m4": "40x ROI on acquisition", "about.eyebrow": "01 — About", "about.h2": "The problem isn’t how much you earn. It’s what you decide with it.", "about.p1": "Five years in corporate financial planning: budgets, forecasts and executive reporting. That taught me money is put in order by a system, not by willpower.", "about.p2": "I apply that system to personal finances: a clear baseline, priorities in order and a plan you can sustain. The goal is financial freedom — money that stops deciding for you.", "fact.base.k": "Location", "fact.base.v": "Heredia, Costa Rica", "fact.mode.k": "Format", "fact.mode.v": "Remote, worldwide", "fact.lang.k": "Languages", "fact.cert.k": "Certification", "fact.cert.v": "Bolsa Nacional de Valores", "fact.edu.k": "Education", "fact.edu.v": "Business Administration, UCR", "svc.eyebrow": "02 — Services", "svc.h2": "Four services. One objective: control.", "svc.lede": "Every service ends in something concrete: a plan, a system or a date.", "svc.1.t": "Diagnostic & financial plan", "svc.1.d": "Where you stand today, what to decide first and in what order. A one-page plan with goals, deadlines and indicators.", "svc.1.g1": "Baseline", "svc.1.g2": "Priorities", "svc.1.g3": "One-page plan", "svc.2.t": "Budget & cash-flow system", "svc.2.d": "A budget built like a corporate forecast: categories with an owner, a monthly close and variance analysis.", "svc.2.g1": "Zero-based budget", "svc.2.g2": "Variances", "svc.2.g3": "Monthly close", "svc.3.t": "Debt payoff strategy", "svc.3.d": "All your debts on one list with rate, balance and minimum. An order of attack and an exit date.", "svc.3.g1": "Avalanche", "svc.3.g2": "Snowball", "svc.3.g3": "Payoff calendar", "svc.4.t": "Investing education & structure", "svc.4.d": "How to structure accounts, horizon and allocation for your profile. Education and a decision framework: I don’t recommend securities or manage money.", "svc.4.g1": "Asset allocation", "svc.4.g2": "Horizon", "svc.4.g3": "Risk", "tools.eyebrow": "03 — Tools", "tools.h2": "Tools, not slide decks.", "tools.lede": "Try them now. No sign-up, no bank connection; everything runs in your browser.", "tools.diagT": "Diagnostic · 6 questions", "tools.calcT": "Compound interest calculator", "cases.eyebrow": "04 — Scenarios", "cases.h2": "What a plan looks like in numbers.", "cases.lede": "Three fictional profiles, computed figures. They show the method; they are not clients or guaranteed results.", "cases.flag": "Illustrative examples · fictional profiles", "case1.who": "Profile 1 · Professional, 29", "case1.big": "25 months", "case1.cap": "to clear $12,500 of debt on $650 a month, attacking the highest rate first.", "case1.k1": "Total debt", "case1.k2": "Annual rates", "case1.k3": "Interest paid", "case1.k4": "Saved vs. snowball", "case2.who": "Profile 2 · Family of four", "case2.big": "12 months", "case2.cap": "to go from half a month of cushion to three months of essential expenses.", "case2.k1": "Essential costs / month", "case2.k2": "Current cushion", "case2.k3": "Target (3 months)", "case2.k4": "Monthly saving", "case3.who": "Profile 3 · Savings in a current account", "case3.cap": "difference over 20 years between leaving money idle and investing it at 7% real, in today’s money.", "case3.k1": "Initial + monthly", "case3.k2": "Total contributed", "case3.k3": "In current account", "case3.k4": "Invested (7% real)", "exp.eyebrow": "05 — Experience", "exp.h2": "Track record.", "job1.when": "Jun 2026 — Aug 2026", "job1.t": "Lead Analyst, FP&A — Supply Chain Sourcing", "job1.p": "Reporting and cost control for a $350M supplier programme. 2027 Sourcing budget (~$30M) with a driver-based model for ~90 positions.", "job2.when": "Jul 2023 — May 2026", "job2.t": "Senior Financial Analyst, Corporate Planning", "job2.p": "Planning, budgeting and forecasting for $750M+ in expenses. Counterpart to Treasury, Tax and Capital Planning. Power BI reporting: 50% less time.", "job5.when": "Jun 2024 — Aug 2026", "job5.t": "Portfolio investment strategy", "job5.p": "Allocation of a ~$6.4M portfolio for employee associations: 81% local-currency sovereign and bank instruments, 19% a seven-ETF sleeve.", "job3.when": "Apr 2022 — Jun 2023", "job3.t": "Senior Consolidator Analyst, Central FP&A", "job3.p": "Costing models that improved forecast accuracy by 30% and delivered more than $1M in savings.", "job4.when": "Jan 2018 — Mar 2022", "job4.t": "Business Development", "job4.p": "Customer acquisition across the US and Canada: more than $1M generated at a 40x ROI.", "edu1.t": "Portfolio Management for Boards, Investment and Risk Committees", "edu2.when": "2023 — 2026", "edu2.t": "Bachelor’s and Licentiate in Business Administration", "ct.eyebrow": "06 — Contact", "ct.h2": "Ready to put your finances in order?", "ct.lede": "Tell me the decision you have pending. If I’m not the right person, I’ll say so in the first reply.", "ct.cta1": "Talk on WhatsApp", "ct.cta2": "Take the diagnostic", "ct.waV": "Message now", "ct.diagL": "Diagnostic", "ct.diagV": "3 minutes, no sign-up", "ct.callAria": "WhatsApp", "foot.tag": "Financial clarity · Español · English · Français", "foot.disc": "Alexandre Lozada provides financial education, planning and decision-support services. He is not a registered investment adviser, broker-dealer, tax adviser or law firm; nothing on this site is personalised investment, tax or legal advice, or an offer to buy or sell securities. The diagnostic and calculator are self-assessment tools with directional results. Scenarios use fictional profiles. Past performance does not guarantee future results.", "su.h": "Sign up for your session", "su.p": "Leave your details and I’ll get in touch to arrange a first conversation.", "su.attached": "Diagnostic attached: {n}/100", "su.fromDiag": "Sign up and your diagnostic is attached to your request automatically.", "su.toForm": "Sign up with my diagnostic", "su.name": "Full name", "su.email": "Email", "su.wa": "WhatsApp", "su.waPh": "+1 000 000 0000", "su.country": "Country", "su.goal": "Main goal", "su.pick": "Choose…", "su.g.debt": "Get out of debt", "su.g.budget": "Organise budget and cash flow", "su.g.investing": "Start investing", "su.g.plan": "Full financial plan", "su.time": "Best time to contact", "su.any": "Any time", "su.t.morning": "Morning", "su.t.afternoon": "Afternoon", "su.t.evening": "Evening", "su.consent": "I authorise the use of this data only to contact me about financial planning services. I can ask for it to be corrected or deleted at any time.", "su.submit": "Sign up", "su.errName": "Please enter your name.", "su.errWa": "Check the WhatsApp number and include the country code.", "su.errGoal": "Please choose your main goal.", "su.errConsent": "I need your consent to store your details.", "su.errSend": "That didn’t go through. Try again or message me on WhatsApp.", "su.okL": "Sign-up received", "su.ok": "Thank you, {name}. I’ll be in touch soon to arrange our first conversation.", "su.okWa": "WhatsApp is opening with your details already written; just press send.", "su.waIntro": "Hello Alexandre, I’m {name}. I’d like to sign up.", "chip.t": "Certified Portfolio Manager"}, "fr": {"diag.eyebrow": "Diagnostic", "diag.h2": "Six questions. Une lecture honnête.", "diag.lede": "Aucune connexion bancaire. Aucun fichier. Répondez de mémoire ; une estimation suffit.", "diag.q": "Question", "diag.prev": "← Question précédente", "diag.complete": "Terminé", "diag.readLabel": "Votre lecture", "diag.outof": "sur 100 · auto-évalué", "diag.start": "Par où commencer", "diag.capH": "Recevez la lecture complète et vos trois prochaines étapes.", "diag.capP": "Une synthèse d’une page de ces résultats et de ce que chaque score signifie concrètement. Pas d’infolettre, pas de séquence automatisée.", "diag.name": "Prénom", "diag.email": "Adresse courriel", "diag.submit": "Envoyer mon diagnostic", "diag.err": "Cette adresse semble incomplète — vérifiez la saisie et réessayez.", "diag.retake": "↺ Refaire le diagnostic", "diag.retake2": "Refaire le diagnostic", "diag.sending": "Envoi…", "diag.errSend": "L’envoi a échoué. Réessayez ou écrivez-moi sur WhatsApp — vos réponses sont toujours là.", "diag.waIntro": "Bonjour Alexandre, je suis {name} et je viens de terminer le diagnostic financier.", "diag.sentWa": "WhatsApp s’ouvre avec vos résultats déjà rédigés — il ne reste qu’à envoyer. S’il ne s’est pas ouvert, utilisez le bouton copier et envoyez-le comme vous voulez.", "diag.errNoChannel": "Aucun canal d’envoi n’est encore configuré. Copiez vos résultats ci-dessous et transmettez-les comme vous voulez.", "diag.received": "Demande reçue", "diag.copy": "Copier mes résultats", "diag.copied": "Copié", "diag.copyfail": "Copie impossible — sélectionnez le texte ci-dessus", "diag.sent": "votre diagnostic part vers {email}. En attendant, notez dès aujourd’hui le chiffre de votre point le plus faible.", "diag.sentAnon": "Votre diagnostic part vers {email}. En attendant, notez dès aujourd’hui le chiffre de votre point le plus faible.", "diag.copyHead": "MON DIAGNOSTIC FINANCIER", "diag.copyStart": "Par où commencer", "lv.crit": "À traiter", "lv.warn": "Gérable", "lv.ok": "Solide", "dim.runway": "Marge de manœuvre", "dim.debt": "Position d’endettement", "dim.growth": "Moteur de croissance", "dim.resilience": "Résilience", "dim.process": "Méthode de décision", "q1": "Si vos revenus s’arrêtaient demain, combien de temps couvririez-vous l’essentiel avec les liquidités accessibles cette semaine ?", "q1a": ["Moins de deux semaines", "Environ un mois", "Deux à trois mois", "Six mois ou plus"], "q2": "Hypothèque mise à part, à quoi ressemble le reste de vos dettes aujourd’hui ?", "q2a": ["En hausse, ou j’ignore le total", "Assez stable d’un mois à l’autre", "Faible et en baisse", "Aucune"], "q3": "Sur chaque unité qui entre sur votre compte, combien reste-t-il à la fin du mois ?", "q3a": ["Rien, ou moins que rien", "Un peu, mais très variable", "Une part constante", "Une part importante, automatiquement"], "q4": "L’argent que vous ne dépensez pas — où finit-il réellement ?", "q4a": ["Il reste sur le compte courant", "Sur un compte d’épargne", "Uniquement en épargne-retraite", "Retraite plus placements ailleurs"], "q5": "Quelque chose de coûteux tombe en panne ce mois-ci. Que se passe-t-il ?", "q5a": ["Ça passe sur la carte de crédit", "J’emprunterais ou je retarderais d’autres factures", "Je le couvrirais, mais ça ferait mal", "Je le couvrirais sans presque le remarquer"], "q6": "Face à une vraie décision financière, comment la prenez-vous ?", "q6a": ["À l’instinct, puis je passe à autre chose", "Je demande à quelqu’un de confiance", "Je cherche et je compare", "Je fais les calculs moi-même"], "mv.runway": "Commencez par la marge de manœuvre. Tant qu’un mauvais mois peut défaire une bonne année, toute autre optimisation repose sur du sable — et c’est précisément un coussin trop mince qui force les décisions coûteuses.", "mv.debt": "Commencez par la pression de la dette. Réunissez le total, le taux de chaque solde et les paiements minimums sur une seule page. On ne peut pas ordonner ce qu’on n’a pas compté.", "mv.growth": "Commencez par votre moteur de croissance. L’argent laissé sur un compte courant est une décision que vous prenez en n’en prenant aucune — et la solution est structurelle, pas une question de volonté.", "mv.resilience": "Commencez par la résilience. Une dépense imprévue ne devrait pas pouvoir effacer une année de progrès, et aujourd’hui elle le peut.", "mv.solid": "Rien ici n’a besoin d’être sauvé. Même votre point le plus faible reste solide : les prochains gains viendront de l’optimisation plutôt que de la réparation — structure des comptes, calendrier des décisions importantes, et ce que fait votre argent pendant que vous ne le regardez pas.", "mv.process": "Commencez par votre façon de décider. L’instinct coûte peu sur les petits choix et cher sur les grands — une méthode reproductible pour comparer deux options vaut mieux que d’avoir raison sur une seule.", "calc.eyebrow": "Ce que vaut vraiment l’argent", "calc.h2": "Le même montant, à trois endroits différents, sur les années qu’il vous reste.", "calc.lede": "Les intérêts composés travaillent pendant que vous dormez et sanctionnent l’attente. Ajustez les chiffres et voyez l’effet du temps.", "calc.startL": "Montant de départ", "calc.monthlyL": "Ajouté chaque mois", "calc.yearsL": "Années de capitalisation", "calc.realT": "Afficher en argent d’aujourd’hui", "calc.realD": "Retranche 3 % par an au titre de l’inflation de long terme, pour que chaque montant reflète son pouvoir d’achat réel.", "calc.n1": "Gardé en liquidités", "calc.n2": "Compte d’épargne", "calc.n3": "Moyenne long terme du S&P 500", "calc.splitL": "Sur le résultat du S&P 500", "calc.spIn": "{v} que vous avez versés", "calc.spGrow": "{v} issus de la capitalisation", "calc.waitL": "Le coût de l’attente", "calc.waitTxt": "Commencer dans cinq ans plutôt qu’aujourd’hui vous coûte {v} à l’année {y} — les mêmes versements, avec simplement moins de temps pour capitaliser.", "calc.waitShort": "Allongez l’horizon au-delà de six ans pour voir ce que coûte le report.", "calc.chartAlt": "Graphique linéaire comparant les mêmes versements gardés en liquidités, sur un compte d’épargne et au rendement moyen long terme du S&P 500. Les montants ci-dessous énoncent chaque résultat en toutes lettres.", "calc.note": "À titre d’illustration uniquement. Le rendement total annuel moyen de long terme du S&P 500 avoisine 10 % en termes nominaux sur la période postérieure à 1957, soit près de 7 % une fois retirée une inflation de long terme d’environ 3 %. Les moyennes masquent d’énormes écarts d’une année à l’autre — l’indice a déjà perdu plus du tiers de sa valeur en une seule année — et les performances passées ne préjugent pas des performances futures. Tous les taux ci-dessus sont modifiables et doivent être considérés comme des hypothèses, non comme des prévisions. Les montants ne tiennent compte ni des impôts, ni des frais, ni des effets de change, et ne constituent pas une recommandation d’investir dans un titre.", "nav.about": "À propos", "nav.services": "Services", "nav.tools": "Outils", "nav.cases": "Scénarios", "nav.exp": "Parcours", "nav.contact": "Contact", "nav.cta": "Parlons-en", "hero.tag": "Nouveaux clients acceptés · Costa Rica et à distance", "hero.hi": "Bonjour, je suis", "hero.sub": "Spécialiste FP&A. J’aide les particuliers à reprendre le contrôle de leur argent et à avancer vers leur <b>liberté financière</b>, avec la même rigueur que j’applique à des budgets d’entreprise allant jusqu’à 750 M$.", "hero.cta1": "Faire le diagnostic", "hero.cta2": "Voir les services", "hero.f1": "Ans en FP&A", "hero.f2": "De budgets", "hero.f3": "Portefeuille conçu", "hero.f4": "Langues", "hero.alt": "Portrait d’Alexandre Lozada", "chip.s": "Bolsa Nacional de Valores de Costa Rica – 2025", "strip.m1": "750 M$+ de dépenses planifiées", "strip.m2": "+30 % de précision des prévisions", "strip.m3": "Programme fournisseurs de 350 M$", "strip.m4": "ROI de 40x en acquisition", "about.eyebrow": "01 — À propos", "about.h2": "Le problème n’est pas combien vous gagnez. C’est ce que vous en décidez.", "about.p1": "Cinq ans en planification financière d’entreprise : budgets, prévisions et reporting de direction. J’y ai appris que l’argent s’ordonne avec un système, pas avec de la volonté.", "about.p2": "J’applique ce système aux finances personnelles : une base claire, des priorités ordonnées et un plan tenable. L’objectif est la liberté financière — que l’argent cesse de décider à votre place.", "fact.base.k": "Localisation", "fact.base.v": "Heredia, Costa Rica", "fact.mode.k": "Format", "fact.mode.v": "À distance, partout", "fact.lang.k": "Langues", "fact.cert.k": "Certification", "fact.cert.v": "Bolsa Nacional de Valores", "fact.edu.k": "Formation", "fact.edu.v": "Administration des affaires, UCR", "svc.eyebrow": "02 — Services", "svc.h2": "Quatre services. Un objectif : le contrôle.", "svc.lede": "Chaque service aboutit à quelque chose de concret : un plan, un système ou une date.", "svc.1.t": "Diagnostic et plan financier", "svc.1.d": "Où vous en êtes, quoi décider d’abord et dans quel ordre. Un plan d’une page avec objectifs, échéances et indicateurs.", "svc.1.g1": "Base de départ", "svc.1.g2": "Priorités", "svc.1.g3": "Plan d’une page", "svc.2.t": "Budget et trésorerie", "svc.2.d": "Un budget construit comme une prévision d’entreprise : catégories avec responsable, clôture mensuelle et analyse des écarts.", "svc.2.g1": "Budget base zéro", "svc.2.g2": "Écarts", "svc.2.g3": "Clôture mensuelle", "svc.3.t": "Stratégie de remboursement", "svc.3.d": "Toutes vos dettes sur une liste avec taux, solde et minimum. Un ordre d’attaque et une date de sortie.", "svc.3.g1": "Avalanche", "svc.3.g2": "Boule de neige", "svc.3.g3": "Calendrier de paiement", "svc.4.t": "Éducation à l’investissement et structure", "svc.4.d": "Comment structurer comptes, horizon et allocation selon votre profil. Éducation et cadre de décision : je ne recommande pas de titres et ne gère pas d’argent.", "svc.4.g1": "Allocation d’actifs", "svc.4.g2": "Horizon", "svc.4.g3": "Risque", "tools.eyebrow": "03 — Outils", "tools.h2": "Des outils, pas des présentations.", "tools.lede": "Essayez-les maintenant. Sans inscription ni connexion bancaire ; tout s’exécute dans votre navigateur.", "tools.diagT": "Diagnostic · 6 questions", "tools.calcT": "Calculateur d’intérêts composés", "cases.eyebrow": "04 — Scénarios", "cases.h2": "À quoi ressemble un plan en chiffres.", "cases.lede": "Trois profils fictifs, des chiffres calculés. Ils montrent la méthode ; ce ne sont ni des clients ni des résultats garantis.", "cases.flag": "Exemples illustratifs · profils fictifs", "case1.who": "Profil 1 · Professionnel, 29 ans", "case1.big": "25 mois", "case1.cap": "pour rembourser 12 500 $ de dettes avec 650 $ par mois, en attaquant d’abord le taux le plus élevé.", "case1.k1": "Dette totale", "case1.k2": "Taux annuels", "case1.k3": "Intérêts payés", "case1.k4": "Économie vs boule de neige", "case2.who": "Profil 2 · Famille de quatre", "case2.big": "12 mois", "case2.cap": "pour passer d’un demi-mois de coussin à trois mois de dépenses essentielles.", "case2.k1": "Dépenses essentielles / mois", "case2.k2": "Coussin actuel", "case2.k3": "Objectif (3 mois)", "case2.k4": "Épargne mensuelle", "case3.who": "Profil 3 · Épargne sur compte courant", "case3.cap": "d’écart sur 20 ans entre laisser l’argent dormir et l’investir à 7 % réel, en argent d’aujourd’hui.", "case3.k1": "Initial + mensuel", "case3.k2": "Total versé", "case3.k3": "Sur compte courant", "case3.k4": "Investi (7 % réel)", "exp.eyebrow": "05 — Parcours", "exp.h2": "Parcours.", "job1.when": "Juin 2026 — Août 2026", "job1.t": "Analyste principal, FP&A — Approvisionnement", "job1.p": "Reporting et contrôle des coûts d’un programme fournisseurs de 350 M$. Budget 2027 de l’Approvisionnement (~30 M$) avec un modèle par inducteurs pour ~90 postes.", "job2.when": "Juil. 2023 — Mai 2026", "job2.t": "Analyste financier senior, Planification d’entreprise", "job2.p": "Planification, budget et prévisions pour 750 M$+ de dépenses. Interlocuteur de la Trésorerie, de la Fiscalité et de la Planification des investissements. Reporting Power BI : 50 % de temps en moins.", "job5.when": "Juin 2024 — Août 2026", "job5.t": "Stratégie d’investissement de portefeuilles", "job5.p": "Allocation d’un portefeuille d’environ 6,4 M$ pour des associations de salariés : 81 % d’instruments souverains et bancaires en monnaie locale, 19 % en sept FNB.", "job3.when": "Avr. 2022 — Juin 2023", "job3.t": "Analyste senior de consolidation, FP&A central", "job3.p": "Modèles de coûts qui ont amélioré la précision des prévisions de 30 % et généré plus de 1 M$ d’économies.", "job4.when": "Janv. 2018 — Mars 2022", "job4.t": "Développement commercial", "job4.p": "Acquisition de clients aux États-Unis et au Canada : plus de 1 M$ générés avec un ROI de 40x.", "edu1.t": "Gestion de portefeuille pour conseils d’administration, comités d’investissement et de risque", "edu2.when": "2023 — 2026", "edu2.t": "Baccalauréat et Licence en administration des affaires", "ct.eyebrow": "06 — Contact", "ct.h2": "Prêt à mettre de l’ordre dans vos finances ?", "ct.lede": "Dites-moi quelle décision vous attend. Si je ne suis pas la bonne personne, je vous le dis dès la première réponse.", "ct.cta1": "Échanger sur WhatsApp", "ct.cta2": "Faire le diagnostic", "ct.waV": "Écrire maintenant", "ct.diagL": "Diagnostic", "ct.diagV": "3 minutes, sans inscription", "ct.callAria": "WhatsApp", "foot.tag": "Clarté financière · Español · English · Français", "foot.disc": "Alexandre Lozada propose des services d’éducation financière, de planification et d’aide à la décision. Il n’est ni conseiller en investissement enregistré, ni courtier, ni fiscaliste, ni cabinet d’avocats ; rien sur ce site ne constitue un conseil personnalisé en investissement, fiscalité ou droit, ni une offre d’achat ou de vente de titres. Le diagnostic et le calculateur sont des outils d’auto-évaluation aux résultats indicatifs. Les scénarios utilisent des profils fictifs. Les performances passées ne garantissent pas les résultats futurs.", "su.h": "Inscrivez-vous pour votre séance", "su.p": "Laissez vos coordonnées et je vous contacte pour organiser un premier échange.", "su.attached": "Diagnostic joint : {n}/100", "su.fromDiag": "Inscrivez-vous et votre diagnostic est joint automatiquement à votre demande.", "su.toForm": "M’inscrire avec mon diagnostic", "su.name": "Nom complet", "su.email": "Courriel", "su.wa": "WhatsApp", "su.waPh": "+33 0 00 00 00 00", "su.country": "Pays", "su.goal": "Objectif principal", "su.pick": "Choisir…", "su.g.debt": "Sortir des dettes", "su.g.budget": "Organiser budget et trésorerie", "su.g.investing": "Commencer à investir", "su.g.plan": "Plan financier complet", "su.time": "Meilleur moment pour vous joindre", "su.any": "N’importe quand", "su.t.morning": "Matin", "su.t.afternoon": "Après-midi", "su.t.evening": "Soir", "su.consent": "J’autorise l’utilisation de ces données uniquement pour me contacter au sujet des services de planification financière. Je peux demander leur correction ou leur suppression à tout moment.", "su.submit": "M’inscrire", "su.errName": "Indiquez votre nom.", "su.errWa": "Vérifiez le numéro WhatsApp et incluez l’indicatif du pays.", "su.errGoal": "Choisissez votre objectif principal.", "su.errConsent": "J’ai besoin de votre accord pour enregistrer vos données.", "su.errSend": "L’envoi a échoué. Réessayez ou écrivez-moi sur WhatsApp.", "su.okL": "Inscription reçue", "su.ok": "Merci, {name}. Je vous contacte bientôt pour organiser notre premier échange.", "su.okWa": "WhatsApp s’ouvre avec vos données déjà rédigées ; il ne reste qu’à envoyer.", "su.waIntro": "Bonjour Alexandre, je suis {name}. Je souhaite m’inscrire.", "chip.t": "Gestionnaire de portefeuille certifié"}};
+  const SUPPORTED = ["es", "en", "fr"];
+  const STORE_KEY = "al.lang";
+  const LOCALE = { es: "es-CR", en: "en-US", fr: "fr-CA" };
+  const NL = "\n";
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let lang = "es";
+
+  const t = k => (T[lang] && T[lang][k] !== undefined) ? T[lang][k] : (T.es[k] !== undefined ? T.es[k] : k);
+
+  function detect(){
+    try { const s = localStorage.getItem(STORE_KEY); if (s && SUPPORTED.includes(s)) return s; } catch { /* storage blocked */ }
+    const navs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "es"];
+    for (const n of navs){ const two = String(n).slice(0, 2).toLowerCase(); if (SUPPORTED.includes(two)) return two; }
+    return "es";
+  }
+
+  function applyLang(next){
+    lang = SUPPORTED.includes(next) ? next : "es";
+    try { localStorage.setItem(STORE_KEY, lang); } catch { /* non-fatal */ }
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = t(el.dataset.i18n); });
+    document.querySelectorAll("[data-i18n-html]").forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
+    document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
+    document.querySelectorAll("[data-i18n-aria]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nAria)); });
+    document.querySelectorAll("[data-i18n-alt]").forEach(el => { el.alt = t(el.dataset.i18nAlt); });
+    document.querySelectorAll("#langSwitch button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+    buildQuestions();
+    if (result.hidden) render(); else paintResult();
+    runCalc();
+  }
+
+  document.getElementById("langSwitch").addEventListener("click", ev => {
+    const b = ev.target.closest("button[data-lang]");
+    if (b) applyLang(b.dataset.lang);
+  });
+
+  /* ═══════════════ HEADER, NAVIGATION, MOTION ═══════════════ */
+
+  const nav = document.getElementById("nav");
+  const hero = document.getElementById("hero");
+  const sentinel = document.createElement("span");
+  sentinel.style.cssText = "position:absolute;top:90px;left:0;width:1px;height:1px";
+  hero.prepend(sentinel);
+  new IntersectionObserver(es => es.forEach(e =>
+    nav.classList.toggle("stuck", !e.isIntersecting && e.boundingClientRect.top <= 0)
+  )).observe(sentinel);
+
+  // The header stays fixed and visible at all times, so its buttons are always one tap away.
+
+  // Native #fragment jumps are blocked inside the artifact sandbox, so every
+  // in-page link is driven here instead — and focus travels with the view.
+  document.addEventListener("click", ev => {
+    const a = ev.target.closest('a[href^="#"]');
+    if (!a || a.hasAttribute("data-wa")) return;
+    const id = a.getAttribute("href");
+    if (id.length < 2) return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    ev.preventDefault();
+    const top = target.getBoundingClientRect().top + (document.scrollingElement || document.documentElement).scrollTop - 70;
+    (document.scrollingElement || document.documentElement).scrollTo({ top, behavior: reduced.matches ? "auto" : "smooth" });
+    target.setAttribute("tabindex", "-1");
+    target.focus({ preventScroll: true });
+  });
+
+  const revealIO = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting){ e.target.classList.add("in"); revealIO.unobserve(e.target); }
+  }), { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+  document.querySelectorAll(".rv, .stagger").forEach(el => revealIO.observe(el));
+  // Never let content depend on the observer firing: the hero is above the
+  // fold, so show it at once; anything still hidden after 2.5s is revealed.
+  hero.querySelectorAll(".rv").forEach(el => el.classList.add("in"));
+  setTimeout(() => document.querySelectorAll(".rv:not(.in), .stagger:not(.in)")
+    .forEach(el => { el.classList.add("in"); revealIO.unobserve(el); }), 2500);
+
+  const countIO = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    countIO.unobserve(e.target);
+    const el = e.target, target = parseFloat(el.dataset.count);
+    const dec = el.dataset.count.includes(".") ? 1 : 0;
+    const paint = v => { el.textContent = el.dataset.fmt.replace("{n}", v.toFixed(dec)); };
+    if (reduced.matches){ paint(target); return; }
+    const t0 = performance.now();
+    const tick = now => {
+      const k = Math.min(1, (now - t0) / 1200);
+      paint(target * (1 - Math.pow(1 - k, 3)));
+      if (k < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }), { threshold: 0.4 });
+  document.querySelectorAll("[data-count]").forEach(el => countIO.observe(el));
+
+  if (matchMedia("(hover: hover) and (pointer: fine)").matches && !reduced.matches){
+    document.querySelectorAll(".magnet").forEach(b => {
+      b.addEventListener("pointermove", e => {
+        const r = b.getBoundingClientRect();
+        b.style.transform = "translate(" + (((e.clientX - r.left) / r.width - 0.5) * 10).toFixed(1) + "px," +
+          (((e.clientY - r.top) / r.height - 0.5) * 8).toFixed(1) + "px)";
+      });
+      b.addEventListener("pointerleave", () => { b.style.transform = ""; });
+    });
+  }
+
+  /* ═══════════════ DIAGNOSTIC ═══════════════ */
+
+  const DIMS = ["runway", "debt", "growth", "growth", "resilience", "process"];
+  const BARS = ["runway", "debt", "growth", "resilience", "process"];
+  const KEYS = ["A", "B", "C", "D"];
+  let QUESTIONS = [];
+  let step = 0, answers = new Array(6).fill(null), lastRead = null;
+
+  const qTitle = document.getElementById("qTitle");
+  const qOpts = document.getElementById("qOpts");
+  const quiz = document.getElementById("quiz");
+  const result = document.getElementById("result");
+  const stepLabel = document.getElementById("stepLabel");
+  const progFill = document.getElementById("progFill");
+  const progTrack = document.querySelector("#diag .track");
+  const backBtn = document.getElementById("backBtn");
+  const pad = n => String(n).padStart(2, "0");
+
+  function buildQuestions(){
+    QUESTIONS = DIMS.map((dim, i) => ({ dim, q: t("q" + (i + 1)), a: t("q" + (i + 1) + "a") }));
+  }
+
+  function render(moveFocus){
+    const item = QUESTIONS[step];
+    qTitle.textContent = item.q;
+    qOpts.textContent = "";
+    item.a.forEach((text, i) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "opt";
+      const k = document.createElement("span");
+      k.className = "key"; k.setAttribute("aria-hidden", "true"); k.textContent = KEYS[i];
+      b.append(k, document.createTextNode(text));
+      b.addEventListener("click", () => choose(i));
+      qOpts.appendChild(b);
+    });
+    stepLabel.textContent = t("diag.q") + " " + pad(step + 1) + " / " + pad(QUESTIONS.length);
+    progFill.style.width = (step / QUESTIONS.length * 100) + "%";
+    progTrack.setAttribute("aria-valuenow", String(step));
+    backBtn.hidden = step === 0;
+    if (moveFocus) qTitle.focus();
+  }
+
+  function choose(i){
+    answers[step] = i;
+    if (step < QUESTIONS.length - 1){ step++; render(true); } else finish();
+  }
+  backBtn.addEventListener("click", () => { if (step > 0){ step--; render(true); } });
+
+  function scoreFor(key){
+    const idx = DIMS.map((d, i) => d === key ? i : -1).filter(i => i >= 0);
+    return Math.round(idx.reduce((s, i) => s + answers[i], 0) / idx.length / 3 * 100);
+  }
+
+  const moveFor = r => r.weakest.val >= 70 ? t("mv.solid") : t("mv." + r.weakest.key);
+
+  function paintResult(){
+    if (!lastRead) return;
+    stepLabel.textContent = t("diag.complete");
+    document.getElementById("scoreNum").textContent = String(lastRead.total);
+    const bars = document.getElementById("bars");
+    bars.textContent = "";
+    lastRead.rows.forEach((r, idx) => {
+      const lv = r.val < 40 ? "crit" : r.val < 70 ? "warn" : "ok";
+      const row = document.createElement("div");
+      row.className = "lv-" + lv;
+      const meta = document.createElement("div"); meta.className = "bar-meta";
+      const nm = document.createElement("span"); nm.textContent = t("dim." + r.key);
+      const vl = document.createElement("span"); vl.className = "vl"; vl.textContent = t("lv." + lv) + " · " + r.val;
+      meta.append(nm, vl);
+      const trk = document.createElement("div"); trk.className = "bar-track";
+      const fill = document.createElement("div"); fill.className = "bar-fill";
+      trk.appendChild(fill); row.append(meta, trk); bars.appendChild(row);
+      setTimeout(() => { fill.style.width = r.val + "%"; }, reduced.matches ? 0 : 40 + idx * 110);
+    });
+    document.getElementById("moveText").textContent = moveFor(lastRead);
+    showAttach();
+  }
+
+  function finish(){
+    progFill.style.width = "100%";
+    progTrack.setAttribute("aria-valuenow", "6");
+    quiz.hidden = true; result.hidden = false;
+    const total = Math.round(answers.reduce((s, v) => s + v, 0) / 18 * 100);
+    const rows = BARS.map(k => ({ key: k, val: scoreFor(k) }));
+    lastRead = { total, rows, weakest: rows.reduce((a, b) => b.val < a.val ? b : a) };
+    paintResult();
+    result.focus();
+    result.scrollIntoView({ behavior: reduced.matches ? "auto" : "smooth", block: "center" });
+  }
+
+  /* ═══════════════ SIGN-UP ═══════════════
+     SIGNUP_ENDPOINT (config.py) is a Google Apps Script web app that appends
+     each sign-up to a sheet you own; backend/Code.gs has the setup steps.
+     While it is empty the sign-up is handed to WhatsApp fully written, so
+     nothing is lost before the back end exists. */
+  const SIGNUP_ENDPOINT = ""; /* build:endpoint */
+
+  /* build:contact */
+  const CONTACT_DIGITS = [[53, 48, 54, 55], [50, 54, 50, 50], [51, 51, 55]]
+    .map(p => p.map(c => String.fromCharCode(c)).join("")).join("");
+  /* /build:contact */
+
+  document.querySelectorAll("[data-wa]").forEach(a => { a.href = "https://wa.me/" + CONTACT_DIGITS; });
+
+  const su = document.getElementById("signup");
+  const suErr = document.getElementById("suErr");
+  const suSent = document.getElementById("suSent");
+  const suSubmit = document.getElementById("suSubmit");
+  const suAttach = document.getElementById("suAttach");
+  const field = id => document.getElementById(id).value.trim();
+
+  function showAttach(){
+    suAttach.hidden = !lastRead;
+    if (lastRead) suAttach.textContent = t("su.attached").replace("{n}", lastRead.total);
+  }
+
+  function resultLines(){
+    if (!lastRead) return [];
+    return [t("diag.copyHead") + ": " + lastRead.total + "/100"]
+      .concat(lastRead.rows.map(r => "· " + t("dim." + r.key) + ": " + r.val + "/100"))
+      .concat([t("diag.copyStart") + ": " + moveFor(lastRead)]);
+  }
+
+  function summary(f){
+    const lines = [t("su.waIntro").replace("{name}", f.name || "—")];
+    [["su.email", f.email], ["su.wa", f.whatsapp], ["su.country", f.country],
+     ["su.goal", f.goal && t("su.g." + f.goal)], ["su.time", f.contactTime && t("su.t." + f.contactTime)]]
+      .forEach(([k, v]) => { if (v) lines.push(t(k) + ": " + v); });
+    const res = resultLines();
+    return lines.concat(res.length ? [""].concat(res) : []).join(NL);
+  }
+
+  function suFail(key, id){
+    suErr.textContent = t(key); suErr.hidden = false;
+    if (id){ const el = document.getElementById(id); el.setAttribute("aria-invalid", "true"); el.focus(); }
+  }
+
+  function suDone(viaWhatsApp){
+    su.querySelectorAll(".su-grid, .su-consent, .su-go").forEach(el => { el.hidden = true; });
+    suErr.hidden = true; suSent.hidden = false;
+    document.getElementById("suSentMsg").textContent = viaWhatsApp
+      ? t("su.okWa") : t("su.ok").replace("{name}", field("suName").split(" ")[0] || "");
+    suSent.focus();
+  }
+
+  su.addEventListener("submit", async ev => {
+    ev.preventDefault();
+    suErr.hidden = true;
+    su.querySelectorAll("[aria-invalid]").forEach(el => el.removeAttribute("aria-invalid"));
+    if (su.querySelector('input[name="company"]').value.trim() !== ""){ suDone(false); return; }   // honeypot
+    const f = { name: field("suName"), email: field("suEmail"), whatsapp: field("suWa"),
+                country: field("suCountry"), goal: field("suGoal"), contactTime: field("suTime") };
+    if (!f.name) return suFail("su.errName", "suName");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email)) return suFail("diag.err", "suEmail");
+    if (f.whatsapp && f.whatsapp.replace(/\D/g, "").length < 8) return suFail("su.errWa", "suWa");
+    if (!f.goal) return suFail("su.errGoal", "suGoal");
+    if (!document.getElementById("suConsent").checked) return suFail("su.errConsent", "suConsent");
+
+    if (!SIGNUP_ENDPOINT){
+      window.open("https://wa.me/" + CONTACT_DIGITS + "?text=" + encodeURIComponent(summary(f)), "_blank", "noopener");
+      suDone(true);
+      return;
+    }
+    const label = suSubmit.querySelector("span");
+    suSubmit.disabled = true; label.textContent = t("diag.sending");
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 15000);
+    try {
+      // text/plain keeps this a "simple" request, so Apps Script needs no CORS preflight
+      const res = await fetch(SIGNUP_ENDPOINT, {
+        method: "POST", signal: ctrl.signal, headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(Object.assign({}, f, {
+          lang, consent: true, source: "site",
+          score: lastRead ? lastRead.total : null,
+          dimensions: lastRead ? Object.fromEntries(lastRead.rows.map(r => [r.key, r.val])) : null,
+          weakest: lastRead ? lastRead.weakest.key : null
+        }))
+      });
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error || "server");
+      suDone(false);
+    } catch {
+      suFail("su.errSend");
+    } finally {
+      clearTimeout(timer); suSubmit.disabled = false; label.textContent = t("su.submit");
+    }
+  });
+
+  document.getElementById("copyBtn").addEventListener("click", async ev => {
+    if (!lastRead) return;
+    const label = ev.currentTarget.querySelector("span");
+    try { await navigator.clipboard.writeText(resultLines().join(NL)); label.textContent = t("diag.copied"); }
+    catch { label.textContent = t("diag.copyfail"); }
+    setTimeout(() => { label.textContent = t("diag.copy"); }, 1800);
+  });
+
+  function retake(){
+    step = 0; answers = new Array(6).fill(null); lastRead = null;
+    result.hidden = true; quiz.hidden = false;
+    showAttach(); render(true);
+  }
+  document.getElementById("retakeBtn").addEventListener("click", retake);
+
+  /* ═══════════════ COMPOUND CALCULATOR ═══════════════ */
+
+  const INFLATION = 3;
+  const SERIES = [{ id: 0, colour: "#9AA7BA" }, { id: 1, colour: "#B7791F" }, { id: 2, colour: "#1F5FA8" }];
+  const elStart = document.getElementById("cStart");
+  const elMonthly = document.getElementById("cMonthly");
+  const elYears = document.getElementById("cYears");
+  const elReal = document.getElementById("cReal");
+  const gc = document.getElementById("growth");
+  const gctx = gc.getContext("2d");
+  let chartReveal = 0;
+
+  const money = v => new Intl.NumberFormat(LOCALE[lang], { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(Math.round(v));
+  const moneyShort = v => new Intl.NumberFormat(LOCALE[lang], { style: "currency", currency: "USD", notation: "compact", maximumFractionDigits: 1 }).format(v);
+  const num = (el, fb) => { const v = parseFloat(el.value); return Number.isFinite(v) ? v : fb; };
+
+  function project(pct, start, monthly, years, skip){
+    const r = pct / 100 / 12; const out = [];
+    let bal = skip > 0 ? 0 : start;
+    out.push(bal);
+    for (let y = 1; y <= years; y++){
+      if (y === skip + 1) bal = start;
+      for (let m = 0; m < 12; m++){ bal = bal * (1 + r); if (y > skip) bal += monthly; }
+      out.push(bal);
+    }
+    return out;
+  }
+
+  function drawChart(sets, years){
+    const w0 = gc.clientWidth, h0 = gc.clientHeight, d = Math.min(window.devicePixelRatio || 1, 2);
+    gc.width = Math.round(w0 * d); gc.height = Math.round(h0 * d);
+    gctx.setTransform(d, 0, 0, d, 0, 0); gctx.clearRect(0, 0, w0, h0);
+    const L = 56, R = 10, Tp = 10, B = 26, w = w0 - L - R, h = h0 - Tp - B;
+    const lo = Math.min(0, ...sets.map(s => Math.min(...s.vals)));
+    const hi = Math.max(1, ...sets.map(s => Math.max(...s.vals)));
+    const span = (hi - lo) || 1;
+    const X = i => L + i / years * w, Y = v => Tp + h - (v - lo) / span * h;
+    gctx.font = "11px 'Open Sans', system-ui, sans-serif";
+    gctx.textAlign = "right"; gctx.textBaseline = "middle";
+    for (let g = 0; g <= 4; g++){
+      const v = lo + span * g / 4, y = Y(v);
+      gctx.strokeStyle = "rgba(11,27,51,.08)"; gctx.lineWidth = 1;
+      gctx.beginPath(); gctx.moveTo(L, y); gctx.lineTo(w0 - R, y); gctx.stroke();
+      gctx.fillStyle = "#66758C"; gctx.fillText(moneyShort(v), L - 8, y);
+    }
+    gctx.textAlign = "center"; gctx.textBaseline = "top";
+    const every = years <= 10 ? 2 : years <= 25 ? 5 : 10;
+    for (let yr = 0; yr <= years; yr += every) gctx.fillText(String(yr), X(yr), Tp + h + 8);
+    const shown = Math.max(1, Math.round(years * chartReveal));
+    for (const s of sets){
+      gctx.beginPath();
+      s.vals.slice(0, shown + 1).forEach((v, i) => { if (i === 0) gctx.moveTo(X(i), Y(v)); else gctx.lineTo(X(i), Y(v)); });
+      gctx.strokeStyle = s.colour; gctx.lineWidth = s.id === 2 ? 2.8 : 1.8; gctx.lineJoin = "round"; gctx.stroke();
+      gctx.beginPath(); gctx.arc(X(shown), Y(s.vals[shown]), s.id === 2 ? 4 : 3, 0, Math.PI * 2);
+      gctx.fillStyle = s.colour; gctx.fill();
+    }
+  }
+
+  const tweens = new WeakMap();
+  function tweenMoney(el, to){
+    const from = tweens.get(el);
+    if (reduced.matches || from === undefined || Math.abs(to - from) < 1){ el.textContent = money(to); tweens.set(el, to); return; }
+    if (el._raf) cancelAnimationFrame(el._raf);
+    const t0 = performance.now();
+    const tick = now => {
+      const k = Math.min(1, (now - t0) / 420);
+      el.textContent = money(from + (to - from) * (1 - Math.pow(1 - k, 3)));
+      if (k < 1) el._raf = requestAnimationFrame(tick); else { el.textContent = money(to); tweens.set(el, to); }
+    };
+    el._raf = requestAnimationFrame(tick);
+  }
+
+  function runCalc(){
+    const start = Math.max(0, num(elStart, 0)), monthly = Math.max(0, num(elMonthly, 0));
+    const years = Math.round(num(elYears, 30)), real = elReal.checked;
+    document.getElementById("cYearsOut").textContent = String(years);
+    const sets = SERIES.map(s => {
+      const rate = num(document.getElementById("r" + s.id), 0) - (real ? INFLATION : 0);
+      return { ...s, rate, vals: project(rate, start, monthly, years, 0) };
+    });
+    sets.forEach(s => tweenMoney(document.getElementById("a" + s.id), s.vals[years]));
+    drawChart(sets, years);
+    const waitEl = document.getElementById("waitTxt");
+    if (years > 6){
+      const late = project(sets[2].rate, start, monthly, years, 5)[years];
+      waitEl.textContent = t("calc.waitTxt").replace("{v}", money(Math.max(0, sets[2].vals[years] - late))).replace("{y}", String(years));
+    } else {
+      waitEl.textContent = t("calc.waitShort");
+    }
+  }
+
+  [elStart, elMonthly, elYears, elReal, "r0", "r1", "r2"]
+    .map(x => typeof x === "string" ? document.getElementById(x) : x)
+    .forEach(el => el.addEventListener("input", runCalc));
+  let rz;
+  window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(runCalc, 160); });
+
+  new IntersectionObserver((es, obs) => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    obs.disconnect();
+    if (reduced.matches){ chartReveal = 1; runCalc(); return; }
+    const t0 = performance.now();
+    const tick = now => {
+      const k = Math.min(1, (now - t0) / 1250);
+      chartReveal = 1 - Math.pow(1 - k, 3); runCalc();
+      if (k < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }), { threshold: 0.3 }).observe(gc);
+
+  applyLang(detect());
+  requestAnimationFrame(() => document.body.classList.add("rdy"));
+})();
+
+</script>
+</body>
+</html>
