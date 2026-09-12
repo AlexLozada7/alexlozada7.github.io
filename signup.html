@@ -858,6 +858,9 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
   }
 
 
+  // The service they clicked, phrased for the booking note.
+  const serviceNote = () => pick ? [t("sp.for") + ": " + t("svc." + SERVICES[pick] + ".t")] : [];
+
   /* ═══════════════ BOOKING EMBED ═══════════════
      Cal.com's own loader stub. It has to exist before embed.js arrives: the
      stub queues the init calls and the script drains that queue on load.
@@ -899,8 +902,11 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
         };
       })(window, "https://app.cal.com/embed/embed.js", "init");
       window.Cal("init", { origin: "https://cal.com" });
+      const lines = serviceNote();
       window.Cal("inline", { elementOrSelector: "#calInline", calLink: calPath,
-                             config: { layout: "month_view" } });
+                             config: lines.length
+                               ? { layout: "month_view", notes: lines.join(NL) }
+                               : { layout: "month_view" } });
       window.Cal("ui", { theme: "light", hideEventTypeDetails: false, layout: "month_view" });
       let waited = 0;
       const watch = setInterval(() => {
@@ -921,6 +927,27 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
   }
 
   /* ═══════════════ FORM ═══════════════ */
+
+
+  /* Cal.com prefills its booking form from query parameters: name, email and
+     notes are read straight off the URL. Sending the request description
+     through notes is what puts it in the confirmation email, which is the
+     whole point of filling the form before picking a time. */
+  function bookingUrl(f, extra){
+    if (!BOOKING_URL) return "";
+    const q = new URLSearchParams();
+    if (f && f.name) q.set("name", f.name);
+    if (f && f.email) q.set("email", f.email);
+    const notes = [];
+    if (f && f.goal) notes.push(t("su.goal") + ": " + t("su.g." + f.goal));
+    if (f && f.country) notes.push(t("su.country") + ": " + f.country);
+    if (f && f.whatsapp) notes.push(t("su.wa") + ": " + f.whatsapp);
+    (extra || []).forEach(line => notes.push(line));
+    if (notes.length) q.set("notes", notes.join(NL));
+    const qs = q.toString();
+    if (!qs) return BOOKING_URL;
+    return BOOKING_URL + (BOOKING_URL.indexOf("?") >= 0 ? "&" : "?") + qs;
+  }
 
   const su = document.getElementById("signup");
 
@@ -955,9 +982,11 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
     if (id){ const el = document.getElementById(id); el.setAttribute("aria-invalid", "true"); el.focus(); }
   }
 
-  function suDone(viaWhatsApp){
+  function suDone(viaWhatsApp, f){
     su.querySelectorAll(".su-grid, .su-consent, .su-go").forEach(el => { el.hidden = true; });
     suErr.hidden = true; suSent.hidden = false;
+    const href = bookingUrl(f, serviceNote());
+    if (href) suSent.querySelectorAll("[data-book]").forEach(a => { a.href = href; });
     document.getElementById("suSentMsg").textContent = viaWhatsApp
       ? t("su.okWa") : t("su.ok").replace("{name}", field("suName").split(" ")[0] || "");
     suSent.focus();
@@ -978,7 +1007,7 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 
     if (!SIGNUP_ENDPOINT){
       window.open("https://wa.me/" + CONTACT_DIGITS + "?text=" + encodeURIComponent(summary(f)), "_blank", "noopener");
-      suDone(true);
+      suDone(true, f);
       return;
     }
     const label = suSubmit.querySelector("span");
@@ -992,7 +1021,7 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
       });
       const data = await res.json();
       if (!data.ok) throw new Error(data.error || "server");
-      suDone(false);
+      suDone(false, f);
     } catch {
       suFail("su.errSend");
     } finally {
