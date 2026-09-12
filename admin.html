@@ -97,8 +97,8 @@
     <div class="kpis">
       <div class="kpi"><b id="kTotal">0</b><span>Registros</span></div>
       <div class="kpi"><b id="kWeek">0</b><span>Últimos 7 días</span></div>
-      <div class="kpi"><b id="kGoal">—</b><span>Meta más común</span></div>
-      <div class="kpi"><b id="kScore">—</b><span>Puntaje promedio</span></div>
+      <div class="kpi"><b id="kGoal">-</b><span>Meta más común</span></div>
+      <div class="kpi"><b id="kScore">-</b><span>Puntaje promedio</span></div>
     </div>
     <div class="filters">
       <input class="field" id="q" type="search" placeholder="Buscar nombre, correo, país o WhatsApp">
@@ -176,9 +176,9 @@
     $("kWeek").textContent = all.filter(r => Date.parse(r.at) >= week).length;
     const counts = {}; all.forEach(r => { if (r.goal) counts[r.goal] = (counts[r.goal] || 0) + 1; });
     const top = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];
-    $("kGoal").textContent = top ? GOAL[top] : "—";
+    $("kGoal").textContent = top ? GOAL[top] : "-";
     const scored = all.filter(r => Number.isFinite(r.score));
-    $("kScore").textContent = scored.length ? Math.round(scored.reduce((s, r) => s + r.score, 0) / scored.length) : "—";
+    $("kScore").textContent = scored.length ? Math.round(scored.reduce((s, r) => s + r.score, 0) / scored.length) : "-";
     fillSelect($("fGoal"), Object.keys(GOAL).filter(g => counts[g]), GOAL);
     fillSelect($("fTime"), Object.keys(TIME).filter(t => all.some(r => r.time === t)), TIME);
     fillSelect($("fCountry"), [...new Set(all.map(r => r.country).filter(Boolean))].sort());
@@ -200,7 +200,7 @@
       const tr = document.createElement("tr");
       const d = new Date(r.at);
       cell(tr, isNaN(d) ? "" : d.toLocaleString("es-CR", { dateStyle: "medium", timeStyle: "short" }));
-      cell(tr, r.name || "—");
+      cell(tr, r.name || "-");
       linkCell(tr, r.email, "mailto:" + r.email);
       const digits = String(r.wa || "").replace(/\D/g, "");
       linkCell(tr, r.wa, "https://wa.me/" + digits);
@@ -208,7 +208,7 @@
       const g = cell(tr, ""); if (r.goal){ const p = document.createElement("span"); p.className = "pill"; p.textContent = GOAL[r.goal] || r.goal; g.appendChild(p); }
       cell(tr, TIME[r.time] || "");
       cell(tr, LANG[r.lang] || "");
-      cell(tr, Number.isFinite(r.score) ? String(r.score) : "—", "num " + (Number.isFinite(r.score) ? (r.score < 40 ? "s-crit" : r.score < 70 ? "s-warn" : "s-ok") : ""));
+      cell(tr, Number.isFinite(r.score) ? String(r.score) : "-", "num " + (Number.isFinite(r.score) ? (r.score < 40 ? "s-crit" : r.score < 70 ? "s-warn" : "s-ok") : ""));
       cell(tr, DIM[r.weakest] || "");
       tbody.appendChild(tr);
     });
