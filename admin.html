@@ -97,7 +97,7 @@
     <div class="kpis">
       <div class="kpi"><b id="kTotal">0</b><span>Registros</span></div>
       <div class="kpi"><b id="kWeek">0</b><span>Últimos 7 días</span></div>
-      <div class="kpi"><b id="kGoal">-</b><span>Meta más común</span></div>
+      <div class="kpi"><b id="kBooked">0</b><span>Sesiones agendadas</span></div>
       <div class="kpi"><b id="kScore">-</b><span>Puntaje promedio</span></div>
     </div>
     <div class="filters">
@@ -111,7 +111,7 @@
       <table>
         <thead><tr>
           <th>Fecha</th><th>Nombre</th><th>Correo</th><th>WhatsApp</th><th>País</th><th>Meta</th>
-          <th>Horario</th><th>Idioma</th><th>Puntaje</th><th>Área más débil</th>
+          <th>Sesión</th><th>Idioma</th><th>Puntaje</th><th>Área más débil</th>
         </tr></thead>
         <tbody id="rows"></tbody>
       </table>
@@ -150,8 +150,9 @@
       const data = await res.json();
       if (!data.ok){ lockError(data.error === "unauthorized" ? "Clave incorrecta." : "No se pudo leer la hoja."); return false; }
       all = (data.rows || []).map(r => ({
-        at: r["Submitted at"], name: r["Name"], email: r["Email"], wa: r["WhatsApp"], country: r["Country"],
-        goal: r["Goal"], time: r["Contact time"], lang: r["Language"], score: r["Score"] === "" ? null : Number(r["Score"]),
+        // New sign-ups carry a time zone instead of a country, and a booked session instead of a preferred time.
+        at: r["Submitted at"], name: r["Name"], email: r["Email"], wa: r["WhatsApp"], country: r["Country"] || r["Timezone"],
+        goal: r["Goal"], time: r["Contact time"], session: r["Session"], lang: r["Language"], score: r["Score"] === "" ? null : Number(r["Score"]),
         weakest: r["Weakest area"], source: r["Source"]
       })).sort((a, b) => String(b.at).localeCompare(String(a.at)));
       return true;
@@ -175,8 +176,7 @@
     $("kTotal").textContent = all.length;
     $("kWeek").textContent = all.filter(r => Date.parse(r.at) >= week).length;
     const counts = {}; all.forEach(r => { if (r.goal) counts[r.goal] = (counts[r.goal] || 0) + 1; });
-    const top = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];
-    $("kGoal").textContent = top ? GOAL[top] : "-";
+    $("kBooked").textContent = all.filter(r => r.session).length;
     const scored = all.filter(r => Number.isFinite(r.score));
     $("kScore").textContent = scored.length ? Math.round(scored.reduce((s, r) => s + r.score, 0) / scored.length) : "-";
     fillSelect($("fGoal"), Object.keys(GOAL).filter(g => counts[g]), GOAL);
@@ -206,7 +206,7 @@
       linkCell(tr, r.wa, "https://wa.me/" + digits);
       cell(tr, r.country || "");
       const g = cell(tr, ""); if (r.goal){ const p = document.createElement("span"); p.className = "pill"; p.textContent = GOAL[r.goal] || r.goal; g.appendChild(p); }
-      cell(tr, TIME[r.time] || "");
+      cell(tr, sessionText(r));
       cell(tr, LANG[r.lang] || "");
       cell(tr, Number.isFinite(r.score) ? String(r.score) : "-", "num " + (Number.isFinite(r.score) ? (r.score < 40 ? "s-crit" : r.score < 70 ? "s-warn" : "s-ok") : ""));
       cell(tr, DIM[r.weakest] || "");
@@ -216,12 +216,19 @@
     $("count").textContent = list.length + " de " + all.length;
   }
 
+  // The booked time in Costa Rica time; older rows fall back to the preferred part of day.
+  function sessionText(r){
+    const d = r.session ? new Date(r.session) : null;
+    if (d && !isNaN(d)) return d.toLocaleString("es-CR", { timeZone: "America/Costa_Rica", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+    return TIME[r.time] || "";
+  }
+
   function csv(){
     const guard = v => { const s = String(v == null ? "" : v); return /^[=+\-@]/.test(s) ? "'" + s : s; };
     const q = v => '"' + guard(v).replace(/"/g, '""') + '"';
-    const head = ["Fecha", "Nombre", "Correo", "WhatsApp", "País", "Meta", "Horario", "Idioma", "Puntaje", "Área más débil"];
+    const head = ["Fecha", "Nombre", "Correo", "WhatsApp", "País o zona", "Meta", "Sesión", "Idioma", "Puntaje", "Área más débil"];
     const lines = [head.map(q).join(",")].concat(filtered().map(r =>
-      [r.at, r.name, r.email, r.wa, r.country, GOAL[r.goal] || "", TIME[r.time] || "", LANG[r.lang] || "",
+      [r.at, r.name, r.email, r.wa, r.country, GOAL[r.goal] || "", sessionText(r), LANG[r.lang] || "",
        Number.isFinite(r.score) ? r.score : "", DIM[r.weakest] || ""].map(q).join(",")));
     const blob = new Blob(["﻿" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
     const a = document.createElement("a");
