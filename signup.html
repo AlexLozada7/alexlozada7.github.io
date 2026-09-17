@@ -172,9 +172,9 @@ h3{font-size:clamp(20px,2vw,24px);letter-spacing:-.02em;line-height:1.15}
 @media (max-width:1080px){.links{display:none}}
 
 /* ---------- buttons ----------
-   Press feedback is the one animation every pressable element
-   owes the user. The three .magnet buttons take their transform
-   from script, so their press is composed there instead. */
+   Press feedback is the one animation every pressable element owes the
+   user. Every button takes its transform from the press spring in script,
+   so nothing here touches the transform property. */
 .btn{position:relative;display:inline-flex;align-items:center;gap:12px;overflow:hidden;cursor:pointer;
   font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.01em;padding:15px 24px;
   border-radius:var(--r-pill);text-decoration:none;border:1px solid transparent;
@@ -1039,6 +1039,10 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 @media (max-width:560px){
   .bot-pop{left:14px;right:14px;width:auto;max-height:78vh;
     bottom:calc(clamp(14px,3vw,26px) + 58px)}
+  /* On a phone the label eats half the width and the launcher parks itself on
+     top of whatever the visitor is reading. The icon alone still invites. */
+  .bot-launch{padding:14px;border-radius:50%}
+  .bot-launch-t{display:none}
 }
 @media (hover:hover) and (pointer:fine){
   .bot-launch:hover{box-shadow:0 22px 48px -18px rgba(11,27,51,.8)}
@@ -1092,6 +1096,39 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 .rec-w{font-size:15px;color:var(--ink-2);max-width:56ch;line-height:1.55;text-wrap:pretty}
 .rec-go{margin-top:4px}
 .rec-note{font-size:12.5px;color:var(--mute);max-width:60ch;line-height:1.55}
+
+
+/* ---------- the comparison table on a phone ----------
+   A 640px-wide table inside a horizontally scrolling box is the one thing a
+   comparison must never be on a phone: you cannot compare what you cannot
+   see at once, and a sideways scroll hides that there is anything to see.
+
+   Below 700px the table stops being a grid and becomes seven cards, one per
+   feature, each listing the three plans underneath it. The comparison
+   survives - three values still sit together - and the page scrolls the way
+   the rest of the page does, downward. Each value carries the plan's name,
+   which is why every cell has a .pl-k label in the markup. */
+.pl-k{display:none}
+@media (max-width:700px){
+  .pl-tw{overflow:visible;border:0;background:none;border-radius:0}
+  .pl-t{min-width:0;display:block}
+  .pl-t thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .pl-t tbody,.pl-t tr,.pl-t th,.pl-t td{display:block}
+  .pl-t tr{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);
+    padding:14px 16px;margin-bottom:10px}
+  .pl-t tbody tr:last-child{margin-bottom:0}
+  .pl-t tbody th{padding:0 0 6px;border:0;font-family:var(--display);font-weight:700;
+    font-size:14.5px;color:var(--ink);line-height:1.35}
+  .pl-t td{display:flex;align-items:center;justify-content:space-between;gap:14px;
+    padding:9px 0;border-bottom:1px solid var(--line-2);text-align:right}
+  .pl-t tbody tr td:last-child{border-bottom:0;padding-bottom:0}
+  .pl-t .pl-k{display:block;text-align:left;font-family:var(--display);font-weight:600;
+    font-size:12.5px;letter-spacing:.02em;color:var(--mute)}
+  /* Stacked, a tinted cell would read as a stripe across the card. The plan
+     that is meant to win keeps its emphasis in the label instead. */
+  .pl-t .c-pop{background:none}
+  .pl-t .c-pop .pl-k{color:var(--accent)}
+}
 
 </style>
 </head>
