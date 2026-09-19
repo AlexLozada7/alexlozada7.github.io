@@ -1495,7 +1495,7 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 .bn-wrap{padding-bottom:clamp(40px,6vw,72px)}
 .bn-hero{padding-top:clamp(24px,4vw,44px)}
 .bn-hero .lbl{margin:0 0 12px}
-.bn-h1{font-size:clamp(34px,5.2vw,62px);letter-spacing:-.04em;line-height:1.02;max-width:16ch;margin:0}
+.bn-h1{font-size:clamp(30px,4.2vw,50px);letter-spacing:-.035em;line-height:1.05;max-width:21ch;margin:0}
 .bn-lede{max-width:64ch;margin:18px 0 0}
 .bn-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
   margin:clamp(26px,3.5vw,38px) 0 0;padding:22px 0;
@@ -1508,7 +1508,9 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 .bn-sec{margin-top:clamp(48px,7vw,86px)}
 .bn-sec .lbl{margin:0 0 10px}
 .bn-h2{font-size:clamp(24px,3.1vw,38px);letter-spacing:-.03em;line-height:1.06;max-width:20ch;margin:0 0 18px}
-.bn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+/* Cuatro tarjetas, no tres: en una fila de cuatro el texto queda en
+   columnas demasiado angostas, asi que van dos por dos. */
+.bn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .bn-c{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);
   padding:clamp(22px,2.6vw,30px);
   transition:border-color var(--t-ui) var(--ease-out),box-shadow var(--t-ui) var(--ease-out)}
@@ -1604,6 +1606,26 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 @media (prefers-reduced-motion: no-preference){
   html:has(.bn-wrap){scroll-behavior:smooth}
 }
+
+/* ---------- el enlace institucional del pie ----------
+   Un ancla para la reunion con el asesor, no una llamada a la accion: la
+   pagina es para el cliente final y esto no debe competir con nada.
+   No baja de .55 de opacidad aunque se haya pedido mas tenue: la nota de
+   arriba en este archivo ya midio que .40 sobre el azul da 3.76:1 y no pasa
+   AA. .55 da 5.93:1 y sigue leyendose como secundario. */
+.foot-end{display:inline-flex;align-items:center;gap:18px;flex-wrap:wrap}
+.foot-b2b{color:rgba(255,255,255,.55);text-decoration:none;font-size:12.5px;
+  border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:1px;
+  transition:color var(--t-fast) var(--ease-out),border-color var(--t-fast) var(--ease-out)}
+.foot-b2b:focus-visible{outline:2px solid rgba(255,255,255,.7);outline-offset:3px;border-radius:2px}
+@media (hover:hover) and (pointer:fine){
+  .foot-b2b:hover{color:rgba(255,255,255,.9);border-color:rgba(255,255,255,.5)}
+}
+
+/* La linea de procedencia del resumen ejecutivo: quien lo escribio, cuando,
+   y que no esta indexado. Secundaria, pero tiene que poder leerse. */
+.pr-meta{margin:20px 0 0;padding-top:16px;border-top:1px solid var(--line-2);
+  font-size:13px;line-height:1.55;color:var(--mute);max-width:72ch}
 
 </style>
 </head>
