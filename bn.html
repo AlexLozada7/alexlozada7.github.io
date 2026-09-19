@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Portafolio Global con BN Valores - Alexandre Lozada</title>
 <meta name="description" content="Llegue a la inversion preparado: fondo de emergencia, deuda bajo control y claridad sobre que riesgo puede sostener. Apertura acompanada de Portafolio Global en BN Valores, puesto de bolsa regulado por SUGEVAL que asigna el portafolio.">
+<meta name="robots" content="noindex">
 <meta name="theme-color" content="#F6F8FB">
 <link rel="canonical" href="https://alexlozada7.github.io/bn.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B1B33'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='13' fill='white' text-anchor='middle'%3EAL%3C/text%3E%3C/svg%3E">
@@ -1495,7 +1496,7 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 .bn-wrap{padding-bottom:clamp(40px,6vw,72px)}
 .bn-hero{padding-top:clamp(24px,4vw,44px)}
 .bn-hero .lbl{margin:0 0 12px}
-.bn-h1{font-size:clamp(34px,5.2vw,62px);letter-spacing:-.04em;line-height:1.02;max-width:16ch;margin:0}
+.bn-h1{font-size:clamp(30px,4.2vw,50px);letter-spacing:-.035em;line-height:1.05;max-width:21ch;margin:0}
 .bn-lede{max-width:64ch;margin:18px 0 0}
 .bn-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
   margin:clamp(26px,3.5vw,38px) 0 0;padding:22px 0;
@@ -1508,7 +1509,9 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 .bn-sec{margin-top:clamp(48px,7vw,86px)}
 .bn-sec .lbl{margin:0 0 10px}
 .bn-h2{font-size:clamp(24px,3.1vw,38px);letter-spacing:-.03em;line-height:1.06;max-width:20ch;margin:0 0 18px}
-.bn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+/* Cuatro tarjetas, no tres: en una fila de cuatro el texto queda en
+   columnas demasiado angostas, asi que van dos por dos. */
+.bn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .bn-c{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);
   padding:clamp(22px,2.6vw,30px);
   transition:border-color var(--t-ui) var(--ease-out),box-shadow var(--t-ui) var(--ease-out)}
@@ -1622,10 +1625,10 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 
     <section class="bn-hero">
       <p class="lbl">Portafolio Global · BN Valores</p>
-      <h1 class="bn-h1">Llegue a la inversión con la casa en orden.</h1>
-      <p class="lede bn-lede">Abrir una cuenta de inversión es fácil. Sostenerla es lo difícil. Mi trabajo es
-        que usted llegue ahí con el fondo de emergencia hecho, la deuda cara fuera del camino y
-        claridad sobre qué riesgo puede sostener de verdad — no la que dice una encuesta de cinco preguntas.</p>
+      <h1 class="bn-h1">Inversión institucional, respaldada por una estrategia financiera a su medida.</h1>
+      <p class="lede bn-lede">Abrir una cuenta de inversión es fácil; sostenerla en el tiempo requiere
+        método. Mi trabajo es prepararlo con rigor corporativo: construir su fondo de emergencia, optimizar
+        su flujo de caja y definir su verdadera capacidad de riesgo antes de dar el salto.</p>
       <div class="bn-stats">
         <div><b>$2.000</b><span>inversión inicial</span></div>
         <div><b>$100</b><span>aportes adicionales</span></div>
@@ -1660,6 +1663,13 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
           <p>Revisión escrita cada mes: qué cambió, qué vigilar y qué decidir. El momento de mayor riesgo no es
             el día que abre la cuenta, es el primer trimestre en rojo.</p>
         </div>
+        <div class="bn-c">
+          <span class="bn-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3>Rigor analítico y experiencia fiduciaria</h3>
+          <p>Mi metodología nace de la experiencia en análisis financiero para corporaciones multinacionales
+            (Moody's, Intel) y la protección patrimonial en comités de inversión solidaristas. Aplico esa
+            exigencia institucional a sus finanzas personales.</p>
+        </div>
       </div>
     </section>
 
@@ -1683,8 +1693,9 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
           regulado y supervisado por la Superintendencia General de Valores.</p>
       </div>
 
-      <p class="bn-note">Yo no ejecuto órdenes, no administro su dinero y no selecciono sus instrumentos. Eso lo
-        hace BN Valores, que es la entidad regulada. Lo mío es que usted llegue listo y no se salga a destiempo.</p>
+      <p class="bn-note">Yo diseño su hoja de ruta y estrategia patrimonial; BN Valores, como entidad regulada
+        por SUGEVAL, custodia, administra y ejecuta las inversiones. Usted obtiene lo mejor de ambos mundos:
+        acompañamiento personalizado y seguridad institucional.</p>
     </section>
 
     <section class="bn-sec" aria-labelledby="bnStepH">
@@ -1692,8 +1703,8 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
       <h2 class="bn-h2" id="bnStepH">Cuatro pasos, en orden.</h2>
       <ol class="bn-steps stagger">
         <li><span class="bn-n" aria-hidden="true">01</span><div><h3>Diagnóstico</h3><p>Dónde está parado hoy: a dónde se va el dinero y cuántos meses aguanta si el ingreso se detiene.</p></div></li>
-        <li><span class="bn-n" aria-hidden="true">02</span><div><h3>Reestructuración</h3><p>Ordenar el flujo de caja y sacar del camino la deuda que cobra más de lo que cualquier portafolio rinde.</p></div></li>
-        <li><span class="bn-n" aria-hidden="true">03</span><div><h3>Acumulación</h3><p>El fondo de emergencia primero, y después el capital semilla hasta llegar al mínimo de entrada.</p></div></li>
+        <li><span class="bn-n" aria-hidden="true">02</span><div><h3>Reestructuración</h3><p>Ordenar el flujo de caja y diseñar una estrategia para eliminar la deuda cara que destruye su rentabilidad.</p></div></li>
+        <li><span class="bn-n" aria-hidden="true">03</span><div><h3>Acumulación</h3><p>Consolidar el fondo de emergencia y apalancar ingresos estacionales (aguinaldo, excedentes solidaristas, FCL) para alcanzar su capital semilla de $2.000 más rápido.</p></div></li>
         <li><span class="bn-n" aria-hidden="true">04</span><div><h3>Apertura con BN Valores</h3><p>Usted llega sabiendo qué riesgo puede sostener. El asesor de BN Valores le asigna el portafolio y le solicita los documentos; yo lo acompaño en la conversación.</p></div></li>
       </ol>
     </section>
@@ -1714,21 +1725,21 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 
         <div class="bn-fg">
           <label class="bn-f"><span>¿Tiene fondo de emergencia?</span>
-            <select id="bnQ1">
+            <select id="bnQ1" required>
               <option value="">Seleccione</option>
               <option value="si">Sí, tres meses o más</option>
               <option value="parcial">Parcial, menos de tres meses</option>
               <option value="no">Todavía no</option>
             </select></label>
           <label class="bn-f"><span>¿Tiene saldo en tarjetas de crédito?</span>
-            <select id="bnQ2">
+            <select id="bnQ2" required>
               <option value="">Seleccione</option>
               <option value="no">No</option>
               <option value="pagando">Sí, con un plan de pago en marcha</option>
               <option value="problema">Sí, y me pesa cada mes</option>
             </select></label>
           <label class="bn-f"><span>Monto que podría destinar</span>
-            <select id="bnQ3">
+            <select id="bnQ3" required>
               <option value="">Seleccione</option>
               <option value="2-5k">Entre $2.000 y $5.000</option>
               <option value="5-15k">Entre $5.000 y $15.000</option>
@@ -1736,21 +1747,21 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
               <option value="nose">Todavía no lo sé</option>
             </select></label>
           <label class="bn-f"><span>¿En cuánto tiempo lo necesitaría?</span>
-            <select id="bnQ4">
+            <select id="bnQ4" required>
               <option value="">Seleccione</option>
               <option value="-3">En menos de 3 años</option>
               <option value="3-7">Entre 3 y 7 años</option>
               <option value="7+">En más de 7 años</option>
             </select></label>
           <label class="bn-f"><span>Experiencia invirtiendo</span>
-            <select id="bnQ5">
+            <select id="bnQ5" required>
               <option value="">Seleccione</option>
               <option value="ninguna">Ninguna</option>
               <option value="alguna">Alguna</option>
               <option value="bastante">Bastante</option>
             </select></label>
           <label class="bn-f"><span>¿Qué le preocupa más?</span>
-            <select id="bnQ6">
+            <select id="bnQ6" required>
               <option value="">Seleccione</option>
               <option value="perder">Perder parte del capital</option>
               <option value="inflacion">Que la inflación se coma el ahorro</option>
@@ -1851,6 +1862,10 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
       const mail = el("bnMail").value.trim();
       if (!name) return fail("Escriba su nombre.", el("bnName"));
       if (!MAILRE.test(mail)) return fail("Revise el correo: no parece valido.", el("bnMail"));
+      // Las seis respuestas SON la pre-calificacion. Sin ellas llega un
+      // contacto sin perfil, que es justo lo que esta pagina promete filtrar.
+      const vacio = QS.find(([, id]) => !el(id).value);
+      if (vacio) return fail("Conteste las seis preguntas: son las que me dicen si esta listo.", el(vacio[1]));
       if (!el("bnOk").checked) return fail("Necesito su autorizacion para poder contactarle.", el("bnOk"));
 
       // El perfil viaja como una sola cadena legible: la hoja lo lee de un vistazo.
