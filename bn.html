@@ -1,0 +1,1901 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portafolio Global con BN Valores - Alexandre Lozada</title>
+<meta name="description" content="Llegue a la inversion preparado: fondo de emergencia, deuda bajo control y un perfil de riesgo definido con sus numeros. Apertura acompanada de Portafolio Global en BN Valores, puesto de bolsa regulado por SUGEVAL.">
+<meta name="theme-color" content="#F6F8FB">
+<link rel="canonical" href="https://alexlozada7.github.io/bn.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B1B33'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='13' fill='white' text-anchor='middle'%3EAL%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alexandre Lozada">
+<meta property="og:url" content="https://alexlozada7.github.io/bn.html">
+<meta property="og:title" content="Portafolio Global con BN Valores - Alexandre Lozada">
+<meta property="og:description" content="Llegue a la inversion preparado: fondo de emergencia, deuda bajo control y un perfil de riesgo definido con sus numeros. Apertura acompanada de Portafolio Global en BN Valores, puesto de bolsa regulado por SUGEVAL.">
+<meta property="og:image" content="https://alexlozada7.github.io/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_CR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Alexandre Lozada Echenique",
+ "jobTitle": "Corporate Financial Planning Specialist",
+ "url": "https://alexlozada7.github.io/",
+ "image": "https://alexlozada7.github.io/img/portrait-920.jpg",
+ "sameAs": [
+  "https://www.linkedin.com/in/alexandrelozada"
+ ],
+ "knowsLanguage": [
+  "es",
+  "en",
+  "fr"
+ ],
+ "address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Heredia",
+  "addressCountry": "CR"
+ },
+ "hasCredential": {
+  "@type": "EducationalOccupationalCredential",
+  "name": "Financial Portfolio Management for Boards, Investment and Risk Committees",
+  "recognizedBy": {
+   "@type": "Organization",
+   "name": "Bolsa Nacional de Valores"
+  }
+ }
+}
+</script>
+<style>
+/* ============================================================
+   ALEXANDRE LOZADA - personal financial-freedom site
+   Light theme by choice: cool paper, navy ink, one oxford-blue
+   accent taken from the shirt in the portrait.
+
+   Motion follows one idea: grouped lists assemble, running text
+   simply arrives. Curves and durations come from the tokens
+   below and are never hand-typed per rule. Every hover motion
+   sits behind a real pointer; every pressable thing answers the
+   press. Colours below carry their measured contrast ratio in a
+   comment wherever the value was chosen to clear WCAG AA.
+   ============================================================ */
+
+:root{
+  /* surfaces and ink */
+  --paper:#F6F8FB; --paper-2:#FFFFFF; --paper-3:#EDF1F7;
+  --ink:#0B1B33; --ink-2:#33445E;
+  --mute:#5A6779;          /* 5.41:1 on paper, 5.07:1 on paper-3. Was #66758C: 4.40 / 4.13, under AA at 11-13px */
+  --line:rgba(11,27,51,.10); --line-2:rgba(11,27,51,.06);
+  --accent:#1F5FA8; --accent-hi:#174A85; --accent-soft:#74B0E8; --wash:#E6EFFA;
+  --chart-flat:#9AA7BA;    /* the "money left sitting still" series */
+  --ok:#19754C;            /* 5.69:1 on white. Was #1E8A5A: 4.34 */
+  --warn:#8F5D0F;          /* 5.28:1 on paper. Was #B7791F: 3.42 */
+  --crit:#B23C32;          /* 5.86:1 on white. Was #C0453A: 5.06 */
+
+  /* type */
+  --display:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Open Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+
+  /* layout */
+  --pad:clamp(20px,5vw,72px); --maxw:1240px;
+
+  /* radius: one scale. Replaces the old 8/9/12/14/16/20/22/24 drift */
+  --r-xs:8px; --r-sm:12px; --r-md:16px; --r-lg:22px; --r-pill:100px;
+
+  /* motion */
+  --ease-out:cubic-bezier(.23,1,.32,1);      /* strong ease-out, for anything entering or exiting */
+  --ease-in-out:cubic-bezier(.77,0,.175,1);  /* for movement across the screen */
+  --ease:var(--ease-out);                    /* legacy alias */
+  --t-press:140ms;                           /* press feedback */
+  --t-fast:180ms;                            /* hover and colour */
+  --t-ui:220ms;                              /* panels, fills, sliding surfaces */
+  --t-enter:460ms;                           /* scroll reveal */
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+p{margin:0}
+[hidden]{display:none!important}   /* a class display rule must never beat hidden */
+.wrap{width:min(var(--maxw),100%);margin-inline:auto;padding-inline:var(--pad)}
+
+/* ---------- browser surfaces ----------
+   The parts nobody draws still carry the design: selection, the
+   caret, the scrollbar, focus, and the underline offset all ship
+   with defaults that belong to no design system. */
+::selection{background:var(--accent);color:#fff}
+a{color:var(--accent);text-underline-offset:3px}
+input,textarea,select{caret-color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+/* The old rule also set border-radius:4px here, which squared off
+   every pill button and rounded panel at the moment it took focus. */
+[tabindex="-1"]:focus{outline:none}
+@supports selector(::-webkit-scrollbar){
+  ::-webkit-scrollbar{width:12px;height:12px}
+  ::-webkit-scrollbar-track{background:var(--paper-3)}
+  ::-webkit-scrollbar-thumb{background:rgba(11,27,51,.22);border-radius:var(--r-pill);
+    border:3px solid var(--paper-3)}
+  ::-webkit-scrollbar-thumb:hover{background:rgba(11,27,51,.34)}
+}
+html{scrollbar-color:rgba(11,27,51,.28) var(--paper-3)}
+
+h1,h2,h3,h4{font-family:var(--display);color:var(--ink);margin:0;line-height:.98;
+  letter-spacing:-.035em;font-weight:800;text-wrap:balance}
+h2{font-size:clamp(34px,5.6vw,72px);max-width:16ch}
+h3{font-size:clamp(20px,2vw,24px);letter-spacing:-.02em;line-height:1.15}
+
+.lede{font-size:clamp(17px,1.6vw,20px);color:var(--ink-2);max-width:56ch;text-wrap:pretty}
+.small{font-size:13.5px;color:var(--mute);line-height:1.6}
+/* Small caps label for a value inside a panel. Not a section kicker:
+   the section headings carry their own weight and take no label. */
+.lbl{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent)}
+
+/* ---------- header ---------- */
+/* The header still compacts when it sticks, but padding is deliberately left
+   out of the transition: tweening it relayouts the whole bar on every stick
+   and unstick, which happens repeatedly while scrolling. It snaps instead,
+   and the background and shadow fading over the same moment cover the snap. */
+#nav{position:fixed;inset:0 0 auto;z-index:50;padding-block:16px;
+  transition:background var(--t-ui) var(--ease-out),box-shadow var(--t-ui) var(--ease-out)}
+#nav.stuck{background:rgba(246,248,251,.88);backdrop-filter:blur(14px) saturate(1.2);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);padding-block:10px;box-shadow:0 1px 0 var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);
+  font-family:var(--display);font-weight:800;letter-spacing:-.02em;font-size:17px;white-space:nowrap}
+/* The wordmark used to tilt its tile -7deg and ripple its letters upward on
+   hover. A real object does not lean because you looked at it, and the ripple
+   was the same directionless rise we took out of the buttons. The tile now
+   answers like a solid thing catching light - it gains depth, not a pose -
+   and the name is left alone: its colour was never the problem. The press is
+   the spring in script, the same one every button uses. */
+.brand i{transition:transform var(--t-fast) var(--ease-out),
+  box-shadow var(--t-fast) var(--ease-out)}
+.brand i{width:30px;height:30px;border-radius:var(--r-xs);background:var(--ink);color:#fff;font-style:normal;
+  display:grid;place-items:center;font-size:12.5px;letter-spacing:.02em}
+.links{display:flex;gap:clamp(12px,1.8vw,26px)}
+.links a{font-family:var(--display);font-weight:500;font-size:14px;color:var(--ink-2);text-decoration:none;
+  position:relative;transition:color var(--t-fast) ease}
+.links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1.5px;background:var(--accent);
+  transform:scaleX(0);transform-origin:left;transition:transform var(--t-fast) var(--ease-out)}
+.nav-r{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1px solid var(--line);border-radius:var(--r-pill);padding:3px;background:var(--paper-2)}
+.lang button{border:0;background:none;cursor:pointer;font-family:var(--display);font-weight:600;font-size:11.5px;
+  letter-spacing:.06em;color:var(--mute);padding:5px 10px;border-radius:var(--r-pill);
+  transition:transform var(--t-press) var(--ease-out),background var(--t-fast) ease,color var(--t-fast) ease}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.lang button:active{transform:scale(.96)}
+@media (max-width:1080px){.links{display:none}}
+
+/* ---------- buttons ----------
+   Press feedback is the one animation every pressable element owes the
+   user. Every button takes its transform from the press spring in script,
+   so nothing here touches the transform property. */
+.btn{position:relative;display:inline-flex;align-items:center;gap:12px;overflow:hidden;cursor:pointer;
+  font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.01em;padding:15px 24px;
+  border-radius:var(--r-pill);text-decoration:none;border:1px solid transparent;
+  /* transform is deliberately absent: the press spring in script owns it, and a
+     CSS transition on the same property would fight the per-frame writes. */
+  transition:color var(--t-fast) var(--ease-out),
+    border-color var(--t-fast) var(--ease-out),box-shadow var(--t-fast) var(--ease-out)}
+.btn span{position:relative;z-index:2}
+/* The darker fill used to wipe up from below, which gave every button a
+   direction it had not earned. It brightens in place now: the material
+   responds, nothing travels. */
+.btn::before{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit;
+  opacity:0;transition:opacity var(--t-ui) var(--ease-out)}
+.btn-solid{background:var(--accent);color:#fff;box-shadow:0 16px 40px -18px rgba(31,95,168,.75)}
+.btn-solid::before{background:var(--ink)}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:var(--paper-2)}
+.btn-ghost::before{background:var(--ink)}
+.btn-sm{padding:10px 16px;font-size:13.5px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.btn[disabled]:active{transform:none}
+
+/* ---------- hero ---------- */
+/* Sized by its content, not the viewport: at 100svh a tall desktop screen
+   centred ~520px of copy in 1250px of hero, with a gap above and below it. */
+#hero{display:flex;align-items:center;padding:calc(72px + clamp(40px,6vw,88px)) 0 clamp(48px,6vw,88px);
+  position:relative;overflow:hidden}
+#hero .glow{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0}
+#hero .glow-a{width:46vw;height:46vw;right:-8vw;top:-10vw;background:radial-gradient(circle,rgba(116,176,232,.42),transparent 65%)}
+#hero .glow-b{width:34vw;height:34vw;left:-12vw;bottom:-14vw;background:radial-gradient(circle,rgba(31,95,168,.16),transparent 65%)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,64px);align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:var(--r-pill);
+  padding:7px 15px 7px 11px;font-size:12.5px;color:var(--ink-2);background:var(--paper-2);font-family:var(--display);font-weight:500}
+/* The dot reports real availability, which is the only thing that earns a status dot. */
+.hero-tag .pulse{width:8px;height:8px;border-radius:50%;background:var(--ok);position:relative}
+.hero-tag .pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1.5px solid var(--ok);
+  animation:ripple 2.2s var(--ease-out) infinite}
+/* A loop must not keep running once it has scrolled out of sight. */
+.offscreen .pulse::after{animation-play-state:paused}
+@keyframes ripple{from{transform:scale(.5);opacity:.9}to{transform:scale(1.9);opacity:0}}
+.hero-hi{font-family:var(--display);font-weight:500;font-size:clamp(15px,1.5vw,18px);color:var(--mute);margin:26px 0 8px}
+.hero-name{font-size:clamp(50px,8.6vw,128px);font-weight:900;letter-spacing:-.055em;line-height:.86;max-width:none}
+.hero-name .o{color:var(--accent);display:block}
+/* The name is visible by default and never waits on script to appear: the
+   entrance runs only once app.js marks the page ready, and fill-mode "both"
+   holds its hidden first frame through the stagger delay. It used to start
+   hidden, so a stalled or failed script left the hero without a name. */
+.hero-name .w{display:inline-block}
+.rdy .hero-name .w{animation:wordIn 640ms var(--ease-out) both;animation-delay:calc(var(--i)*70ms + .1s)}
+@keyframes wordIn{from{opacity:0;transform:translateY(.4em)}}
+.hero-sub{max-width:46ch;margin-top:26px;font-size:clamp(16px,1.5vw,19.5px);line-height:1.6;color:var(--ink-2);text-wrap:pretty}
+.hero-sub b{color:var(--ink);font-weight:600}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+.shot{position:relative;justify-self:end;width:min(100%,460px)}
+.shot picture{display:contents}            /* let the <img> fill the arch frame */
+.shot .frame{position:relative;border-radius:220px 220px var(--r-lg) var(--r-lg);overflow:hidden;aspect-ratio:1/1.2;
+  background:var(--paper-3);border:1px solid var(--line);box-shadow:0 40px 90px -50px rgba(11,27,51,.55)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 24%;
+  transform:scale(1.04);transition:transform 400ms var(--ease-out)}
+.chip{position:absolute;left:-22px;bottom:-18px;z-index:3;display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line);border-radius:var(--r-md);padding:9px 14px 9px 9px;max-width:250px;
+  box-shadow:0 16px 40px -26px rgba(11,27,51,.45)}
+.chip .seal{width:26px;height:26px;flex:none;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center}
+.chip .seal svg{width:14px;height:14px}
+.chip-txt{display:grid;gap:1px;min-width:0}
+.chip b{font-family:var(--display);font-weight:700;font-size:12.5px;line-height:1.3;letter-spacing:-.005em;color:var(--ink)}
+.chip small{font-size:11px;line-height:1.35;color:var(--mute)}
+@media (max-width:880px){
+  .hero-grid{grid-template-columns:1fr}
+  .shot{justify-self:start;width:min(78%,360px);order:-1}
+  .chip{left:auto;right:-14px;bottom:-16px}
+}
+
+/* ---------- track record beside the portrait (phones) ----------
+   On a phone the portrait shrinks and the certification chip goes, which
+   left an empty column beside the photo. The positions and the certification
+   rotate there instead: each enters from the right, holds long enough to
+   read, and leaves to the left before the next arrives, so two lines of
+   text never overlap. The bar under the label fills over each slot and says
+   the text is about to change. 21.6s = six 3.6s slots (one slot is 16.67%
+   of the cycle); the bar shares the slot length and the .5s start so the
+   two stay in step. Adding or removing an item means redoing that maths. */
+.creds{display:none}
+.creds-bar{display:block;height:2px;width:min(100%,120px);border-radius:2px;background:var(--line);overflow:hidden}
+.creds-bar i{display:block;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:left}
+.creds-stack{display:grid}
+.cred{grid-area:1/1;display:grid;gap:4px;align-content:start;opacity:0}
+.cred b{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:-.02em;line-height:1.15;color:var(--ink)}
+.cred small{font-size:12.5px;line-height:1.4;color:var(--ink-2)}
+.rdy .cred{animation:credCycle 21.6s var(--ease-out) infinite;animation-delay:calc(var(--i) * 3.6s + .5s)}
+.rdy .creds-bar i{animation:credBar 3.6s linear .5s infinite}
+.creds.offscreen .cred,.creds.offscreen .creds-bar i{animation-play-state:paused}
+@keyframes credCycle{
+  0%{opacity:0;transform:translateX(16px)}
+  2.5%,15.4%{opacity:1;transform:none}   /* 0.54s in, a shorter 0.27s out: exits snap */
+  16.67%,100%{opacity:0;transform:translateX(-16px)}
+}
+@keyframes credBar{0%{transform:scaleX(0);opacity:1}85%{opacity:1}100%{transform:scaleX(1);opacity:0}}
+
+/* ---------- proof band ----------
+   The four figures used to sit inside the hero, which made the
+   first screen a six-part stack and read as the stock metric
+   template. They carry more weight as their own band, next to
+   the places the numbers came from. */
+.proof{border-top:1px solid var(--line);background:var(--paper-2)}
+.proof-in{display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,34px);padding-block:clamp(22px,3vw,30px)}
+.proof-in div{min-width:96px}
+.proof-in b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(24px,2.6vw,34px);
+  color:var(--ink);letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.proof-in small{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--mute);display:block;margin-top:8px}
+
+/* ---------- employer + certification strip ----------
+   A running ticker, not a static row: positions worked and the
+   portfolio certification drift right to left, on loop, fading
+   in and out at the section's own edges rather than clipping. */
+.strip{border-block:1px solid var(--line);background:var(--paper-2);overflow:hidden;
+  mask-image:linear-gradient(90deg,transparent 0,#000 var(--pad),#000 calc(100% - var(--pad)),transparent 100%);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 var(--pad),#000 calc(100% - var(--pad)),transparent 100%)}
+/* 41s over a ~2430px half-track (six cells, measured at 1280px) is ~59px/s,
+   the pace the ticker has always run at. Phones render a narrower track and
+   run a little slower, ~50px/s. The three languages differ by 2% in width,
+   which is not a visible difference in speed. Re-measure if cells change. */
+.strip-in{display:flex;width:max-content;animation:strip-scroll 41s linear infinite}
+.strip:hover .strip-in,.strip:focus-within .strip-in,.strip.offscreen .strip-in{animation-play-state:paused}
+.strip-set{display:flex}
+.strip-cell{flex:0 0 auto;display:flex;align-items:baseline;gap:10px;white-space:nowrap;
+  padding:clamp(20px,2.6vw,30px) clamp(24px,3.4vw,44px);border-right:1px solid var(--line)}
+.strip-cell .co{font-family:var(--display);font-weight:800;font-size:clamp(16px,1.6vw,19px);letter-spacing:-.02em;color:var(--ink);
+  position:relative;transition:color var(--t-fast) ease}
+.strip-cell .co::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1.5px;
+  background:currentColor;transform:scaleX(0);transform-origin:left;
+  transition:transform var(--t-ui) var(--ease-out)}
+.strip-cell .mt{font-size:13px;color:var(--mute);white-space:nowrap}
+@keyframes strip-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+.sec{padding-block:clamp(72px,10vw,132px);position:relative}
+.sec+.sec{border-top:1px solid var(--line)}
+.sec-head{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,64px)}
+.alt{background:var(--paper-2)}
+
+/* Copy and facts share the left column and the photo sits beside them,
+   centred on their combined height. With the facts under the photo, the
+   right side ran twice as tall as the copy and left an empty block below it. */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;grid-template-areas:"copy shot" "facts shot";
+  column-gap:clamp(28px,5vw,80px);row-gap:clamp(28px,3.4vw,44px);align-items:start}
+.about-grid .lede+.lede{margin-top:16px}
+.about-copy{grid-area:copy}
+.about-grid .facts{grid-area:facts}
+/* A plain rounded frame,
+   deliberately not the hero's arch: the same shape twice would read as one
+   layout repeated rather than two different moments. It does not animate on
+   hover either, since it is a photograph and not a control. */
+.about-shot{grid-area:shot;align-self:center;position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;
+  background:var(--paper-3);border:1px solid var(--line);
+  box-shadow:0 30px 70px -45px rgba(11,27,51,.45)}
+.about-shot picture{display:contents}
+.about-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+@media (max-width:880px){.about-shot{max-width:360px}}
+
+.facts{display:grid;gap:0;border-top:1px solid var(--line)}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-family:var(--display);font-weight:600}
+.facts dd{margin:0;text-align:right;font-family:var(--display);font-weight:600;color:var(--ink);
+  font-variant-numeric:tabular-nums}
+@media (max-width:880px){.about-grid{grid-template-columns:1fr;grid-template-areas:"copy" "shot" "facts"}}
+.fact-go{color:var(--accent);text-decoration:none;text-underline-offset:3px}
+/* On a phone the label and a long value fought for one row and the value
+   wrapped to four lines; stacked, each value keeps one or two. */
+@media (max-width:560px){
+  .facts div{flex-direction:column;gap:4px}
+  .facts dd{text-align:left}
+}
+@media (hover:hover) and (pointer:fine){.fact-go:hover{text-decoration:underline}}
+
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.svc-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,3vw,36px);
+  display:grid;gap:14px;align-content:start;position:relative;text-decoration:none;color:inherit;
+  transition:transform var(--t-fast) var(--ease-out),box-shadow var(--t-fast) var(--ease-out),
+    border-color var(--t-fast) var(--ease-out)}
+.svc .svc-card:active{transform:scale(.99)}
+.svc-card h3{transition:color var(--t-fast) ease;padding-right:44px}
+/* The arrow is the affordance that says this card goes somewhere. */
+.svc-card .go{position:absolute;top:clamp(22px,3vw,32px);right:clamp(22px,3vw,32px);
+  width:32px;height:32px;border-radius:50%;display:grid;place-items:center;flex:none;
+  background:var(--paper-3);color:var(--accent);
+  transition:transform var(--t-ui) var(--ease-out),background var(--t-fast) ease,color var(--t-fast) ease}
+.svc-card .go svg{width:15px;height:15px}
+.svc .no{font-family:var(--display);font-weight:700;font-size:13px;color:var(--accent);letter-spacing:.06em}
+.svc p{color:var(--ink-2);font-size:15.5px}
+.svc ul{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.svc li{font-size:12.5px;font-family:var(--display);font-weight:500;color:var(--ink-2);background:var(--paper-3);
+  border-radius:var(--r-pill);padding:5px 11px}
+@media (max-width:760px){.svc{grid-template-columns:1fr}}
+
+/* ---------- tools ---------- */
+.tools{display:grid;gap:22px}
+.panel{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.panel-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  padding:16px 24px;border-bottom:1px solid var(--line);background:var(--paper-3)}
+.panel-top .t{font-family:var(--display);font-weight:700;font-size:15px}
+.step{font-family:var(--display);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-variant-numeric:tabular-nums}
+.track{flex:1 1 100px;max-width:320px;height:3px;border-radius:3px;background:var(--line);position:relative;min-width:0;overflow:hidden}
+/* scaleX, not width: width animates layout on every frame */
+.track span{position:absolute;inset:0;width:100%;background:var(--accent);border-radius:3px;
+  transform:scaleX(0);transform-origin:left;transition:transform var(--t-ui) var(--ease-out)}
+.panel-body{padding:clamp(24px,3.6vw,44px)}
+
+/* The calculator has its own page; this card is the way there. The three
+   lines echo its chart and draw in once the card arrives. The card sits
+   inside the .rv wrapper so its own quick transitions are never replaced
+   by the slower reveal. */
+.calc-link{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:clamp(20px,4vw,56px);align-items:center;
+  padding:clamp(24px,3.6vw,44px);text-decoration:none;color:inherit;-webkit-tap-highlight-color:transparent;
+  transition:transform var(--t-fast) var(--ease-out),box-shadow var(--t-fast) var(--ease-out),border-color var(--t-fast) var(--ease-out)}
+.calc-link:active{transform:scale(.99)}
+.calc-link-copy{display:grid;gap:12px;justify-items:start}
+.calc-link h3{font-size:clamp(22px,2.6vw,30px);letter-spacing:-.025em;max-width:24ch}
+.calc-link p{color:var(--ink-2);font-size:15.5px;max-width:52ch}
+.calc-link .btn{margin-top:8px}
+.calc-link-art{display:block;width:100%;height:auto;overflow:visible}
+.calc-link-art .g{fill:none;stroke:var(--line);stroke-width:1}
+.calc-link-art .s0,.calc-link-art .s1,.calc-link-art .s2{fill:none;stroke-linecap:round;
+  stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1100ms var(--ease-out) 150ms}
+.calc-link-art .s0{stroke:var(--chart-flat);stroke-width:2}
+.calc-link-art .s1{stroke:var(--warn);stroke-width:2}
+.calc-link-art .s2{stroke:var(--accent);stroke-width:3}
+.calc-link-art circle{opacity:0;transition:opacity 240ms var(--ease-out) 1100ms}
+.calc-link-art .d0{fill:var(--chart-flat)} .calc-link-art .d1{fill:var(--warn)} .calc-link-art .d2{fill:var(--accent)}
+.rv.in .calc-link-art path{stroke-dashoffset:0}
+.rv.in .calc-link-art circle{opacity:1}
+@media (max-width:760px){.calc-link{grid-template-columns:1fr}.calc-link-art{max-width:320px}}
+
+.q-title{font-family:var(--display);font-weight:700;font-size:clamp(21px,2.6vw,30px);letter-spacing:-.025em;
+  line-height:1.18;max-width:26ch;margin:0 0 24px}
+/* One step replacing another is a state change worth explaining. */
+#quiz{transition:opacity var(--t-fast) var(--ease-out)}
+#quiz.swap{opacity:0}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:16px 18px;border-radius:var(--r-md);
+  background:var(--paper);border:1px solid var(--line);color:var(--ink);font-family:var(--body);font-size:16px;cursor:pointer;
+  transition:transform var(--t-press) var(--ease-out),border-color var(--t-fast) var(--ease-out),
+    background var(--t-fast) var(--ease-out)}
+.opt:active{transform:scale(.985)}
+.opt .key{width:26px;height:26px;flex:none;border-radius:var(--r-xs);display:grid;place-items:center;background:var(--paper-2);
+  border:1px solid var(--line);font-family:var(--display);font-weight:700;font-size:12px;color:var(--mute);
+  transition:background var(--t-fast) ease,color var(--t-fast) ease,border-color var(--t-fast) ease}
+.linkbtn{margin-top:20px;background:none;border:0;padding:0;cursor:pointer;font-family:var(--display);font-weight:600;
+  font-size:13px;color:var(--mute);transition:color var(--t-fast) ease}
+.linkbtn[hidden]{display:none}
+
+.result{display:grid;gap:30px}
+.score{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.score b{font-family:var(--display);font-weight:900;font-size:clamp(56px,8vw,86px);letter-spacing:-.05em;line-height:.85;
+  color:var(--accent);font-variant-numeric:tabular-nums}
+.score small{font-size:13px;color:var(--mute)}
+.bars{display:grid;gap:16px}
+.bar-meta{display:flex;justify-content:space-between;gap:12px;font-family:var(--display);font-size:13px;font-weight:600}
+.bar-meta .vl{font-variant-numeric:tabular-nums}
+.bar-track{height:8px;border-radius:var(--r-xs);background:var(--paper-3);overflow:hidden;margin-top:7px}
+.bar-fill{height:100%;width:100%;border-radius:var(--r-xs);transform:scaleX(0);transform-origin:left;
+  transition:transform 640ms var(--ease-out)}
+.lv-crit .bar-fill{background:var(--crit)} .lv-crit .vl{color:var(--crit)}
+.lv-warn .bar-fill{background:var(--warn)} .lv-warn .vl{color:var(--warn)}
+.lv-ok .bar-fill{background:var(--ok)}     .lv-ok .vl{color:var(--ok)}
+.move{border-left:1px solid var(--accent);padding:4px 0 4px 20px;display:grid;gap:8px}
+.move .lbl{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.move p{font-size:17px;max-width:58ch;text-wrap:pretty}
+.capture{border-top:1px solid var(--line);padding-top:26px;display:grid;gap:14px}
+.capture h4{font-size:19px;letter-spacing:-.02em}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.field{flex:1 1 220px;padding:14px 16px;border-radius:var(--r-sm);border:1px solid var(--line);background:var(--paper);
+  font-family:var(--body);font-size:16px;color:var(--ink);
+  transition:border-color var(--t-fast) ease,box-shadow var(--t-fast) ease,background var(--t-fast) ease}
+.field:focus{outline:none;border-color:var(--accent);background:#fff;box-shadow:0 0 0 4px var(--wash)}
+.field[aria-invalid="true"]{border-color:var(--crit)}
+::placeholder{color:var(--mute);opacity:1}   /* browser defaults are too light to pass AA */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+.err{font-size:13.5px;color:var(--crit)} .err[hidden]{display:none}
+.sent{border:1px solid rgba(25,117,76,.3);background:rgba(25,117,76,.06);border-radius:var(--r-md);padding:22px;display:grid;gap:12px}
+.sent .lbl{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ok)}
+
+.calc{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr)}
+.calc-ctl{padding:clamp(22px,3vw,32px);display:grid;gap:22px;align-content:start;background:var(--paper-3);border-right:1px solid var(--line)}
+.ctl{display:grid;gap:8px}
+.ctl label{font-family:var(--display);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ctl .u{display:flex;align-items:center;gap:8px}
+.ctl .u span{color:var(--mute);font-weight:600}
+.ctl input[type=number]{width:100%;padding:11px 13px;border-radius:var(--r-sm);border:1px solid var(--line);background:#fff;
+  font-family:var(--display);font-weight:700;font-size:19px;color:var(--ink);font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.ctl input::-webkit-outer-spin-button,.ctl input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.ctl input[type=range]{width:100%;accent-color:var(--accent)}
+.yrs{font-family:var(--display);font-weight:800;font-size:20px}
+.toggle{display:flex;gap:11px;align-items:flex-start;cursor:pointer;border-top:1px solid var(--line);padding-top:18px}
+.toggle input{width:18px;height:18px;margin-top:3px;accent-color:var(--accent);flex:none}
+.toggle b{font-family:var(--display);font-size:14.5px;display:block}
+.toggle span{font-size:12.5px;color:var(--mute);line-height:1.45}
+.calc-out{padding:clamp(22px,3vw,32px);display:grid;gap:22px;align-content:start;min-width:0}
+#growth{display:block;width:100%;height:270px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px}
+.lg{display:flex;align-items:center;gap:8px;font-size:12.5px;font-family:var(--display);font-weight:500;color:var(--ink-2)}
+.lg i{width:14px;height:3px;border-radius:3px;display:block}
+.rows{border-top:1px solid var(--line)}
+.rrow{display:grid;grid-template-columns:1fr auto auto;gap:10px 16px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+.rrow .nm{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:15px}
+.rrow .nm i{width:14px;height:3px;border-radius:3px}
+.rrow .rt{display:flex;align-items:center;gap:4px;color:var(--mute);font-size:12.5px}
+/* 16px floor: anything smaller makes iOS Safari zoom the page on focus */
+.rrow .rt input{width:66px;padding:5px 7px;border-radius:var(--r-xs);border:1px solid var(--line);text-align:right;
+  font-family:var(--display);font-size:16px;-moz-appearance:textfield}
+.wait{border-left:1px solid var(--warn);padding:4px 0 4px 18px}
+.wait .lbl{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--warn)}
+.wait p{margin-top:6px}
+.wait b{color:var(--accent);font-variant-numeric:tabular-nums}
+.note{margin-top:18px;font-size:12.5px;color:var(--mute);max-width:72ch;line-height:1.65}
+@media (max-width:920px){.calc{grid-template-columns:1fr}.calc-ctl{border-right:none;border-bottom:1px solid var(--line)}}
+@media (max-width:560px){.rrow{grid-template-columns:1fr auto}.rrow .rt{order:3}}
+
+/* ---------- scenarios ---------- */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.case{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(22px,2.6vw,30px);display:grid;gap:14px;align-content:start;
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+  transition:transform var(--t-fast) var(--ease-out),box-shadow var(--t-fast) var(--ease-out),border-color var(--t-fast) var(--ease-out)}
+/* Selecting a scenario outlines it, fills its monogram and recounts the
+   headline figure (app.js), so the result reads as worked out rather than
+   printed. The short rule under the figure draws in alongside the count. */
+.cases .case:active,.cases .case:hover:active{transform:scale(.99)}
+.cases .case.sel,.cases .case.sel:hover{border-color:var(--accent);
+  box-shadow:0 0 0 4px var(--wash),0 30px 60px -40px rgba(11,27,51,.5)}
+.case.sel .avatar{background:var(--accent);color:#fff;animation:avatarPop 360ms var(--ease-out)}
+@keyframes avatarPop{40%{transform:scale(1.12)}}
+.case .big::after{content:"";display:block;width:56px;height:2px;margin-top:12px;border-radius:2px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 600ms var(--ease-out)}
+.case.sel .big::after{transform:scaleX(1)}
+/* Each scenario is a person now, not a numbered profile. The avatar is a
+   monogram on purpose: these people are fictional, and a stock portrait would
+   dress an illustration up as a real client. The section's lede already says
+   so, and the copy should not quietly contradict it. */
+.persona{display:flex;align-items:center;gap:12px}
+.avatar{width:44px;height:44px;flex:none;border-radius:50%;background:var(--wash);color:var(--accent);
+  display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.02em;
+  transition:background var(--t-fast) ease,color var(--t-fast) ease}
+.persona-id{display:grid;gap:2px;min-width:0}
+.persona-id b{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.015em;color:var(--ink)}
+.persona-id small{font-size:12.5px;color:var(--mute);line-height:1.35}
+.case .situation{font-size:14.5px;color:var(--ink-2);line-height:1.55;
+  padding-bottom:16px;border-bottom:1px solid var(--line-2)}
+.case .outcome{display:grid;gap:6px}
+.case .big{font-family:var(--display);font-weight:900;font-size:clamp(36px,4vw,50px);letter-spacing:-.05em;line-height:.95;color:var(--accent);font-variant-numeric:tabular-nums}
+.case .cap{font-size:14px;color:var(--ink-2)}
+.case dl{margin:4px 0 0;display:grid;gap:0;border-top:1px solid var(--line)}
+.case dl div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-2);font-size:14px}
+.case dt{color:var(--mute)} .case dd{margin:0;font-family:var(--display);font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:980px){.cases{grid-template-columns:1fr}}
+
+/* ---------- experience ----------
+   An executive summary, not a CV: each role on one line (when, where, what)
+   and one result per employer beside it. The full history is one link away
+   on LinkedIn; education and the certification already sit in About. */
+.exp-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.exp-col{display:grid;gap:14px;align-content:start}
+.roles,.wins{margin:0;padding:0;list-style:none;display:grid;border-top:1px solid var(--line)}
+.roles li{display:grid;grid-template-columns:92px minmax(0,1.1fr) minmax(0,1fr);gap:4px 16px;align-items:baseline;
+  padding:14px 0;border-bottom:1px solid var(--line)}
+.roles .yr{font-family:var(--display);font-weight:600;font-size:13px;color:var(--mute);font-variant-numeric:tabular-nums;white-space:nowrap}
+.roles b{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.015em;line-height:1.3;color:var(--ink)}
+.roles .rt{font-size:14.5px;line-height:1.4;color:var(--ink-2)}
+.wins div{display:grid;grid-template-columns:92px minmax(0,1fr);gap:16px;align-items:baseline;
+  padding:14px 0;border-bottom:1px solid var(--line)}
+.wins dt{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-.03em;line-height:1;
+  color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+.wins dd{margin:0;font-size:14.5px;line-height:1.45;color:var(--ink-2)}
+.exp-more{justify-self:start;font-family:var(--display);font-weight:600;font-size:14px;text-decoration:none;
+  transition:color var(--t-fast) ease}
+@media (max-width:1080px){.exp-grid{grid-template-columns:1fr}}   /* below this a role no longer fits one line */
+@media (max-width:560px){
+  .roles li{grid-template-columns:84px minmax(0,1fr)}
+  .roles .rt{grid-column:2}
+  .wins div{grid-template-columns:84px minmax(0,1fr)}
+}
+
+/* ---------- contact ---------- */
+#contact{background:var(--ink);color:#fff;border-top:none}
+#contact h2{color:#fff}
+#contact .lede{color:rgba(255,255,255,.72)}
+.ct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+.ct{display:grid;gap:8px;padding:24px;border-radius:var(--r-lg);border:1px solid rgba(255,255,255,.12);text-decoration:none;color:#fff;
+  background:rgba(255,255,255,.03);
+  transition:transform var(--t-press) var(--ease-out),background var(--t-fast) var(--ease-out),
+    border-color var(--t-fast) var(--ease-out)}
+.ct:active{transform:scale(.99)}
+.ct svg{width:22px;height:22px;color:var(--accent-soft)}
+.ct .lb{font-family:var(--display);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.ct .vv{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.015em}
+#contact .btn-solid{background:var(--accent-soft);color:var(--ink)}
+#contact .btn-solid::before{background:#fff}
+/* That pale fill is right against the dark section, but it must not follow the
+   button into the white sign-up card, where it reads as disabled. The #contact
+   prefix is required: without it this loses to the rule above on specificity. */
+#contact .su .btn-solid{background:var(--accent);color:#fff}
+#contact .su .btn-solid::before{background:var(--ink)}
+@media (max-width:760px){.ct-grid{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:rgba(255,255,255,.62);padding:30px 0 44px;border-top:1px solid rgba(255,255,255,.1)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 30px;font-size:13px}
+/* .40 white on ink measured 3.76:1, under AA at 12px. .55 measures 5.93:1 */
+.disc{margin-top:18px;font-size:12px;line-height:1.65;color:rgba(255,255,255,.55);max-width:100ch}
+
+/* ---------- sign-up ---------- */
+.ct-layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:16px;margin-top:40px;align-items:start}
+.ct-side{display:grid;gap:14px}
+.su{background:var(--paper-2);color:var(--ink);border-radius:var(--r-lg);padding:clamp(22px,3vw,34px);display:grid;gap:18px;
+  box-shadow:0 40px 80px -50px rgba(0,0,0,.6)}
+.su-head{display:grid;gap:8px}
+.su-head h3{font-size:clamp(22px,2.4vw,28px)}
+.su-head p{color:var(--ink-2);font-size:15px}
+.su-attach{justify-self:start;font-family:var(--display);font-weight:600;font-size:12.5px;color:var(--accent);
+  background:var(--wash);border-radius:var(--r-pill);padding:5px 12px}
+.su-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.su-f{display:grid;gap:6px;align-content:start}
+.su-f>span,.su-f>label{font-family:var(--display);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.su-f>label small{font-family:var(--body);font-size:12px;font-weight:400;letter-spacing:0;text-transform:none}
+.su .field{width:100%;flex:none}
+/* WhatsApp: the country code is a real select, invisible and laid over a
+   compact "CR +506" prefix, so it keeps native keyboard and touch pickers. */
+.tel{display:flex;gap:8px;min-width:0}
+.su .tel .field{flex:1 1 auto;min-width:0;width:auto}
+.dial{position:relative;flex:none;display:flex}
+.su-wide{grid-column:1/-1}
+.dial-show{appearance:none;margin:0;cursor:pointer;text-align:left;display:flex;align-items:center;padding:0 34px 0 14px;border-radius:var(--r-sm);border:1px solid var(--line);
+  background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235A6779' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 13px center;
+  font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums;
+  transition:border-color var(--t-fast) ease,box-shadow var(--t-fast) ease,background-color var(--t-fast) ease}
+.dial select{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:16px;border:0;margin:0}
+.dial:focus-within .dial-show{border-color:var(--accent);background-color:#fff;box-shadow:0 0 0 4px var(--wash)}
+.dial-show:focus-visible{outline:none}
+.dial.rich select{display:none}
+/* The list scales in from the prefix it belongs to. */
+.dial-pop{position:absolute;top:calc(100% + 6px);left:0;z-index:30;width:300px;max-width:calc(100vw - 40px);padding:8px;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);
+  box-shadow:0 24px 60px -24px rgba(11,27,51,.35),0 2px 6px rgba(11,27,51,.06);
+  transform-origin:top left;animation:popIn 160ms var(--ease-out)}
+@keyframes popIn{from{opacity:0;transform:translateY(-4px) scale(.98)}}
+.dial-find{width:100%;padding:10px 12px;border-radius:var(--r-sm);border:1px solid var(--line);background:var(--paper);
+  font-family:var(--body);font-size:16px;color:var(--ink);transition:border-color var(--t-fast) ease,background var(--t-fast) ease}
+.dial-find:focus{outline:none;border-color:var(--accent);background:#fff}
+.dial-list{list-style:none;margin:6px 0 0;padding:0;max-height:264px;overflow-y:auto;overscroll-behavior:contain}
+.dial-list li{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:var(--r-xs);
+  cursor:pointer;font-size:14.5px;line-height:1.3;color:var(--ink-2)}
+.dial-list li span:not(.flag){flex:1 1 auto;min-width:0}
+.flag{display:block;width:20px;height:15px;flex:none;border-radius:2px;object-fit:cover;
+  box-shadow:0 0 0 1px rgba(11,27,51,.12)}          /* the hairline keeps white-edged flags from dissolving */
+.flag.none{background:var(--paper-3);box-shadow:none}
+.dial-show .flag{margin-right:8px}
+.dial-list li b{font-family:var(--display);font-weight:600;font-size:13.5px;color:var(--mute);font-variant-numeric:tabular-nums}
+.dial-list li.on{background:var(--wash);color:var(--ink)}
+.dial-list li[aria-selected="true"],.dial-list li[aria-selected="true"] b{color:var(--accent);font-weight:600}
+@media (hover:hover) and (pointer:fine){.dial:hover .dial-show{border-color:rgba(11,27,51,.22)}}
+@media (max-width:560px){.su-go .btn{width:100%;justify-content:center}}
+select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:38px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235A6779' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center}
+.su-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-2);line-height:1.5;cursor:pointer}
+
+.su-consent input[aria-invalid="true"]{outline:2px solid var(--crit);outline-offset:2px}
+@media (max-width:900px){.ct-layout{grid-template-columns:1fr}}
+@media (max-width:560px){.su-grid{grid-template-columns:1fr}}
+
+/* ---------- narrow phones ---------- */
+@media (max-width:560px){
+  .brand .bt{display:none}                 /* the AL mark carries the brand */
+  .nav-r{gap:8px}
+  .lang button{padding:5px 8px}
+  #nav .btn-sm{padding:9px 13px}
+  #hero{padding-top:92px}
+  /* The portrait column keeps its old size so the name stays on the first
+     screen; the rotating track record takes the column beside it. */
+  .shot{width:100%;display:grid;grid-template-columns:min(52%,196px) minmax(0,1fr);gap:16px;align-items:center}
+  .chip{display:none}                      /* same fact now rotates in .creds */
+  .creds{display:grid;gap:10px;align-content:center}
+  /* The "managed" labels are long enough that the wrapped figures fell into a
+     ragged 2 + 2; two equal columns keep them aligned. */
+  .proof-in{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  /* At 390px the hero measured 891px against an 844px viewport, which clipped
+     the second CTA by 7px. The 47px comes back out of spacing and the portrait
+     rather than out of the copy. */
+  .hero-hi{margin:14px 0 6px}
+  .hero-sub{margin-top:18px}
+  .hero-btns{margin-top:22px}
+}
+
+/* ---------- hover ----------
+   Behind a real pointer. On a touchscreen a tap fires :hover and
+   then leaves it stuck on the element the finger left behind. */
+@media (hover:hover) and (pointer:fine){
+  .links a:hover{color:var(--ink)}
+  .links a:hover::after{transform:scaleX(1)}
+  .lang button:hover{color:var(--ink)}
+  .btn:hover::before{opacity:1}
+  .btn-ghost:hover{color:#fff;border-color:var(--ink)}
+  .shot:hover img{transform:scale(1.07)}
+  .svc .svc-card:hover{transform:translateY(-3px);border-color:rgba(31,95,168,.35);
+    box-shadow:0 30px 60px -40px rgba(11,27,51,.5)}
+  .svc-card:hover .go{background:var(--accent);color:#fff;transform:translateX(3px)}
+  .svc-card:hover h3{color:var(--accent)}
+  .calc-link:hover{transform:translateY(-3px);border-color:rgba(31,95,168,.35);
+    box-shadow:0 30px 60px -40px rgba(11,27,51,.5)}
+  .calc-link:hover .btn::before{transform:none}
+  .cp-next .btn-ghost:hover{border-color:#fff}
+  .cases .case:hover{transform:translateY(-3px);border-color:rgba(31,95,168,.35);
+    box-shadow:0 30px 60px -40px rgba(11,27,51,.5)}
+  /* The wordmark lifts letter by letter; the mark tilts into it. */
+  .brand:hover i{transform:scale(1.04);box-shadow:0 10px 20px -10px rgba(11,27,51,.6)}
+  /* Employer names: colour plus an underline that wipes in from the left. */
+  .strip-cell:hover .co{color:var(--accent)}
+  .strip-cell:hover .co::after{transform:scaleX(1)}
+  .exp-more:hover{color:var(--accent-hi)}
+  .opt:hover{border-color:var(--accent);background:var(--wash);transform:translateX(2px)}
+  .opt:hover .key{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .linkbtn:hover{color:var(--accent)}
+  .ct-side .ct:hover{background:rgba(116,176,232,.1);border-color:rgba(116,176,232,.45);transform:translateY(-2px)}
+}
+
+/* ---------- reveals ----------
+   Running text arrives; grouped lists assemble. Section copy
+   fades without moving, so the page is not one identical slide
+   repeated eight times down the scroll. */
+/* Running copy rises as it arrives; grouped lists assemble behind it. Two
+   different entrances, not one slide repeated down the whole page. */
+.rv{opacity:0;transform:translateY(18px);
+  transition:opacity 560ms var(--ease-out),transform 560ms var(--ease-out)}
+.rv.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(16px)}
+/* The entrance owns these transitions and delays only while it plays; app.js
+   marks the group .settled afterwards. Left in place they overrode every
+   card's own transition for good: border and shadow snapped on hover, the
+   lift took 480ms, and the fourth card waited 210ms before moving at all. */
+.stagger:not(.settled)>*{transition:opacity 480ms var(--ease-out),transform 480ms var(--ease-out)}
+.stagger.in>*{opacity:1;transform:none}
+.stagger.in:not(.settled)>*:nth-child(2){transition-delay:70ms}
+.stagger.in:not(.settled)>*:nth-child(3){transition-delay:140ms}
+.stagger.in:not(.settled)>*:nth-child(4){transition-delay:210ms}
+.stagger.in:not(.settled)>*:nth-child(5){transition-delay:280ms}
+.stagger.in:not(.settled)>*:nth-child(6){transition-delay:350ms}
+.stagger.in:not(.settled)>*:nth-child(7){transition-delay:420ms}
+.stagger.in:not(.settled)>*:nth-child(8){transition-delay:490ms}
+
+/* The seam between two sections draws itself rather than just being there.
+   This is the only motion that belongs to the boundary itself. */
+.sec+.sec{border-top:none}
+.sec+.sec::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--line);
+  transform:scaleX(0);transform-origin:left;transition:transform 900ms var(--ease-out)}
+.sec.seen::before{transform:scaleX(1)}
+
+/* Fewer and gentler, not none: opacity and colour still carry
+   meaning, movement goes away. */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important}
+  .rv,.stagger>*{opacity:1!important;transform:none!important;transition:opacity 160ms linear!important}
+  .hero-name .w{opacity:1!important;transform:none!important;animation:none!important}
+  .hero-tag .pulse::after{animation:none!important}
+  .bar-fill{transition:transform 220ms linear!important}
+  .sec+.sec::before{transform:none!important}
+  .brand:hover i{transform:none!important}
+  .strip-cell .co::after{transform:none!important}
+  .strip{mask-image:none!important;-webkit-mask-image:none!important;overflow:visible!important}
+  .strip-in{animation:none!important;flex-wrap:wrap;width:auto!important;transform:none!important}
+  .strip-set[aria-hidden="true"]{display:none!important}
+  /* The rotation stops on the most recent position. */
+  .creds .cred{animation:none!important}
+  .creds .cred:first-child{opacity:1!important;transform:none!important}
+  .creds-bar{display:none!important}
+  .cases .case:hover,.cases .case:active,.cases .case:hover:active{transform:none!important}
+  .case.sel .avatar{animation:none!important}
+  .slot:active span{transform:none!important}
+  .dial-pop{animation:none!important}
+  .calc-link:hover,.calc-link:active{transform:none!important}
+  .calc-link-art path{stroke-dashoffset:0!important}
+  .calc-link-art circle{opacity:1!important}
+  #quiz{transition:opacity 120ms linear!important}
+  .opt:active,.ct:active,.lang button:active{transform:none!important}
+  .btn{transform:none!important}   /* the press spring stands down; colour carries the feedback */
+}
+
+
+/* ---------- sign-up landing page ----------
+   Reached from a service card. The chosen service is named back on the left
+   so the visitor sees what they clicked; the form sits on the right with that
+   service already selected. Shares every token with the home page. */
+.sp-main{padding:calc(74px + clamp(30px,6vw,66px)) 0 clamp(56px,8vw,96px)}
+.sp-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:clamp(28px,5vw,64px);align-items:start}
+.sp-intro .lbl{display:block;margin-bottom:14px}
+.sp-h{font-size:clamp(30px,4.2vw,50px);letter-spacing:-.035em;line-height:1.03;margin:0 0 16px;max-width:16ch}
+.sp-tags{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.sp-tags li{font-size:12.5px;font-family:var(--display);font-weight:500;color:var(--ink-2);
+  background:var(--paper-3);border-radius:var(--r-pill);padding:5px 11px}
+.sp-alt{display:grid;gap:12px;margin-top:clamp(26px,4vw,38px)}
+.su-h2{font-size:clamp(22px,2.4vw,28px);max-width:none}  /* h2's 16ch cap wraps this one badly */
+.sp-main .su{border:1px solid var(--line);box-shadow:0 30px 70px -50px rgba(11,27,51,.45)}
+/* .ct is authored for the dark contact block; on this light page it inverts. */
+.sp-main .ct{color:var(--ink);border-color:var(--line);background:var(--paper-2)}
+.sp-main .ct svg{color:var(--accent)}
+.sp-main .ct .lb{color:var(--mute)}
+@media (hover:hover) and (pointer:fine){
+  .sp-main .ct:hover{background:var(--wash);border-color:rgba(31,95,168,.35);transform:translateY(-2px)}
+}
+@media (max-width:880px){.sp-grid{grid-template-columns:1fr}}
+
+/* ---------- calculator page ----------
+   The calculator on its own, under a plain heading, with the way back to a
+   conversation at the bottom. Uses the landing page's top spacing. */
+.cp-head{display:grid;gap:14px;margin-bottom:clamp(26px,4vw,44px)}
+.cp-h{font-size:clamp(32px,4.6vw,56px);letter-spacing:-.035em;line-height:1.02;max-width:18ch}
+.cp-next{margin-top:clamp(40px,6vw,72px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:22px;padding:clamp(24px,3.6vw,40px);border-radius:var(--r-lg);background:var(--ink);color:#fff}
+.cp-next-copy{display:grid;gap:8px}
+.cp-next h2{color:#fff;font-size:clamp(22px,2.6vw,30px);max-width:24ch;line-height:1.1}
+.cp-next p{color:rgba(255,255,255,.72);max-width:52ch}
+.cp-next .btn-solid{background:var(--accent-soft);color:var(--ink)}
+.cp-next .btn-solid::before{background:#fff}
+.cp-next .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+.cp-next .btn-ghost::before{background:rgba(255,255,255,.12)}
+
+
+/* ---------- slot picker ----------
+   The form books the session itself, so the time is picked inside it: the
+   next days with free times, then that day's times, as native radios
+   dressed as buttons (arrow keys move within each group for free). Chips are
+   44px tall, the minimum comfortable touch target. */
+.su-slots,.su-set{border:0;margin:0;padding:0;min-width:0;display:grid;gap:10px}
+.su-slots legend,.su-set legend{padding:0;margin-bottom:4px;font-family:var(--display);font-size:11.5px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.su-slots legend small{display:block;margin-top:4px;font-family:var(--body);font-size:12.5px;font-weight:400;
+  letter-spacing:0;text-transform:none}
+.days{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x proximity;padding:2px}
+.days::-webkit-scrollbar{display:none}
+.times{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px;padding:2px}
+.slot{position:relative;display:block;cursor:pointer;scroll-snap-align:start;-webkit-tap-highlight-color:transparent}
+.slot input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.slot span{display:grid;place-items:center;gap:1px;min-height:44px;padding:7px 10px;border-radius:var(--r-sm);
+  border:1px solid var(--line);background:var(--paper);font-family:var(--display);font-weight:600;font-size:13.5px;
+  color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums;
+  transition:background var(--t-fast) ease,border-color var(--t-fast) ease,color var(--t-fast) ease,
+    transform var(--t-press) var(--ease-out)}
+.days .slot span{min-width:56px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.days .slot b{font-size:18px;letter-spacing:-.02em;line-height:1;color:var(--ink)}
+.slot input:checked+span{background:var(--accent);border-color:var(--accent);color:#fff}
+.slot input:checked+span b{color:#fff}
+.slot input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.slot:active span{transform:scale(.97)}
+.times[aria-invalid="true"] .slot span,.su-goal[aria-invalid="true"] .slot span{border-color:var(--crit)}
+.goals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:2px}
+.goals .slot{display:grid}              /* each choice fills its row, so pairs match in height */
+.goals .slot span{white-space:normal;text-align:center;line-height:1.25;padding:10px 12px;font-size:14px}
+.slots-msg{font-size:13.5px;color:var(--mute)}
+.slots-alt{justify-self:start;font-family:var(--display);font-weight:600;font-size:14px}
+@media (hover:hover) and (pointer:fine){
+  .slot:hover input:not(:checked)+span{border-color:var(--accent);color:var(--ink)}
+}
+
+
+/* ---------- form controls ----------
+   The country field used to be a text box with a datalist, which browsers
+   render as a native drop-down that matches nothing else on the page. It is
+   a real select now, wearing the same chevron as the other two. The consent
+   box is drawn here too, for the same reason. */
+.su-consent input{appearance:none;-webkit-appearance:none;width:20px;height:20px;margin-top:1px;
+  flex:none;border:1.5px solid var(--line);border-radius:6px;background:var(--paper-2);
+  cursor:pointer;position:relative;
+  transition:background var(--t-fast) ease,border-color var(--t-fast) ease}
+.su-consent input:checked{background:var(--accent);border-color:var(--accent)}
+.su-consent input:checked::after{content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.su-consent input[aria-invalid="true"]{border-color:var(--crit)}
+@media (hover:hover) and (pointer:fine){
+  .field:hover{border-color:rgba(11,27,51,.22)}
+  .su-consent input:hover{border-color:var(--accent)}
+}
+
+
+/* ---------- screen-reader only ----------
+   A table caption names the table for anyone not looking at it; on screen
+   the heading above already does that job. */
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- plans ----------
+   Three prices are a comparison before they are a list, so the cards sit on
+   one row wherever the row still fits and the middle one is raised rather
+   than recoloured: the emphasis has to survive being read in grayscale. */
+.svc-more{margin-top:clamp(20px,3vw,28px)}
+.pl-all{margin:clamp(30px,5vw,54px) 0 clamp(26px,4vw,40px)}
+.pl-all-h{font-size:clamp(19px,2.2vw,24px);letter-spacing:-.02em;margin:0 0 18px}
+.pl-all-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.pl-all-c{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:20px 20px 22px;display:grid;gap:8px;align-content:start;
+  transition:transform var(--t-fast) var(--ease-out),border-color var(--t-fast) var(--ease-out),
+    box-shadow var(--t-fast) var(--ease-out),background var(--t-fast) var(--ease-out)}
+.pl-all-c h3{font-size:16px;letter-spacing:-.015em;margin:0}
+.pl-all-c p{font-size:14px;color:var(--ink-2);line-height:1.55}
+
+/* The cards stretch to the tallest of the three so the three buttons land on
+   one line: a price row where the calls to action step down reads as three
+   unrelated cards instead of one comparison. */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+/* La banda superior se reserva en las TRES, no solo en la marcada: si solo la
+   tuviera esa, su nombre arrancaria mas abajo que los otros dos y la fila se
+   veria desalineada. */
+.plan{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:calc(clamp(24px,2.6vw,32px) + 20px) clamp(24px,2.6vw,32px) clamp(24px,2.6vw,32px);
+  display:flex;flex-direction:column;gap:12px;position:relative;
+  transition:transform var(--t-fast) var(--ease-out),box-shadow var(--t-fast) var(--ease-out),
+    border-color var(--t-fast) var(--ease-out)}
+.plan .btn{margin-top:auto}
+.plan-n{font-size:clamp(20px,2.2vw,24px);letter-spacing:-.02em;margin:0}
+.plan-price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;font-family:var(--display)}
+.plan-price b{font-size:clamp(40px,4.6vw,54px);font-weight:800;letter-spacing:-.04em;line-height:1;
+  font-variant-numeric:tabular-nums}
+.plan-price span{font-size:15px;font-weight:600;color:var(--mute)}
+.plan-tax{margin-top:-6px;font-size:12.5px;color:var(--mute);letter-spacing:.02em}
+.plan-d{font-size:14.5px;color:var(--ink-2);line-height:1.55;min-height:3.1em}
+.plan-f{list-style:none;margin:4px 0 6px;padding:0;display:grid;gap:9px}
+.plan-f li{position:relative;padding-left:26px;font-size:14.5px;line-height:1.5}
+.plan-f li::before{content:"";position:absolute;left:2px;top:.44em;width:11px;height:6px;
+  border:solid var(--accent);border-width:0 0 2px 2px;transform:rotate(-45deg)}
+.plan .btn{justify-content:center;width:100%}
+/* The chosen plan is lifted, outlined and tagged: three signals, none of
+   which is colour alone. */
+.plan.is-pop{border-color:var(--accent);box-shadow:0 30px 70px -48px rgba(11,27,51,.55)}
+/* Raising the chosen card lifts its top edge only: the row stretches, so the
+   bottoms stay level and the three buttons keep their line. */
+@media (min-width:881px){.plan.is-pop{margin-top:-14px}}
+/* En la esquina superior derecha y fuera del flujo, para que la tarjeta
+   marcada no empiece su contenido mas abajo que las otras dos. El verde es
+   --ok, el mismo de la lectura "solido" del diagnostico: 5.69:1 sobre blanco,
+   y sigue leyendose sobre su propio fondo al 10%. */
+.plan-tag{position:absolute;top:16px;right:16px;z-index:2;
+  font-family:var(--display);font-size:11px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ok);
+  background:rgba(25,117,76,.1);border-radius:var(--r-pill);padding:5px 11px}
+
+.pl-cmp{margin-top:clamp(40px,6vw,64px)}
+.pl-cmp-h{font-size:clamp(19px,2.2vw,24px);letter-spacing:-.02em;margin:0 0 18px}
+.pl-tw{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--paper-2)}
+.pl-t{border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px}
+.pl-t th,.pl-t td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line-2)}
+.pl-t tbody tr:last-child th,.pl-t tbody tr:last-child td{border-bottom:0}
+.pl-t thead th{background:var(--paper-3);font-family:var(--display);font-size:13px;
+  letter-spacing:.04em;vertical-align:bottom;border-bottom:1px solid var(--line)}
+.pl-t thead th span{display:block}
+.pl-t tbody th{font-weight:500;color:var(--ink-2)}
+.pl-t td{text-align:center;color:var(--ink-2)}
+.pl-t thead th:not(:first-child){text-align:center}
+.pl-t .c-pop{background:rgba(31,95,168,.05)}
+/* Marcas de verdad, no bordes girados: un trazo de grosor uniforme que no se
+   deforma al cambiar el tamanio de fuente y que hereda el color por currentColor. */
+.yn{display:inline-grid;place-items:center;width:20px;height:20px;vertical-align:middle}
+.yn svg{width:20px;height:20px;display:block}
+.yn.y{color:var(--ok)}
+.yn.n{color:var(--chart-flat)}
+.pl-notes{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:7px}
+.pl-notes li{font-size:12.5px;color:var(--mute);line-height:1.6;padding-left:15px;position:relative}
+.pl-notes li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;
+  border-radius:50%;background:var(--line);}
+@media (max-width:1080px){.pl-all-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:880px){
+  .plans{grid-template-columns:1fr}
+  .plan-d{min-height:0}
+}
+@media (max-width:560px){.pl-all-grid{grid-template-columns:1fr}}
+/* The lift is written under .plans so it outranks the stagger's transform:none
+   once the group has settled, the same way the service cards do it. */
+/* Hovering a card highlights it: the border takes the accent and a ring of the
+   same colour sits just outside it, on top of the lift and the drop shadow.
+   Four signals, and three of them survive being read in grayscale. */
+@media (hover:hover) and (pointer:fine){
+  .plans .plan:hover,.pl-all-grid .pl-all-c:hover{
+    border-color:var(--accent);background:var(--paper-2);
+    box-shadow:0 0 0 3px rgba(31,95,168,.13),0 26px 60px -44px rgba(11,27,51,.6)}
+  .plans .plan:hover{transform:translateY(-4px)}
+  .pl-all-grid .pl-all-c:hover{transform:translateY(-2px)}
+  .plans .plan.is-pop:hover{
+    box-shadow:0 0 0 3px rgba(31,95,168,.16),0 34px 76px -44px rgba(11,27,51,.62)}
+}
+@media (prefers-reduced-motion:reduce){
+  .plan,.pl-all-c{transition:border-color var(--t-fast) var(--ease-out),box-shadow var(--t-fast) var(--ease-out)}
+  .plans .plan:hover,.pl-all-grid .pl-all-c:hover{transform:none}
+}
+
+
+/* ---------- site chat ----------
+   A launcher and a panel, both fixed to the bottom-right corner. The panel
+   is a conversation, so it is laid out as one: what the site says sits left
+   on paper, what the visitor answers sits right in navy, and the answer
+   controls live in their own tray under the log rather than floating in it.
+   On a phone it becomes a sheet with a gutter on each side. */
+.bot-launch{position:fixed;right:clamp(14px,3vw,26px);bottom:clamp(14px,3vw,26px);z-index:60;
+  display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+  font-family:var(--display);font-weight:600;font-size:14.5px;letter-spacing:-.01em;
+  padding:12px 20px 12px 14px;border-radius:var(--r-pill);border:1px solid transparent;
+  background:var(--ink);color:#fff;box-shadow:0 18px 40px -18px rgba(11,27,51,.7);
+  transition:transform var(--t-press) var(--ease-out),box-shadow var(--t-fast) var(--ease-out)}
+.bot-launch-ic{display:grid;place-items:center;width:24px;height:24px;flex:none}
+.bot-launch-ic svg{width:19px;height:19px}
+.bot-launch:active{transform:scale(.97)}
+.bot-launch.is-open .bot-launch-t{display:none}
+.bot-launch.is-open{padding:12px 14px}
+
+.bot-pop{position:fixed;right:clamp(14px,3vw,26px);bottom:calc(clamp(14px,3vw,26px) + 60px);z-index:61;
+  width:min(370px,calc(100vw - 28px));max-height:min(74vh,600px);
+  display:flex;flex-direction:column;overflow:hidden;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);
+  box-shadow:0 40px 90px -40px rgba(11,27,51,.65);
+  opacity:0;transform:translateY(10px) scale(.985);transform-origin:100% 100%;
+  transition:opacity var(--t-ui) var(--ease-out),transform var(--t-ui) var(--ease-out)}
+.bot-pop.in{opacity:1;transform:none}
+.bot-head{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 12px 14px 18px;background:var(--ink);color:#fff}
+.bot-head-t{display:grid;gap:1px;min-width:0}
+.bot-head-t b{font-family:var(--display);font-size:15px;letter-spacing:-.015em}
+.bot-head-t span{font-size:12px;color:rgba(255,255,255,.66)}
+.bot-x{display:grid;place-items:center;width:34px;height:34px;flex:none;cursor:pointer;
+  border:0;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;
+  transition:background var(--t-fast) var(--ease-out)}
+.bot-x svg{width:17px;height:17px}
+
+.bot-log{flex:1 1 auto;overflow-y:auto;overscroll-behavior:contain;
+  padding:16px 16px 6px;display:flex;flex-direction:column;gap:9px}
+.bot-msg{display:flex}
+.bot-msg p{max-width:84%;padding:10px 14px;border-radius:var(--r-md);
+  font-size:14.5px;line-height:1.5;text-wrap:pretty}
+.bot-msg.bot p{background:var(--paper-3);border-bottom-left-radius:6px}
+.bot-msg.me{justify-content:flex-end}
+.bot-msg.me p{background:var(--ink);color:#fff;border-bottom-right-radius:6px}
+.bot-msg.bot-wait p{color:var(--mute)}
+
+.bot-act{flex:none;padding:10px 16px 6px;display:grid;gap:8px}
+.bot-chips{display:flex;flex-wrap:wrap;gap:7px}
+.bot-chip{cursor:pointer;font-family:var(--display);font-weight:600;font-size:13.5px;
+  padding:9px 14px;border-radius:var(--r-pill);
+  border:1px solid var(--line);background:var(--paper-2);color:var(--ink);
+  transition:border-color var(--t-fast) var(--ease-out),background var(--t-fast) var(--ease-out),
+    transform var(--t-press) var(--ease-out)}
+.bot-chip:active{transform:scale(.97)}
+.bot-form{display:flex;gap:8px;align-items:center}
+.bot-in{flex:1 1 auto;min-width:0;font:inherit;font-size:15px;color:var(--ink);
+  padding:11px 14px;border-radius:var(--r-pill);
+  border:1px solid var(--line);background:var(--paper-2);
+  transition:border-color var(--t-fast) var(--ease-out)}
+.bot-in:focus{outline:none;border-color:var(--accent)}
+.bot-in[aria-invalid="true"]{border-color:var(--crit)}
+.bot-go{display:grid;place-items:center;width:42px;height:42px;flex:none;cursor:pointer;
+  border:0;border-radius:50%;background:var(--accent);color:#fff;
+  transition:background var(--t-fast) var(--ease-out),transform var(--t-press) var(--ease-out)}
+.bot-go svg{width:18px;height:18px}
+.bot-go:active{transform:scale(.94)}
+.bot-skip{justify-self:start;cursor:pointer;border:0;background:none;padding:2px 0;
+  font-family:var(--display);font-weight:600;font-size:13px;color:var(--mute);
+  text-decoration:underline;text-underline-offset:3px}
+.bot-err{font-size:13px;color:var(--crit);line-height:1.5}
+.bot-cta{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
+  font-family:var(--display);font-weight:600;font-size:14.5px;padding:13px 20px;
+  border-radius:var(--r-pill);background:var(--accent);color:#fff;
+  transition:background var(--t-fast) var(--ease-out),transform var(--t-press) var(--ease-out)}
+.bot-cta:active{transform:scale(.98)}
+.bot-note{flex:none;padding:8px 16px 14px;font-size:11.5px;line-height:1.5;color:var(--mute)}
+
+@media (max-width:560px){
+  .bot-pop{left:14px;right:14px;width:auto;max-height:78vh;
+    bottom:calc(clamp(14px,3vw,26px) + 58px)}
+  /* On a phone the label eats half the width and the launcher parks itself on
+     top of whatever the visitor is reading. The icon alone still invites. */
+  .bot-launch{padding:14px;border-radius:50%}
+  .bot-launch-t{display:none}
+}
+@media (hover:hover) and (pointer:fine){
+  .bot-launch:hover{box-shadow:0 22px 48px -18px rgba(11,27,51,.8)}
+  .bot-x:hover{background:rgba(255,255,255,.2)}
+  .bot-chip:hover{border-color:var(--accent);background:var(--wash)}
+  .bot-go:hover,.bot-cta:hover{background:var(--accent-hi)}
+  .bot-skip:hover{color:var(--ink)}
+}
+@media (prefers-reduced-motion:reduce){
+  .bot-pop{transition:none;opacity:1;transform:none}
+  .bot-launch,.bot-chip,.bot-go,.bot-cta{transition:none}
+}
+
+
+/* ---------- every pill answers the pointer ----------
+   The badges, tags and chips around the site were the only surfaces that
+   stayed still under the mouse. They move now, but deliberately less than a
+   button does: one pixel and a deeper ground. A label that cannot be clicked
+   should react like a surface, not advertise itself as a control. */
+.hero-tag,.chip,.svc li,.sp-tags li,.su-attach,.plan-tag{
+  transition:transform var(--t-fast) var(--ease-out),background var(--t-fast) var(--ease-out),
+    border-color var(--t-fast) var(--ease-out),color var(--t-fast) var(--ease-out),
+    box-shadow var(--t-fast) var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+  .hero-tag:hover{transform:translateY(-1px);border-color:rgba(31,95,168,.35)}
+  .chip:hover{transform:translateY(-2px);box-shadow:0 22px 48px -26px rgba(11,27,51,.5)}
+  .svc li:hover,.sp-tags li:hover{transform:translateY(-1px);background:var(--wash);color:var(--ink)}
+  .su-attach:hover,.plan-tag:hover{transform:translateY(-1px);box-shadow:0 10px 22px -16px rgba(31,95,168,.8)}
+  /* These two already answered the pointer with colour; now they move too.
+     Each press rule is restated after its hover so the press still wins. */
+  .slot:hover span{transform:translateY(-1px)}
+  .slot:active span{transform:scale(.97)}
+  .bot-chip:hover{transform:translateY(-1px)}
+  .bot-chip:active{transform:scale(.97)}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-tag:hover,.chip:hover,.svc li:hover,.sp-tags li:hover,.su-attach:hover,.plan-tag:hover,
+  .slot:hover span,.bot-chip:hover{transform:none}
+}
+
+
+/* ---------- suggested plan ----------
+   Sits between the reading and the sign-up, because it is the bridge: the
+   diagnostic says where you stand, this says what that costs to fix. It is
+   built on the ground the panel already uses rather than a new surface, and
+   it carries its own caveat so the suggestion is never read as a verdict. */
+.rec{background:var(--paper-3);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:20px 22px;display:grid;gap:6px;justify-items:start}
+.rec-n{font-family:var(--display);font-weight:800;font-size:clamp(22px,2.6vw,28px);
+  letter-spacing:-.03em;line-height:1.1;margin-top:2px}
+.rec-w{font-size:15px;color:var(--ink-2);max-width:56ch;line-height:1.55;text-wrap:pretty}
+.rec-go{margin-top:4px}
+.rec-note{font-size:12.5px;color:var(--mute);max-width:60ch;line-height:1.55}
+
+
+/* ---------- the comparison table on a phone ----------
+   A 640px-wide table inside a horizontally scrolling box is the one thing a
+   comparison must never be on a phone: you cannot compare what you cannot
+   see at once, and a sideways scroll hides that there is anything to see.
+
+   Below 700px the table stops being a grid and becomes seven cards, one per
+   feature, each listing the three plans underneath it. The comparison
+   survives - three values still sit together - and the page scrolls the way
+   the rest of the page does, downward. Each value carries the plan's name,
+   which is why every cell has a .pl-k label in the markup. The prices stay
+   out of it: the cards above already state them, and a table that repeats
+   them has to be kept in step with the period switch or it starts lying. */
+.pl-k{display:none}
+@media (max-width:700px){
+  .pl-tw{overflow:visible;border:0;background:none;border-radius:0}
+  .pl-t{min-width:0;display:block}
+  .pl-t thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .pl-t tbody,.pl-t tr,.pl-t th,.pl-t td{display:block}
+  .pl-t tr{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);
+    padding:14px 16px;margin-bottom:10px}
+  .pl-t tbody tr:last-child{margin-bottom:0}
+  .pl-t tbody th{padding:0 0 6px;border:0;font-family:var(--display);font-weight:700;
+    font-size:14.5px;color:var(--ink);line-height:1.35}
+  .pl-t td{display:flex;align-items:center;justify-content:space-between;gap:14px;
+    padding:9px 0;border-bottom:1px solid var(--line-2);text-align:right}
+  .pl-t tbody tr td:last-child{border-bottom:0;padding-bottom:0}
+  /* Apilada, la fila de encabezado se oculta, asi que cada celda dice a que
+     plan pertenece su valor. */
+  .pl-t .pl-k{display:block;text-align:left;
+    font-family:var(--display);font-weight:600;
+    font-size:12.5px;letter-spacing:.02em;color:var(--mute)}
+  /* Stacked, a tinted cell would read as a stripe across the card. The plan
+     that is meant to win keeps its emphasis in the label instead. */
+  .pl-t .c-pop{background:none}
+  .pl-t .c-pop .pl-k{color:var(--accent)}
+}
+
+
+/* ---------- client portal ----------
+   The traffic light is the page: two readings side by side, and a word only
+   when a dimension actually crossed into another band. Everything else on
+   the page is subordinate to that table. */
+.pt-demo{display:grid;gap:4px;margin-bottom:clamp(22px,3vw,32px);
+  background:#FDF6E7;border:1px solid rgba(143,93,15,.28);border-radius:var(--r-md);padding:14px 18px}
+.pt-demo b{font-family:var(--display);font-size:14px;color:var(--warn)}
+.pt-demo p{font-size:13.5px;color:var(--ink-2);line-height:1.55;max-width:72ch}
+
+.pt-form{display:grid;gap:14px;justify-items:start;max-width:420px}
+.pt-f{display:grid;gap:7px;width:100%}
+.pt-f>span{font-family:var(--display);font-weight:600;font-size:13px;color:var(--ink-2)}
+.pt-f .field{width:100%}
+.pt-err{font-size:13.5px;color:var(--crit);line-height:1.5}
+
+.pt-panel{margin-bottom:clamp(26px,4vw,40px)}
+.pt-panel .panel-body{display:grid;gap:20px}
+.pt-empty{font-size:14.5px;color:var(--mute);line-height:1.6;max-width:62ch}
+.pt-go{display:grid;gap:10px;justify-items:start;padding-top:4px;border-top:1px solid var(--line-2)}
+.pt-go .small{max-width:56ch}
+
+.pt-t{border-collapse:collapse;width:100%;font-size:14.5px}
+.pt-t th,.pt-t td{padding:13px 12px;text-align:left;border-bottom:1px solid var(--line-2);vertical-align:middle}
+.pt-t thead th{font-family:var(--display);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--mute);font-weight:600;padding-bottom:9px}
+.pt-t tbody tr:last-child th,.pt-t tbody tr:last-child td{border-bottom:0}
+.pt-t tbody th{font-weight:500;color:var(--ink);padding-left:0}
+.pt-lv{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:13.5px}
+.pt-lv i{width:11px;height:11px;border-radius:50%;flex:none}
+.pt-lv.lv-crit{color:var(--crit)} .pt-lv.lv-crit i{background:var(--crit)}
+.pt-lv.lv-warn{color:var(--warn)} .pt-lv.lv-warn i{background:var(--warn)}
+.pt-lv.lv-ok{color:var(--ok)}     .pt-lv.lv-ok i{background:var(--ok)}
+.pt-move{display:block;font-family:var(--display);font-weight:600;font-size:11.5px;
+  letter-spacing:.02em;margin-top:3px}
+.pt-move.up{color:var(--ok)} .pt-move.down{color:var(--crit)}
+
+.pt-sec{margin-bottom:clamp(26px,4vw,40px);display:grid;gap:12px;justify-items:start}
+.pt-h{font-size:clamp(19px,2.2vw,24px);letter-spacing:-.02em;margin:0}
+.pt-hist{list-style:none;margin:0;padding:0;display:grid;gap:0;width:100%;max-width:520px}
+.pt-hist li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  padding:12px 0;border-bottom:1px solid var(--line-2)}
+.pt-hist li:last-child{border-bottom:0}
+.pt-when{font-size:14px;color:var(--ink-2)}
+.pt-hist b{font-family:var(--display);font-size:15px;font-variant-numeric:tabular-nums}
+.pt-data-row{padding-top:2px}
+.pt-danger{color:var(--crit);border-color:rgba(178,60,50,.35)}
+.pt-danger::before{background:var(--crit)}
+
+@media (max-width:620px){
+  .pt-t thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .pt-t,.pt-t tbody,.pt-t tr,.pt-t th,.pt-t td{display:block}
+  .pt-t tbody tr{padding:14px 0;border-bottom:1px solid var(--line-2)}
+  .pt-t tbody tr:last-child{border-bottom:0}
+  .pt-t tbody th{padding:0 0 9px;font-family:var(--display);font-weight:700;border:0}
+  .pt-t tbody td{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:5px 0;border:0}
+  /* Stacked, each cell has to say which of the two readings it is. */
+  .pt-t tbody td::before{content:attr(data-when);font-family:var(--display);font-weight:600;
+    font-size:12.5px;color:var(--mute)}
+  .pt-move{display:inline;margin:0 0 0 8px}
+}
+@media (hover:hover) and (pointer:fine){
+  .pt-danger:hover{border-color:var(--crit);color:#fff}
+}
+
+/* On a phone the portal header carried three controls and wrapped to two
+   lines, which pushed the greeting underneath the sticky bar. The wordmark
+   already goes home, so the third control is the one that goes. */
+@media (max-width:560px){
+  .pt-back{display:none}
+}
+
+
+/* ---------- periodicidad y precio de lanzamiento ----------
+   El indicador se mide en el guion, no con un 50%: los dos botones tienen
+   anchos distintos porque el anual carga su etiqueta, y en tres idiomas los
+   anchos cambian otra vez.
+
+   Las dos mitades miden igual (1fr 1fr sobre max-content: ambas columnas
+   toman el ancho de la mas larga), que es como lo hace Google y ademas
+   permite que el indicador nunca cambie de ancho. Asi el deslizamiento es
+   solo transform, que se resuelve en el compositor, en vez de animar width
+   y obligar a recalcular disposicion en cada cuadro. */
+.per{position:relative;display:grid;grid-template-columns:1fr 1fr;width:max-content;
+  margin:0 auto clamp(22px,3vw,32px);
+  border:1px solid var(--line);border-radius:var(--r-pill);padding:4px;background:var(--paper-2)}
+/* Sin transicion hasta que se haya colocado por primera vez: si no, en la
+   primera pintura se ve crecer desde cero, que es un parpadeo, no un gesto. */
+.per-ind{position:absolute;top:4px;left:0;width:0;height:calc(100% - 8px);
+  border-radius:var(--r-pill);background:var(--ink)}
+.per.ready .per-ind{transition:transform var(--t-ui) var(--ease-out)}
+.per button{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;
+  border:0;background:none;border-radius:var(--r-pill);padding:10px 18px;
+  font-family:var(--display);font-weight:600;font-size:14px;color:var(--mute);
+  transition:color var(--t-fast) var(--ease-out)}
+.per button[aria-pressed="true"]{color:#fff}
+.per button i{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.04em;
+  background:var(--wash);color:var(--accent);border-radius:var(--r-pill);padding:3px 9px;
+  transition:background var(--t-fast) var(--ease-out),color var(--t-fast) var(--ease-out)}
+.per button[aria-pressed="true"] i{background:rgba(255,255,255,.18);color:#fff}
+
+/* El tachado es un precio real al que el plan vuelve, no un ancla inventada.
+   Va mas pequenio que el vigente: informa, no compite. */
+.plan-was{font-size:clamp(16px,1.8vw,20px);font-weight:700;color:var(--mute);
+  text-decoration-line:line-through;text-decoration-thickness:2px;
+  font-variant-numeric:tabular-nums}
+.plan-note{display:grid;gap:3px;margin-top:-4px}
+.plan-note span{font-size:12.5px;line-height:1.45;color:var(--accent);font-weight:600;
+  font-family:var(--display)}
+.plan-note span:last-child:not(:first-child){color:var(--mute);font-weight:500}
+
+/* ---------- la tarjeta en el telefono ----------
+   Tomado de como Google ordena sus planes en movil: el boton va pegado al
+   precio, antes de la lista. En una pantalla angosta, una lista de cuatro
+   caracteristicas empuja la accion fuera de vista, y la tarjeta se vuelve
+   algo que se lee en vez de algo que se usa. El orden del DOM se queda como
+   esta -- primero el contenido, luego la accion -- y solo cambia la pintura. */
+@media (max-width:880px){
+  .plan{text-align:center;align-items:center}
+  .plan-n{order:1}
+  .plan-price{order:2;justify-content:center;gap:6px}
+  .plan-tax{order:3}
+  .plan-note{order:4;justify-items:center}
+  .plan .btn{order:5;margin-top:4px;width:100%;justify-content:center}
+  .plan-d{order:6;width:100%;padding-top:16px;border-top:1px solid var(--line-2);min-height:0}
+  .plan-f{order:7;width:100%;text-align:left}
+  /* La declaracion de comision va de ultima: sin orden explicito caia
+     arriba del nombre del plan, que es justo donde no debe leerse. */
+  .plan-disc{order:8;width:100%;text-align:left}
+}
+
+@media (max-width:560px){
+  /* Mitades iguales y el ahorro en su propia linea, como lo hace Google:
+     la etiqueta al lado hacia el boton demasiado ancho. */
+  .per{width:100%;margin-inline:0}
+  .per button{flex-direction:column;align-items:center;gap:1px;
+    padding:9px 6px;line-height:1.3}
+  .per button i{background:none;padding:0;font-size:11px;color:var(--ok);letter-spacing:0}
+  .per button[aria-pressed="true"] i{background:none;color:rgba(255,255,255,.82)}
+}
+
+@media (prefers-reduced-motion:reduce){ .per-ind{transition:none} }
+@media (hover:hover) and (pointer:fine){
+  .per button[aria-pressed="false"]:hover{color:var(--ink)}
+}
+
+/* ---------- la comparacion en el telefono ----------
+   La seccion se llama "lo que cambia entre planes", y tres de sus siete filas
+   no cambian: van con la misma marca en los tres. En escritorio esas filas
+   cuestan una linea y refuerzan que se reciben en todos los niveles. En el
+   telefono cada una es una tarjeta entera con tres renglones, y lo que
+   aportan ya esta dicho en "Incluido en los tres", en esta misma pagina y
+   mas arriba. Ahi se van: la tabla queda con las cuatro que deciden. */
+@media (max-width:700px){
+  .pl-t tr.pl-all3{display:none}
+}
+
+
+/* ---------- via rapida a los planes ----------
+   El enlace de planes vivia en .links, que se oculta entero bajo 1080px: en
+   un telefono no habia forma de llegar a los precios sin desplazarse hasta
+   servicios. Este va en el hero, visible en todos los tamanios. */
+.hero-plans{display:inline-flex;align-items:center;gap:2px;margin-top:16px;
+  font-family:var(--display);font-weight:600;font-size:15px;color:var(--accent);
+  text-decoration:none;align-self:start;
+  transition:gap var(--t-fast) var(--ease-out),color var(--t-fast) var(--ease-out)}
+.hero-plans:active{opacity:.7}
+@media (hover:hover) and (pointer:fine){
+  .hero-plans:hover{gap:7px;color:var(--accent-hi)}
+}
+
+/* ---------- el precio primero ----------
+   En el telefono la pagina abria con "Incluido en los tres" y los precios
+   quedaban abajo. Quien llega a una pagina de precios viene a ver precios:
+   las tarjetas suben, y el detalle de lo comun queda despues. */
+@media (max-width:880px){
+  .pl-wrap{display:flex;flex-direction:column}
+  .pl-wrap .cp-head{order:1}
+  .pl-wrap .per{order:2}
+  .pl-wrap .plans{order:3}
+  .pl-wrap .pl-all{order:4;margin-top:clamp(30px,5vw,44px)}
+  .pl-wrap .pl-cmp{order:5}
+  .pl-wrap .cp-next{order:6}
+}
+
+/* ---------- la tarjeta responde al dedo ----------
+   Todo el efecto de las tarjetas estaba detras de (hover:hover), asi que en
+   un telefono no pasaba nada al tocarlas. Ahora la tarjeta entera es el area
+   tactil -- su boton sigue siendo el control real para teclado y lector de
+   pantalla -- y se hunde al presionarla, que es la senial de que se puede
+   tocar. Las cajas de "Incluido en los tres" no la llevan a proposito: no
+   van a ninguna parte, y anunciar que responden seria mentir. */
+.plans .plan{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.plans .plan:active{transform:scale(.985)}
+.plans .plan:active .btn{background:var(--accent-hi)}
+.plans .plan.is-pop:active{transform:scale(.985)}
+@media (prefers-reduced-motion:reduce){
+  .plans .plan:active,.plans .plan.is-pop:active{transform:none}
+  .hero-plans{transition:color var(--t-fast) var(--ease-out)}
+}
+
+/* Solo donde el menu esta oculto: arriba de 1080px el enlace ya vive en .links
+   y repetirlo seria ruido. Abajo, es la unica via rapida a los precios. */
+.nav-plans{display:none;font-family:var(--display);font-weight:600;font-size:14px;
+  color:var(--ink-2);text-decoration:none;white-space:nowrap;
+  transition:color var(--t-fast) var(--ease-out)}
+.nav-plans:active{opacity:.6}
+@media (max-width:1080px){ .nav-plans{display:inline-block} }
+@media (max-width:420px){ .nav-plans{font-size:13px} }
+@media (hover:hover) and (pointer:fine){ .nav-plans:hover{color:var(--accent)} }
+
+
+/* ---------- preguntas frecuentes ----------
+   <details> nativo: el acordeon funciona sin una linea de guion, responde al
+   teclado solo y el buscador ve el texto aunque este cerrado. El atributo
+   name los vuelve excluyentes donde el navegador lo soporta; donde no, se
+   abren varios, que es una degradacion sin consecuencias. */
+.faq{margin-top:clamp(40px,6vw,64px)}
+.faq-i{border-bottom:1px solid var(--line-2)}
+.faq-i:first-of-type{border-top:1px solid var(--line-2)}
+.faq-i summary{display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:20px 2px;cursor:pointer;list-style:none;
+  font-family:var(--display);font-weight:600;font-size:clamp(15px,1.7vw,17px);
+  letter-spacing:-.01em;color:var(--ink);
+  transition:color var(--t-fast) var(--ease-out)}
+.faq-i summary::-webkit-details-marker{display:none}
+.faq-i summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r-xs)}
+.faq-mark{display:grid;place-items:center;width:26px;height:26px;flex:none;color:var(--mute);
+  border-radius:50%;background:var(--paper-3);
+  transition:transform var(--t-ui) var(--ease-out),background var(--t-fast) var(--ease-out),
+    color var(--t-fast) var(--ease-out)}
+.faq-mark svg{width:16px;height:16px}
+.faq-i[open] .faq-mark{transform:rotate(180deg);background:var(--wash);color:var(--accent)}
+.faq-i p{padding:0 2px 22px;margin-top:-4px;max-width:66ch;
+  font-size:15px;line-height:1.65;color:var(--ink-2);text-wrap:pretty}
+@media (prefers-reduced-motion:no-preference){
+  .faq-i[open] p{animation:faqIn 260ms var(--ease-out) both}
+  @keyframes faqIn{from{opacity:0;transform:translateY(-4px)}}
+}
+@media (hover:hover) and (pointer:fine){
+  .faq-i summary:hover{color:var(--accent)}
+  .faq-i summary:hover .faq-mark{background:var(--wash);color:var(--accent)}
+}
+/* En el telefono la FAQ va despues de la comparacion y antes del cierre. */
+@media (max-width:880px){
+  .pl-wrap .ruta{order:6}
+  .pl-wrap .faq{order:7}
+  .pl-wrap .cp-next{order:8}
+}
+
+/* ---------- permiso de mercadeo ----------
+   Tiene que leerse como una casilla distinta, no como la continuacion de la
+   obligatoria: el consentimiento de la sesion cubre agendar y preparar, este
+   cubre escribirle despues. Si las dos parecen la misma, el permiso separado
+   no sirve para nada. Va mas tenue y con su propia separacion. */
+.su-mkt{margin-top:-4px;padding-top:12px;border-top:1px solid var(--line-2)}
+.su-mkt span{color:var(--mute)}
+
+
+/* ---------- el orden del trabajo ----------
+   Los planes dicen que acceso da cada uno; esto dice que se hace y en que
+   orden. Cuatro etapas, doce pasos numerados por un contador de CSS: los
+   rotulos de rango (01-03, 04-06...) y la numeracion de los pasos no pueden
+   separarse porque salen de la misma cuenta.
+   La ultima linea marca donde termina el servicio, y esa frontera es parte
+   de la oferta, no una nota al pie. */
+.ruta{margin-top:clamp(40px,6vw,64px)}
+.ruta .lbl{margin:0 0 10px}
+.ruta-lede{max-width:62ch;color:var(--ink-2);font-size:clamp(15px,1.5vw,16.5px);
+  line-height:1.6;margin:0 0 clamp(20px,3vw,28px)}
+.ruta-grid{counter-reset:paso;list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.ruta-st{background:var(--paper-2);border:1px solid var(--line);
+  border-radius:var(--r-md);padding:clamp(20px,2.4vw,26px);
+  transition:border-color var(--t-ui) var(--ease-out),
+             box-shadow var(--t-ui) var(--ease-out)}
+.ruta-rng{font-family:var(--display);font-size:12px;font-weight:600;
+  letter-spacing:.12em;color:var(--accent);margin:0 0 8px;
+  font-variant-numeric:tabular-nums}
+.ruta-n{font-size:clamp(18px,2vw,21px);letter-spacing:-.02em;margin:0}
+.ruta-d{font-size:14.5px;color:var(--ink-2);line-height:1.55;margin:8px 0 0}
+.ruta-steps{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.ruta-steps li{display:grid;grid-template-columns:auto 1fr;gap:10px;
+  align-items:start;font-size:14.5px;color:var(--ink);line-height:1.5;
+  counter-increment:paso}
+.ruta-steps li::before{content:counter(paso,decimal-leading-zero);
+  font-family:var(--display);font-size:11.5px;font-weight:600;color:var(--mute);
+  font-variant-numeric:tabular-nums;background:var(--paper-3);
+  border-radius:var(--r-xs);padding:3px 6px;margin-top:1px}
+.ruta-stop{max-width:70ch;margin:clamp(20px,3vw,26px) 0 0;padding-top:18px;
+  border-top:1px solid var(--line-2);font-size:14px;color:var(--mute);
+  line-height:1.6}
+@media (max-width:760px){.ruta-grid{grid-template-columns:1fr}}
+@media (hover:hover) and (pointer:fine){
+  .ruta-st:hover{border-color:rgba(31,95,168,.34);
+    box-shadow:0 0 0 3px rgba(31,95,168,.10)}
+}
+
+
+/* ---------- el metodo, las credenciales y la declaracion ----------
+   El nombre dejo de ser el H1: ahora el H1 es la propuesta de valor y el
+   nombre queda como marca denominativa. La animacion vive en .hero-name,
+   que es clase, asi que cambiar la etiqueta no la toca.
+   La declaracion de comision se lee distinta al resto de la tarjeta a
+   proposito: no es una caracteristica, es una advertencia. */
+.hero-h1{font-family:var(--display);font-size:clamp(20px,2.4vw,27px);font-weight:700;
+  letter-spacing:-.025em;line-height:1.18;color:var(--ink);max-width:22ch;margin:18px 0 0}
+.ab-creds{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.ab-creds .lbl{margin:0 0 12px}
+.ab-creds ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ab-creds li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;
+  font-size:14.5px;line-height:1.5;color:var(--ink)}
+.ab-creds i{display:grid;place-items:center;width:20px;height:20px;flex:none;margin-top:1px;
+  border-radius:50%;background:var(--wash);color:var(--accent)}
+.ab-creds i svg{width:13px;height:13px}
+.mt-grid{counter-reset:none;list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mt-c{position:relative;background:var(--paper-2);border:1px solid var(--line);
+  border-radius:var(--r-md);padding:clamp(20px,2.4vw,26px);
+  transition:border-color var(--t-ui) var(--ease-out),box-shadow var(--t-ui) var(--ease-out)}
+.mt-ic{display:grid;place-items:center;width:38px;height:38px;border-radius:var(--r-sm);
+  background:var(--wash);color:var(--accent);margin-bottom:14px}
+.mt-ic svg{width:21px;height:21px}
+.mt-num{position:absolute;top:clamp(20px,2.4vw,26px);right:clamp(20px,2.4vw,26px);
+  font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.1em;
+  color:var(--mute);font-variant-numeric:tabular-nums}
+.mt-c h3{font-size:clamp(16px,1.7vw,18px);letter-spacing:-.015em;margin:0}
+.mt-c p{font-size:14px;color:var(--ink-2);line-height:1.55;margin:8px 0 0}
+.plan-disc{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--line-2);
+  font-size:12.5px;line-height:1.55;color:var(--mute)}
+@media (max-width:1080px){.mt-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.mt-grid{grid-template-columns:1fr}}
+@media (hover:hover) and (pointer:fine){
+  .mt-c:hover{border-color:rgba(31,95,168,.34);box-shadow:0 0 0 3px rgba(31,95,168,.10)}
+}
+
+/* ---------- Portafolio Global: la pagina de pre-calificacion ----------
+   Vive en el mismo sistema que el resto del sitio y no imita la marca del
+   puesto de bolsa: es la pagina de Alexandre nombrando a su socio, no una
+   pagina de BN Valores. Esa distincion protege a los dos.
+   El bloque .bn-kyc se lee mas fuerte que el resto del formulario a
+   proposito: que NO se pidan documentos es la promesa, no una nota. */
+.bn-wrap{padding-bottom:clamp(40px,6vw,72px)}
+.bn-hero{padding-top:clamp(24px,4vw,44px)}
+.bn-hero .lbl{margin:0 0 12px}
+.bn-h1{font-size:clamp(34px,5.2vw,62px);letter-spacing:-.04em;line-height:1.02;max-width:16ch;margin:0}
+.bn-lede{max-width:64ch;margin:18px 0 0}
+.bn-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+  margin:clamp(26px,3.5vw,38px) 0 0;padding:22px 0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bn-stats div{display:grid;gap:4px}
+.bn-stats b{font-family:var(--display);font-size:clamp(20px,2.6vw,28px);font-weight:800;
+  letter-spacing:-.03em;line-height:1;color:var(--accent)}
+.bn-stats span{font-size:13px;color:var(--mute);line-height:1.35}
+.bn-cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.bn-sec{margin-top:clamp(48px,7vw,86px)}
+.bn-sec .lbl{margin:0 0 10px}
+.bn-h2{font-size:clamp(24px,3.1vw,38px);letter-spacing:-.03em;line-height:1.06;max-width:20ch;margin:0 0 18px}
+.bn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bn-c{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:clamp(22px,2.6vw,30px);
+  transition:border-color var(--t-ui) var(--ease-out),box-shadow var(--t-ui) var(--ease-out)}
+.bn-ic{display:grid;place-items:center;width:38px;height:38px;border-radius:var(--r-sm);
+  background:var(--wash);color:var(--accent);margin-bottom:14px}
+.bn-ic svg{width:21px;height:21px}
+.bn-c h3{font-size:clamp(16px,1.8vw,19px);letter-spacing:-.02em;margin:0}
+.bn-c p{font-size:14.5px;color:var(--ink-2);line-height:1.55;margin:8px 0 0}
+.bn-list{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:12px;max-width:70ch}
+/* Nada de grid aqui: cada nodo de texto suelto se volveria una celda y el
+   <b> quedaria en una columna y el resto de la frase en otra. */
+.bn-list li{position:relative;padding:0 0 12px 20px;
+  font-size:15px;line-height:1.55;color:var(--ink-2);
+  border-bottom:1px solid var(--line-2)}
+.bn-list li::before{content:"";position:absolute;left:0;top:.62em;
+  width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.bn-list b{color:var(--ink)}
+.bn-note{max-width:68ch;margin:22px 0 0;font-size:14.5px;line-height:1.6;color:var(--mute)}
+.bn-steps{list-style:none;counter-reset:none;margin:0;padding:0;display:grid;gap:12px}
+.bn-steps li{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:clamp(18px,2.2vw,24px);
+  transition:border-color var(--t-ui) var(--ease-out),box-shadow var(--t-ui) var(--ease-out)}
+.bn-n{font-family:var(--display);font-size:clamp(20px,2.4vw,26px);font-weight:800;
+  letter-spacing:-.03em;color:var(--paper-3);line-height:1;font-variant-numeric:tabular-nums;
+  transition:color var(--t-ui) var(--ease-out)}
+.bn-steps h3{font-size:clamp(16px,1.8vw,19px);letter-spacing:-.02em;margin:0}
+.bn-steps p{font-size:14.5px;color:var(--ink-2);line-height:1.55;margin:6px 0 0}
+.bn-kyc{max-width:66ch;margin:0 0 24px;padding:16px 18px;border-radius:var(--r-md);
+  background:var(--wash);border:1px solid rgba(31,95,168,.18);
+  font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+.bn-kyc b{color:var(--ink)}
+.bn-form{display:grid;gap:18px;max-width:780px}
+.bn-fg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.bn-f{display:grid;gap:7px}
+.bn-f>span{font-family:var(--display);font-size:13px;font-weight:600;color:var(--ink-2)}
+.bn-f input,.bn-f select{width:100%;padding:13px 14px;border-radius:var(--r-sm);
+  border:1px solid var(--line);background:var(--paper-2);color:var(--ink);
+  font-family:var(--body);font-size:15.5px;
+  transition:border-color var(--t-fast) var(--ease-out),box-shadow var(--t-fast) var(--ease-out)}
+.bn-f input:focus,.bn-f select:focus{outline:none;border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(31,95,168,.14)}
+.bn-go{display:grid;gap:10px;justify-items:start}
+.bn-err{margin:0;font-size:14px;color:var(--crit)}
+.bn-disc{margin:clamp(48px,7vw,80px) 0 0;padding-top:20px;border-top:1px solid var(--line);
+  font-size:12.5px;line-height:1.65;color:var(--mute);max-width:100ch}
+@media (max-width:880px){
+  .bn-stats{grid-template-columns:repeat(2,1fr);gap:18px}
+  .bn-grid{grid-template-columns:1fr}
+  .bn-fg{grid-template-columns:1fr}
+  .bn-cta-row .btn{width:100%;justify-content:center}
+}
+/* Los cuatro pasos respondian a la entrada pero no al puntero, mientras las
+   tres tarjetas de arriba si: en la misma pagina, unas vivas y otras muertas.
+   Resaltado igual que las tarjetas, y el numero se enciende. Nada de hundirse
+   al presionar: un paso no lleva a ninguna parte, y anunciar que responde
+   seria mentir -- la misma razon por la que las cajas de "Incluido en los
+   tres" tampoco lo llevan. */
+@media (hover:hover) and (pointer:fine){
+  .bn-c:hover,.bn-steps li:hover{border-color:rgba(31,95,168,.34);
+    box-shadow:0 0 0 3px rgba(31,95,168,.10)}
+  .bn-steps li:hover .bn-n{color:var(--accent)}
+}
+
+/* ---------- el espacio de la marca del socio ----------
+   Queda vacio a proposito hasta que BN Valores autorice el uso del
+   logotipo por escrito. Ponerlo antes del acuerdo afirmaria un respaldo
+   que no existe. Cuando llegue la autorizacion, esto se reemplaza por un
+   <img> y el borde punteado se va con el. */
+.bn-partner{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;
+  margin:26px 0 0;padding:18px;border:1px solid var(--line);border-radius:var(--r-md);
+  background:var(--paper-2);max-width:70ch}
+.bn-logo{display:grid;place-content:center;gap:2px;text-align:center;
+  width:190px;min-height:78px;padding:10px 14px;border-radius:var(--r-sm);
+  border:1.5px dashed rgba(11,27,51,.22);background:var(--paper)}
+.bn-logo span{font-family:var(--display);font-size:12.5px;font-weight:600;color:var(--mute)}
+.bn-logo small{font-size:10.5px;line-height:1.35;color:var(--mute);opacity:.8}
+.bn-partner-t{margin:0;font-size:14px;line-height:1.55;color:var(--ink-2)}
+.bn-partner-t b{display:block;font-family:var(--display);font-size:15.5px;
+  letter-spacing:-.015em;color:var(--ink);margin-bottom:3px}
+@media (max-width:640px){
+  .bn-partner{grid-template-columns:1fr;justify-items:start}
+  .bn-logo{width:100%}
+}
+
+/* ---------- los saltos internos de la pagina BN ----------
+   El encabezado es position:fixed y mide 64px. En el resto del sitio los
+   enlaces #ancla los intercepta app.js, que resta 70px a mano; esta pagina
+   no lo carga, asi que el destino aterrizaba debajo del encabezado.
+   scroll-margin-top lo resuelve sin JavaScript, y sobrevive a que alguien
+   llegue con la ancla ya en la URL. */
+.bn-sec[id],#bnForm,#bn-que{scroll-margin-top:84px}
+@media (prefers-reduced-motion: no-preference){
+  html:has(.bn-wrap){scroll-behavior:smooth}
+}
+
+</style>
+</head>
+<body>
+<header id="nav" class="stuck">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html" aria-label="Alexandre Lozada"><i>AL</i><span class="bt">Alexandre Lozada</span></a>
+    <div class="nav-r">
+      <a class="btn btn-ghost btn-sm" href="index.html">Volver al sitio</a>
+    </div>
+  </div>
+</header>
+
+<main class="sp-main">
+  <div class="wrap bn-wrap">
+
+    <section class="bn-hero">
+      <p class="lbl">Portafolio Global · BN Valores</p>
+      <h1 class="bn-h1">Llegue a la inversión con la casa en orden.</h1>
+      <p class="lede bn-lede">Abrir una cuenta de inversión es fácil. Sostenerla es lo difícil. Mi trabajo es
+        que usted llegue ahí con el fondo de emergencia hecho, la deuda cara fuera del camino y un perfil de
+        riesgo definido con sus propios números — no con una encuesta de cinco preguntas.</p>
+      <div class="bn-stats">
+        <div><b>$2.000</b><span>inversión inicial</span></div>
+        <div><b>$100</b><span>aportes adicionales</span></div>
+        <div><b>5</b><span>portafolios modelo</span></div>
+        <div><b>SUGEVAL</b><span>entidad regulada</span></div>
+      </div>
+      <div class="bn-cta-row">
+        <a class="btn btn-solid" href="#bnForm">Empezar la pre-calificación</a>
+        <a class="btn btn-ghost" href="#bn-que">Qué es Portafolio Global</a>
+      </div>
+    </section>
+
+    <section class="bn-sec" aria-labelledby="bnWhyH">
+      <p class="lbl">Por qué a través de mí</p>
+      <h2 class="bn-h2" id="bnWhyH">La cuenta se abre una vez. Las decisiones siguen apareciendo.</h2>
+      <div class="bn-grid stagger">
+        <div class="bn-c">
+          <span class="bn-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 4v5h5"/><path d="M12 7v5l3 2"/></svg></span>
+          <h3>Llega preparado, no improvisando</h3>
+          <p>La mayoría abre la cuenta antes de tener el piso. Cuando llega el imprevisto y toca retirar en el
+            peor momento, no falló la inversión: faltaba el colchón. Primero el colchón.</p>
+        </div>
+        <div class="bn-c">
+          <span class="bn-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></span>
+          <h3>Su perfil sale de sus números</h3>
+          <p>De su flujo de caja real, su horizonte y lo que de verdad puede dejar quieto sin tocarlo. Un perfil
+            de riesgo que no aguanta un mal trimestre no era su perfil.</p>
+        </div>
+        <div class="bn-c">
+          <span class="bn-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v5H4z"/><path d="M4 13h16v7H4z"/><path d="M8 17h5"/></svg></span>
+          <h3>Alguien sigue mirando después</h3>
+          <p>Revisión escrita cada mes: qué cambió, qué vigilar y qué decidir. El momento de mayor riesgo no es
+            el día que abre la cuenta, es el primer trimestre en rojo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bn-sec" id="bn-que" aria-labelledby="bnQueH">
+      <p class="lbl">El destino</p>
+      <h2 class="bn-h2" id="bnQueH">Qué es Portafolio Global.</h2>
+      <p class="lede bn-lede">Un servicio de BN Valores, el puesto de bolsa del Banco Nacional de Costa Rica,
+        regulado y supervisado por la Superintendencia General de Valores. La cuenta queda a nombre suyo.</p>
+      <ul class="bn-list">
+        <li><b>Cinco portafolios modelo</b>, cada uno construido para un perfil de riesgo distinto.</li>
+        <li><b>Desde $2.000</b> de inversión inicial, con aportes adicionales a partir de $100.</li>
+        <li><b>Mercados locales e internacionales</b> en una sola cartera diversificada.</li>
+        <li><b>Reportería</b> para que usted vea qué tiene y cómo se comporta.</li>
+      </ul>
+      <div class="bn-partner">
+        <div class="bn-logo" role="img" aria-label="Espacio reservado para el logotipo de BN Valores">
+          <span>Logotipo de BN Valores</span>
+          <small>espacio reservado, sujeto a autorización de marca</small>
+        </div>
+        <p class="bn-partner-t"><b>BN Valores Puesto de Bolsa</b>Puesto de bolsa del Banco Nacional de Costa Rica,
+          regulado y supervisado por la Superintendencia General de Valores.</p>
+      </div>
+
+      <p class="bn-note">Yo no ejecuto órdenes, no administro su dinero y no selecciono sus instrumentos. Eso lo
+        hace BN Valores, que es la entidad regulada. Lo mío es que usted llegue listo y no se salga a destiempo.</p>
+    </section>
+
+    <section class="bn-sec" aria-labelledby="bnStepH">
+      <p class="lbl">Cómo funciona</p>
+      <h2 class="bn-h2" id="bnStepH">Cuatro pasos, en orden.</h2>
+      <ol class="bn-steps stagger">
+        <li><span class="bn-n" aria-hidden="true">01</span><div><h3>Diagnóstico</h3><p>Dónde está parado hoy: a dónde se va el dinero y cuántos meses aguanta si el ingreso se detiene.</p></div></li>
+        <li><span class="bn-n" aria-hidden="true">02</span><div><h3>Reestructuración</h3><p>Ordenar el flujo de caja y sacar del camino la deuda que cobra más de lo que cualquier portafolio rinde.</p></div></li>
+        <li><span class="bn-n" aria-hidden="true">03</span><div><h3>Acumulación</h3><p>El fondo de emergencia primero, y después el capital semilla hasta llegar al mínimo de entrada.</p></div></li>
+        <li><span class="bn-n" aria-hidden="true">04</span><div><h3>Apertura con BN Valores</h3><p>Su perfil de riesgo definido, y la apertura de la cuenta con un asesor de BN Valores. Ellos solicitan los documentos; yo lo acompaño.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="bn-sec" id="bnForm" aria-labelledby="bnFormH">
+      <p class="lbl">Pre-calificación</p>
+      <h2 class="bn-h2" id="bnFormH">Seis preguntas y sus datos de contacto.</h2>
+
+      <p class="bn-kyc"><b>No le pido cédula ni documentos.</b> Esos los solicita BN Valores directamente, cuando
+        usted ya haya decidido abrir la cuenta. Aquí solo mido si está listo y qué perfil le corresponde.</p>
+
+      <form class="bn-form" id="bnF" novalidate>
+        <div class="bn-fg">
+          <label class="bn-f"><span>Nombre completo</span><input id="bnName" type="text" autocomplete="name" required></label>
+          <label class="bn-f"><span>Correo</span><input id="bnMail" type="email" autocomplete="email" required></label>
+          <label class="bn-f"><span>WhatsApp</span><input id="bnWa" type="tel" autocomplete="tel" inputmode="tel" placeholder="+506 0000 0000"></label>
+        </div>
+
+        <div class="bn-fg">
+          <label class="bn-f"><span>¿Tiene fondo de emergencia?</span>
+            <select id="bnQ1">
+              <option value="">Seleccione</option>
+              <option value="si">Sí, tres meses o más</option>
+              <option value="parcial">Parcial, menos de tres meses</option>
+              <option value="no">Todavía no</option>
+            </select></label>
+          <label class="bn-f"><span>¿Tiene saldo en tarjetas de crédito?</span>
+            <select id="bnQ2">
+              <option value="">Seleccione</option>
+              <option value="no">No</option>
+              <option value="pagando">Sí, con un plan de pago en marcha</option>
+              <option value="problema">Sí, y me pesa cada mes</option>
+            </select></label>
+          <label class="bn-f"><span>Monto que podría destinar</span>
+            <select id="bnQ3">
+              <option value="">Seleccione</option>
+              <option value="2-5k">Entre $2.000 y $5.000</option>
+              <option value="5-15k">Entre $5.000 y $15.000</option>
+              <option value="15k+">Más de $15.000</option>
+              <option value="nose">Todavía no lo sé</option>
+            </select></label>
+          <label class="bn-f"><span>¿En cuánto tiempo lo necesitaría?</span>
+            <select id="bnQ4">
+              <option value="">Seleccione</option>
+              <option value="-3">En menos de 3 años</option>
+              <option value="3-7">Entre 3 y 7 años</option>
+              <option value="7+">En más de 7 años</option>
+            </select></label>
+          <label class="bn-f"><span>Experiencia invirtiendo</span>
+            <select id="bnQ5">
+              <option value="">Seleccione</option>
+              <option value="ninguna">Ninguna</option>
+              <option value="alguna">Alguna</option>
+              <option value="bastante">Bastante</option>
+            </select></label>
+          <label class="bn-f"><span>¿Qué le preocupa más?</span>
+            <select id="bnQ6">
+              <option value="">Seleccione</option>
+              <option value="perder">Perder parte del capital</option>
+              <option value="inflacion">Que la inflación se coma el ahorro</option>
+              <option value="liquidez">No poder disponer del dinero</option>
+              <option value="entender">No entender en qué estoy metido</option>
+            </select></label>
+        </div>
+
+        <label class="su-consent"><input type="checkbox" id="bnOk" required><span>Autorizo a Alexandre Lozada a
+          usar estos datos para contactarme y, si decido avanzar, a compartirlos con BN Valores Puesto de Bolsa
+          con el único fin de coordinar la apertura de mi cuenta.</span></label>
+        <label class="su-consent su-mkt"><input type="checkbox" id="bnMkt"><span>Además, quiero recibir sus
+          artículos y análisis por correo. Esto es aparte y puedo darme de baja cuando quiera.</span></label>
+
+        <div class="bn-go">
+          <button class="btn btn-solid" type="submit">Enviar mi pre-calificación</button>
+          <p class="bn-err" id="bnErr" role="alert" hidden></p>
+        </div>
+      </form>
+
+      <div class="sent" id="bnDone" hidden>
+        <b>Recibido.</b>
+        <p>Le escribo en menos de 48 horas con su lectura y el siguiente paso. Si todavía no está listo para
+          abrir la cuenta, se lo voy a decir — es la parte del trabajo que nadie cobra y que más ahorra.</p>
+      </div>
+    </section>
+
+    <p class="bn-disc">Alexandre Lozada brinda educación financiera, planeación y estructuración patrimonial. No
+      es puesto de bolsa, no ejecuta órdenes, no administra el dinero del cliente ni capta fondos del público. La
+      cuenta se abre a nombre del cliente en BN Valores Puesto de Bolsa, entidad regulada por SUGEVAL, que
+      solicita directamente la documentación de identificación y conocimiento del cliente. Alexandre Lozada
+      mantiene un acuerdo comercial con BN Valores y percibe una comisión por las cuentas que se abran por su
+      referencia; esta relación se declara por escrito antes de cualquier recomendación. Toda inversión implica
+      riesgo y el desempeño pasado no garantiza resultados futuros.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot"><span>© 2026 Alexandre Lozada · Heredia, Costa Rica</span><span>Claridad financiera</span></div>
+  </div>
+</footer>
+
+<script>
+  /* ═══════════════ PORTAFOLIO GLOBAL: PRE-CALIFICACION ═══════════════
+     Esta pagina NO recoge documentos de identidad. El conocimiento del
+     cliente es obligacion de BN Valores, que es la entidad regulada, y
+     duplicarlo aqui solo trasladaria responsabilidad sin aportar nada.
+     Lo que se recoge es si la persona esta lista y que perfil le toca.
+
+     Todo vive dentro de este cierre: el guardia de declaraciones
+     duplicadas del build solo lee nombres con sangria de dos espacios,
+     y aqui dentro nada la tiene. */
+  (() => {
+    const EP = "https://script.google.com/macros/s/AKfycbzesY6E8kjU48TvLbjr-qGEIZ3Ij3lVEf_zY0MiZIkCRQyznOi-GZZ0YR6DtsvJ_M15Jg/exec"; /* build:bnendpoint */
+    const MAILRE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    /* Revelado. El CSS deja .rv y .stagger en opacidad cero y quien los
+       enciende es app.js, que esta pagina no carga: sin esto las tarjetas
+       quedan invisibles. Misma mecanica que el sitio, en corto. */
+    const reveal = el => {
+      el.classList.add("in");
+      if (el.classList.contains("stagger")) setTimeout(() => el.classList.add("settled"), 1000);
+    };
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting){ reveal(e.target); io.unobserve(e.target); }
+    }), { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    document.querySelectorAll(".rv, .stagger").forEach(n => io.observe(n));
+    // Red de seguridad: lo que ya este en pantalla no depende del observador.
+    setTimeout(() => {
+      const vh = window.innerHeight;
+      document.querySelectorAll(".rv:not(.in), .stagger:not(.in)").forEach(n => {
+        const r = n.getBoundingClientRect();
+        if (r.top < vh && r.bottom > 0){ reveal(n); io.unobserve(n); }
+      });
+    }, 2500);
+
+    const form = document.getElementById("bnF");
+    const done = document.getElementById("bnDone");
+    const err = document.getElementById("bnErr");
+    if (!form) return;
+
+    const el = id => document.getElementById(id);
+    const QS = [["fondo", "bnQ1"], ["tarjetas", "bnQ2"], ["monto", "bnQ3"],
+                ["horizonte", "bnQ4"], ["experiencia", "bnQ5"], ["preocupa", "bnQ6"]];
+
+    function fail(msg, focus){
+      err.textContent = msg;
+      err.hidden = false;
+      if (focus) focus.focus();
+    }
+
+    form.addEventListener("submit", async ev => {
+      ev.preventDefault();
+      err.hidden = true;
+
+      const name = el("bnName").value.trim();
+      const mail = el("bnMail").value.trim();
+      if (!name) return fail("Escriba su nombre.", el("bnName"));
+      if (!MAILRE.test(mail)) return fail("Revise el correo: no parece valido.", el("bnMail"));
+      if (!el("bnOk").checked) return fail("Necesito su autorizacion para poder contactarle.", el("bnOk"));
+
+      // El perfil viaja como una sola cadena legible: la hoja lo lee de un vistazo.
+      const perfil = QS.map(([k, id]) => k + "=" + (el(id).value || "-")).join("; ");
+
+      let tz = "";
+      try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch { /* navegador viejo */ }
+
+      const body = JSON.stringify({
+        name: name.slice(0, 80),
+        email: mail.slice(0, 160),
+        whatsapp: el("bnWa").value.trim().slice(0, 32),
+        goal: "investing",
+        source: "bn-portafolio",
+        lang: "es",
+        consent: true,
+        marketing: el("bnMkt").checked,
+        timezone: tz,
+        bnProfile: perfil
+      });
+
+      const btn = form.querySelector("button[type=submit]");
+      btn.disabled = true;
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 15000);
+      let ok = false;
+      try {
+        if (!EP) throw new Error("sin endpoint");
+        // text/plain mantiene la peticion simple: sin preflight CORS para Apps Script
+        const res = await fetch(EP, { method: "POST", signal: ctrl.signal,
+          headers: { "Content-Type": "text/plain;charset=utf-8" }, body });
+        ok = res.ok;
+        if (ok){ const j = await res.json().catch(() => ({ ok: true })); ok = j.ok !== false; }
+      } catch { ok = false; } finally { clearTimeout(timer); btn.disabled = false; }
+
+      if (ok){
+        form.hidden = true;
+        done.hidden = false;
+        done.scrollIntoView({ block: "center", behavior: "smooth" });
+      } else {
+        fail("No pude enviarlo. Reviselo en un momento, o escribame por WhatsApp.");
+      }
+    });
+  })();
+
+</script>
+</body>
+</html>
