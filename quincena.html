@@ -3,17 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Resumen ejecutivo para BN Valores - Alexandre Lozada</title>
-<meta name="description" content="Documento de trabajo: propuesta de canal de adquisicion pre-calificado para Portafolio Global.">
-<meta name="robots" content="noindex">
+<title>Planificador de quincena y aguinaldo - Alexandre Lozada</title>
+<meta name="description" content="Reparta su quincena y su aguinaldo en bloques con destino: gastos fijos, colchon, inversion y obligaciones anuales. Con los porcentajes ajustables, en colones o dolares.">
 <meta name="theme-color" content="#F6F8FB">
-<link rel="canonical" href="https://alexlozada7.github.io/propuesta-bn-valores.html">
+<link rel="canonical" href="https://alexlozada7.github.io/quincena.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B1B33'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='13' fill='white' text-anchor='middle'%3EAL%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alexandre Lozada">
-<meta property="og:url" content="https://alexlozada7.github.io/propuesta-bn-valores.html">
-<meta property="og:title" content="Resumen ejecutivo para BN Valores - Alexandre Lozada">
-<meta property="og:description" content="Documento de trabajo: propuesta de canal de adquisicion pre-calificado para Portafolio Global.">
+<meta property="og:url" content="https://alexlozada7.github.io/quincena.html">
+<meta property="og:title" content="Planificador de quincena y aguinaldo - Alexandre Lozada">
+<meta property="og:description" content="Reparta su quincena y su aguinaldo en bloques con destino: gastos fijos, colchon, inversion y obligaciones anuales. Con los porcentajes ajustables, en colones o dolares.">
 <meta property="og:image" content="https://alexlozada7.github.io/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -1910,7 +1909,7 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
   <div class="wrap nav-in">
     <a class="brand" href="index.html" aria-label="Alexandre Lozada"><i>AL</i><span class="bt">Alexandre Lozada</span></a>
     <div class="nav-r">
-      <a class="btn btn-ghost btn-sm" href="bn.html"><span>Ver la página del cliente</span></a>
+      <a class="btn btn-ghost btn-sm" href="index.html"><span>Volver al sitio</span></a>
     </div>
   </div>
 </header>
@@ -1919,122 +1918,236 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
   <div class="wrap bn-wrap">
 
     <section class="bn-hero">
-      <p class="lbl">Resumen ejecutivo · BN Valores Puesto de Bolsa</p>
-      <h1 class="bn-h1">Un canal de adquisición pre-calificado para Portafolio Global.</h1>
-      <p class="lede bn-lede">Propongo un acuerdo de referencia: yo estructuro el orden financiero previo
-        —flujo de caja, deuda, fondo de emergencia y capital semilla— y le entrego a BN Valores un inversionista
-        que llega listo para la apertura. La ejecución, la custodia y la asignación del portafolio quedan
-        íntegramente de su lado.</p>
-      <p class="pr-meta">Documento de trabajo, preparado por Alexandre Lozada · Heredia, Costa Rica ·
-        Septiembre de 2026. No indexado en buscadores.</p>
+      <p class="lbl">Herramienta de planificación</p>
+      <h1 class="bn-h1">A dónde va su quincena, y a dónde debería ir su aguinaldo.</h1>
+      <p class="lede bn-lede">Dos repartos, uno para el dinero que entra cada quincena y otro para el que
+        entra una vez al año. Las proporciones que vienen puestas son un punto de partida razonable, no una
+        receta: muévalas hasta que describan su caso. Lo que importa es que cada colón tenga destino
+        <em>antes</em> del día de pago, no después.</p>
     </section>
 
-    <section class="bn-sec" aria-labelledby="prFricH">
-      <p class="lbl">El problema</p>
-      <h2 class="bn-h2" id="prFricH">Educar al cliente retail encarece cada cuenta.</h2>
-      <div class="bn-grid">
-        <div class="bn-c">
-          <h3>La fricción que ustedes absorben</h3>
-          <p>El asesor institucional termina asumiendo un rol educativo que diluye su enfoque técnico.
-            Explicar riesgo y volatilidad a alguien que todavía no tiene un sistema de ahorro eleva el costo
-            de adquisición y baja la eficiencia comercial — sobre un ticket de entrada de $2.000, ese costo
-            rara vez se amortiza.</p>
-          <p>Y el fracaso caro no es la cuenta que no abre. Es la que abre, aporta dos meses y se cierra en
-            el primer trimestre en rojo, porque nunca hubo colchón detrás.</p>
+    <section class="bn-sec" aria-labelledby="qFormH">
+      <h2 class="sr" id="qFormH">Sus datos</h2>
+
+      <div class="q-ctl">
+        <div class="per q-mode" id="qMode" role="group" aria-label="Qué está repartiendo">
+          <span class="per-ind" aria-hidden="true"></span>
+          <button type="button" data-mode="q" aria-pressed="true">Distribución quincenal</button>
+          <button type="button" data-mode="a" aria-pressed="false">Estrategia de aguinaldo</button>
         </div>
-        <div class="bn-c">
-          <h3>Lo que aporto antes del traspaso</h3>
-          <p>Ordeno el flujo de caja, elimino la deuda que cobra más de lo que cualquier portafolio rinde,
-            construyo el fondo de emergencia y sistematizo la acumulación hasta el mínimo de entrada.</p>
-          <p>El cliente llega entendiendo qué riesgo puede sostener con sus propios números, no con la
-            respuesta que dio en una encuesta. Eso es menor deserción y menos horas de asesor gastadas en
-            educar a quien todavía no estaba listo.</p>
+        <div class="q-cur" id="qCur" role="group" aria-label="Moneda">
+          <button type="button" data-cur="crc" aria-pressed="true">CRC ₡</button>
+          <button type="button" data-cur="usd" aria-pressed="false">USD $</button>
         </div>
       </div>
+
+      <label class="rt-m q-amount"><span id="qAmountL">Salario neto por quincena</span>
+        <span class="rt-in"><i aria-hidden="true" id="qSym">₡</i>
+          <input id="qAmount" type="number" inputmode="decimal" min="0" step="5000" value="450000"></span></label>
+
+      <p class="q-hint" id="qHint">El aguinaldo en Costa Rica equivale a un mes de salario, así que suele ser
+        cerca del doble de una quincena.</p>
     </section>
 
-    <section class="bn-sec" aria-labelledby="prFlujoH">
-      <p class="lbl">Flujo operativo</p>
-      <h2 class="bn-h2" id="prFlujoH">Dónde termina mi trabajo y empieza el suyo.</h2>
-      <ol class="bn-steps">
-        <li><span class="bn-n" aria-hidden="true">01</span><div><h3>Orden financiero</h3>
-          <p>Diagnóstico del flujo de caja, plan de salida de la deuda cara y fondo de emergencia.
-            Acumulación sistemática hasta los $2.000, apalancando ingresos estacionales:
-            aguinaldo, excedentes solidaristas y FCL.</p></div></li>
-        <li><span class="bn-n" aria-hidden="true">02</span><div><h3>Preparación y traspaso</h3>
-          <p>Traduzco expectativa de mercado y tolerancia al riesgo a términos que el cliente entiende, y se
-            lo presento a su ejecutivo con el contexto ya construido: monto, horizonte, capacidad real y qué
-            le preocupa.</p></div></li>
-        <li><span class="bn-n" aria-hidden="true">03</span><div><h3>Ejecución institucional</h3>
-          <p>BN Valores asume el control: conocimiento del cliente, recepción de fondos en custodia,
-            asignación del portafolio modelo y ejecución. La cuenta queda a nombre del cliente.</p></div></li>
-      </ol>
+    <section class="bn-sec" id="qOut" aria-labelledby="qOutH" aria-live="polite">
+      <div class="q-head">
+        <div>
+          <p class="lbl">El reparto</p>
+          <h2 class="bn-h2" id="qOutH">Cada colón con destino.</h2>
+        </div>
+        <p class="q-total" id="qTotal">100%</p>
+      </div>
+      <ol class="q-list" id="qList"></ol>
+      <p class="bn-err" id="qErr" role="alert" hidden></p>
+      <button class="linkbtn q-reset" id="qReset" type="button">Restablecer el reparto sugerido</button>
     </section>
 
-    <section class="bn-sec" aria-labelledby="prRegH">
-      <p class="lbl">Delimitación regulatoria</p>
-      <h2 class="bn-h2" id="prRegH">Cero riesgo de intermediación.</h2>
+    <section class="bn-sec" aria-labelledby="qWhyH">
+      <p class="lbl">Por qué este orden</p>
+      <h2 class="bn-h2" id="qWhyH">Lo que cambia según su caso.</h2>
       <ul class="bn-list">
-        <li><b>No recomiendo instrumentos.</b> La autoridad de este servicio se construye sin nombrar un solo
-          valor bursátil específico. Es una restricción de diseño, no una omisión.</li>
-        <li><b>No opero como fondo ni capto dinero del público.</b> No custodio, no administro y no ejecuto
-          órdenes.</li>
-        <li><b>El 100% de la ejecución técnica y la custodia</b> reside bajo la gobernanza de BN Valores y la
-          supervisión de SUGEVAL.</li>
-        <li><b>La comisión se declara al cliente</b> por escrito, antes de cualquier recomendación, y está
-          publicada en la página que el cliente lee.</li>
-      </ul>
-      <p class="bn-note">Esta delimitación no es una cláusula defensiva: es el argumento. Un cliente que
-        entiende que yo no gano por el instrumento que escoja llega con menos resistencia a la conversación
-        técnica que ustedes sí deben tener con él.</p>
-    </section>
-
-    <section class="bn-sec" aria-labelledby="prRigorH">
-      <p class="lbl">Quién lo dirige</p>
-      <h2 class="bn-h2" id="prRigorH">Rigor analítico de origen corporativo.</h2>
-      <p class="lede bn-lede">Alexandre Lozada. Dirección de Empresas, Universidad de Costa Rica.
-        Certificado en gestión de portafolios para juntas directivas y comités de inversión y riesgo por la
-        Bolsa Nacional de Valores.</p>
-      <ul class="bn-list">
-        <li><b>$750M en presupuestos corporativos bajo control</b>, consolidando y defendiendo cifras de nueve
-          dígitos en Moody's Corporation, Intel Corporation y Kaiser Permanente. Responsabilidad directa sobre
-          el número.</li>
-        <li><b>$6.4M en un portafolio diseñado para asociaciones solidaristas</b>, como Especialista de
-          Inversiones en comités de inversión y protección patrimonial: el ahorro de gente con salario,
-          defendido cifra por cifra ante un comité.</li>
-        <li><b>Cinco años</b> en equipos donde ninguna decisión pasa sin que alguien pregunte por qué.</li>
-        <li><b>Español, inglés y francés</b>, lo que abre el canal a clientes que hoy quedan fuera por idioma.</li>
+        <li><b>Si tiene saldo en tarjetas, el reparto se inclina.</b> Una tarjeta al 36% anual le cuesta más
+          de lo que cualquier portafolio le rinde, así que mientras ese saldo exista el bloque de deuda le
+          gana al de inversión. No es preferencia: es aritmética.</li>
+        <li><b>Si todavía no tiene colchón, el orden es otro.</b> Invertir sin fondo de emergencia termina
+          en retirar en el peor momento. Primero tres meses de gastos esenciales, después el resto.</li>
+        <li><b>El aguinaldo no es dinero extra.</b> Es salario diferido, y llega junto con los gastos de
+          diciembre y con el marchamo de enero. Por eso la quinta parte va apartada para obligaciones
+          anuales antes de decidir cualquier otra cosa.</li>
+        <li><b>La asociación solidarista cambia la cuenta.</b> Donde el patrono aporta, cada colón que usted
+          pone rinde más que en cualquier otro lado el primer día. Revise su tope antes de mandar dinero a
+          otra parte.</li>
       </ul>
     </section>
 
-    <section class="bn-sec" aria-labelledby="prNextH">
-      <p class="lbl">Siguientes pasos</p>
-      <h2 class="bn-h2" id="prNextH">Lo que necesito de ustedes para avanzar.</h2>
-      <ul class="bn-list">
-        <li><b>La figura contractual.</b> Bajo qué esquema se formaliza la referencia, y si requiere
-          acreditación ante la Bolsa Nacional de Valores. Su área de cumplimiento define esto, no yo.</li>
-        <li><b>La estructura de la comisión.</b> Si es única o recurrente, el porcentaje y sobre qué base se
-          calcula, para poder declararla al cliente con precisión.</li>
-        <li><b>El canal de traspaso.</b> A quién le presento al cliente perfilado y con qué información.</li>
-        <li><b>El uso de marca.</b> Qué requiere su área de mercadeo para autorizar el logotipo, y si existe
-          manual. El espacio ya está reservado en la página y hoy está vacío a propósito.</li>
-      </ul>
-    </section>
+    <div class="cp-next">
+      <div class="cp-next-copy">
+        <h2>¿Quiere este reparto hecho con sus números reales?</h2>
+        <p>Esta página reparte porcentajes. Un presupuesto de verdad parte de sus movimientos bancarios,
+          sus fechas de pago y sus obligaciones, y se actualiza cada mes. Eso es el plan Sistema.</p>
+      </div>
+      <div class="row">
+        <a class="btn btn-solid" href="plans.html"><span>Conocer el plan Sistema</span></a>
+        <a class="btn btn-ghost" href="diagnostico.html"><span>Hacer el diagnóstico</span></a>
+      </div>
+    </div>
 
-    <p class="bn-disc">Documento de trabajo con fines de discusión comercial. No constituye una oferta, un
-      contrato ni un acuerdo vinculante. Alexandre Lozada brinda educación financiera, planeación y
-      estructuración patrimonial; no es puesto de bolsa, asesor de inversión registrado, asesor tributario ni
-      firma legal, y no capta fondos del público. Las cifras de trayectoria corresponden a responsabilidades
-      profesionales verificables en su historial laboral. Toda inversión implica riesgo y el desempeño pasado
-      no garantiza resultados futuros.</p>
+    <p class="bn-disc">Esta herramienta reparte un monto en porcentajes; no es un presupuesto ni una
+      recomendación personalizada. No convierte entre monedas: el símbolo cambia, el número que usted
+      escriba se reparte tal cual. Las proporciones sugeridas son un punto de partida habitual y no
+      sustituyen el análisis de su situación. Alexandre Lozada no es asesor de inversión registrado ni
+      puesto de bolsa, no recomienda instrumentos y no administra dinero de terceros.</p>
   </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="foot"><span>© 2026 Alexandre Lozada · Heredia, Costa Rica</span><span>Documento B2B</span></div>
+    <div class="foot"><span>© 2026 Alexandre Lozada · Heredia, Costa Rica</span><span>Claridad financiera</span></div>
   </div>
 </footer>
 
+<script>
+  /* ═══════════════ PLANIFICADOR DE QUINCENA Y AGUINALDO ═══════════════
+     Dos repartos con la misma mecanica: un monto, cuatro bloques, y unos
+     porcentajes que el visitante puede mover.
+
+     Los porcentajes son editables a proposito. Un reparto fijo seria una
+     regla de oro mas, y la posicion de esta practica es que las reglas de
+     oro fallan porque no conocen el caso. Aqui se abre con un reparto
+     razonable y se dice, debajo, que lo cambia.
+
+     No convierte monedas. Cambiar el simbolo y dejar el numero es honesto;
+     aplicar un tipo de cambio que envejece el mismo dia no lo seria. */
+  (() => {
+    const $ = id => document.getElementById(id);
+    const list = $("qList");
+    if (!list) return;
+
+    const PLANES = {
+      q: {
+        etiqueta: "Salario neto por quincena",
+        pista: "El aguinaldo en Costa Rica equivale a un mes de salario, así que suele ser cerca del doble de una quincena.",
+        bloques: [
+          { n: "Gastos esenciales fijos", d: "Vivienda, servicios, supermercado, transporte.", p: 50 },
+          { n: "Fondo de emergencia o deuda acelerada", d: "El que le falte primero. Si hay saldo en tarjetas, va aquí completo.", p: 20 },
+          { n: "Ahorro e inversión", d: "Asociación solidarista, fondo voluntario de pensión, fondos de inversión.", p: 20 },
+          { n: "Discrecional", d: "Lo que hace que el plan se sostenga. Cero aquí es lo que hace que la gente abandone.", p: 10 }
+        ]
+      },
+      a: {
+        etiqueta: "Aguinaldo proyectado de diciembre",
+        pista: "Es salario diferido, no dinero extra: llega junto con los gastos de diciembre y el marchamo de enero.",
+        bloques: [
+          { n: "Deuda cara o fondo de emergencia", d: "Lo que cobra más de lo que cualquier portafolio rinde, primero.", p: 40 },
+          { n: "Inversión de largo plazo", d: "Aporte extraordinario a lo que ya tiene estructurado.", p: 30 },
+          { n: "Obligaciones anuales", d: "Marchamo, seguros, matrículas. Apartarlo aquí evita la tarjeta en enero.", p: 20 },
+          { n: "Disfrute", d: "Vacaciones, familia. Declararlo es lo que evita que se coma el resto.", p: 10 }
+        ]
+      }
+    };
+
+    let modo = "q";
+    let moneda = "crc";
+    let pesos = PLANES.q.bloques.map(b => b.p);
+
+    const SIM = { crc: "₡", usd: "$" };
+    const DEF = { crc: 450000, usd: 900 };
+
+    const plata = n => SIM[moneda] + Math.round(n).toLocaleString("en-US");
+
+    function pintar(){
+      const monto = parseFloat($("qAmount").value);
+      const bloques = PLANES[modo].bloques;
+      const total = pesos.reduce((s, p) => s + p, 0);
+
+      $("qTotal").textContent = total + "%";
+      $("qTotal").classList.toggle("is-off", total !== 100);
+
+      const err = $("qErr");
+      if (!isFinite(monto) || monto <= 0){
+        err.textContent = "Escriba un monto mayor que cero.";
+        err.hidden = false;
+      } else if (total !== 100){
+        err.textContent = "Los cuatro bloques suman " + total + "%. Ajústelos hasta llegar a 100% para que el reparto cuadre.";
+        err.hidden = false;
+      } else {
+        err.hidden = true;
+      }
+
+      const valido = isFinite(monto) && monto > 0;
+      list.textContent = "";
+      bloques.forEach((b, i) => {
+        const parte = valido ? monto * pesos[i] / 100 : 0;
+        const li = document.createElement("li");
+        li.className = "q-row";
+        li.innerHTML =
+          '<div class="q-row-h">'
+          + '<div class="q-row-t"><b>' + b.n + '</b><small>' + b.d + '</small></div>'
+          + '<span class="q-row-v">' + (valido ? plata(parte) : "—") + "</span>"
+          + "</div>"
+          + '<div class="q-row-c">'
+          + '<input class="q-slide" type="range" min="0" max="100" step="5" value="' + pesos[i]
+          + '" aria-label="Porcentaje para ' + b.n + '">'
+          + '<span class="q-row-p">' + pesos[i] + "%</span>"
+          + "</div>"
+          + '<span class="q-bar" aria-hidden="true"><i style="clip-path:inset(0 '
+          + (100 - pesos[i]) + '% 0 0)"></i></span>';
+        li.querySelector(".q-slide").addEventListener("input", ev => {
+          pesos[i] = parseInt(ev.target.value, 10);
+          pintar();
+        });
+        list.append(li);
+      });
+    }
+
+    function setModo(m){
+      modo = m;
+      pesos = PLANES[m].bloques.map(b => b.p);
+      $("qAmountL").textContent = PLANES[m].etiqueta;
+      $("qHint").textContent = PLANES[m].pista;
+      $("qAmount").value = modo === "a" ? DEF[moneda] * 2 : DEF[moneda];
+      document.querySelectorAll("#qMode button").forEach(b =>
+        b.setAttribute("aria-pressed", String(b.dataset.mode === m)));
+      mover();
+      pintar();
+    }
+
+    // El indicador se mide, no se calcula: el ancho del boton depende del
+    // texto, que cambia con el modo.
+    function mover(){
+      const grupo = $("qMode");
+      const act = grupo.querySelector('button[aria-pressed="true"]');
+      const ind = grupo.querySelector(".per-ind");
+      if (!act || !ind) return;
+      ind.style.width = act.offsetWidth + "px";
+      ind.style.transform = "translateX(" + (act.offsetLeft - grupo.clientLeft) + "px)";
+    }
+
+    $("qMode").addEventListener("click", ev => {
+      const b = ev.target.closest("button[data-mode]");
+      if (b) setModo(b.dataset.mode);
+    });
+
+    $("qCur").addEventListener("click", ev => {
+      const b = ev.target.closest("button[data-cur]");
+      if (!b) return;
+      moneda = b.dataset.cur;
+      document.querySelectorAll("#qCur button").forEach(x =>
+        x.setAttribute("aria-pressed", String(x.dataset.cur === moneda)));
+      $("qSym").textContent = SIM[moneda];
+      $("qAmount").value = modo === "a" ? DEF[moneda] * 2 : DEF[moneda];
+      $("qAmount").step = moneda === "crc" ? 5000 : 50;
+      pintar();
+    });
+
+    $("qAmount").addEventListener("input", pintar);
+    $("qReset").addEventListener("click", () => { pesos = PLANES[modo].bloques.map(b => b.p); pintar(); });
+    window.addEventListener("resize", mover);
+
+    setModo("q");
+    requestAnimationFrame(() => { $("qMode").classList.add("ready"); mover(); });
+  })();
+
+</script>
 </body>
 </html>

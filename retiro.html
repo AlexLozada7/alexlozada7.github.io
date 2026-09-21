@@ -1847,6 +1847,61 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
   .inv-art .b-ring,.inv-art .b-disc,.inv-art .b-sign{transform:none;transition:opacity 160ms linear}
 }
 
+/* ---------- planificador de quincena y aguinaldo ----------
+   Los porcentajes son editables a proposito: un reparto fijo seria otra
+   regla de oro, y aqui la posicion es que las reglas de oro fallan porque
+   no conocen el caso. El total se marca en ambar cuando no suma 100, en
+   vez de corregirse solo: que no cuadre es informacion. */
+.q-ctl{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
+  margin-bottom:20px}
+.q-mode{margin:0}
+.q-cur{display:flex;border:1px solid var(--line);border-radius:var(--r-pill);padding:3px;
+  background:var(--paper-2)}
+.q-cur button{border:0;background:none;cursor:pointer;font-family:var(--display);font-weight:600;
+  font-size:13px;color:var(--mute);padding:8px 14px;border-radius:var(--r-pill);
+  transition:background var(--t-fast) var(--ease-out),color var(--t-fast) var(--ease-out)}
+.q-cur button[aria-pressed=true]{background:var(--ink);color:#fff}
+.q-amount{max-width:360px}
+.q-hint{margin:12px 0 0;font-size:13.5px;color:var(--mute);line-height:1.55;max-width:74ch}
+.q-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.q-total{margin:0;font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.03em;
+  color:var(--ok);font-variant-numeric:tabular-nums;
+  transition:color var(--t-fast) var(--ease-out)}
+.q-total.is-off{color:var(--warn)}
+.q-list{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:12px}
+.q-row{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:clamp(16px,2vw,22px);display:grid;gap:12px}
+.q-row-h{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.q-row-t{display:grid;gap:3px;min-width:0;flex:1 1 260px}
+.q-row-t b{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.015em;color:var(--ink)}
+.q-row-t small{font-size:13px;color:var(--mute);line-height:1.45}
+.q-row-v{font-family:var(--display);font-weight:800;font-size:clamp(20px,2.4vw,26px);
+  letter-spacing:-.03em;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+.q-row-c{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+.q-row-p{font-family:var(--display);font-weight:700;font-size:14px;color:var(--ink-2);
+  font-variant-numeric:tabular-nums;min-width:44px;text-align:right}
+.q-slide{-webkit-appearance:none;appearance:none;width:100%;background:transparent;cursor:pointer}
+.q-slide:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:var(--r-pill)}
+.q-slide::-webkit-slider-runnable-track{height:5px;border-radius:var(--r-pill);background:var(--paper-3)}
+.q-slide::-moz-range-track{height:5px;border-radius:var(--r-pill);background:var(--paper-3)}
+.q-slide::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:19px;height:19px;
+  margin-top:-7px;border-radius:50%;background:var(--accent);border:3px solid #fff;
+  box-shadow:0 2px 7px -2px rgba(11,27,51,.45)}
+.q-slide::-moz-range-thumb{width:19px;height:19px;border-radius:50%;background:var(--accent);
+  border:3px solid #fff;box-shadow:0 2px 7px -2px rgba(11,27,51,.45)}
+.q-bar{display:block;height:7px;border-radius:var(--r-pill);background:var(--paper-3);overflow:hidden}
+.q-bar i{display:block;width:100%;height:100%;border-radius:inherit;background:var(--accent);
+  transition:clip-path var(--t-ui) var(--ease-out)}
+.q-reset{margin-top:16px}
+.q-art .q-seg{fill:var(--accent)}
+.q-art .s1{opacity:1} .q-art .s2{opacity:.62} .q-art .s3{opacity:.4} .q-art .s4{opacity:.24}
+.q-art .q-tick{stroke:var(--line);stroke-width:3;stroke-linecap:round}
+@media (max-width:560px){
+  .q-ctl{flex-direction:column;align-items:stretch}
+  .q-amount{max-width:none}
+  .q-row-v{flex:1 1 100%}
+}
+
 </style>
 </head>
 <body>
