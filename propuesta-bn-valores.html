@@ -1628,6 +1628,156 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 .pr-meta{margin:20px 0 0;padding-top:16px;border-top:1px solid var(--line-2);
   font-size:13px;line-height:1.55;color:var(--mute);max-width:72ch}
 
+/* ---------- calculadora de retiro ----------
+   Las dos cifras grandes son el resultado; el veredicto de abajo es lo que
+   la diferencia de las demas: puede decir que el plan no cierra. Por eso
+   tiene tres colores y no uno. */
+.rt-form{margin:0}
+.rt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.rt-help{color:var(--accent);text-decoration:none;font-weight:500;margin-left:6px}
+.rt-help:hover{text-decoration:underline}
+.rt-heads{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.rt-head{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:clamp(22px,2.6vw,30px)}
+.rt-head>b{display:block;font-family:var(--display);font-weight:800;
+  font-size:clamp(32px,4.4vw,52px);letter-spacing:-.04em;line-height:1;color:var(--accent);
+  font-variant-numeric:tabular-nums}
+.rt-head>span{display:block;margin-top:10px;font-family:var(--display);font-size:12px;
+  font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.rt-head>p{margin:12px 0 0;font-size:14px;line-height:1.55;color:var(--ink-2)}
+#rtOut.is-stale .rt-heads,#rtOut.is-stale .rt-verdict{opacity:.35}
+.rt-verdict{margin:14px 0 0;padding:16px 18px;border-radius:var(--r-md);
+  font-size:15px;line-height:1.6;border:1px solid}
+.rt-verdict.ok{background:rgba(25,117,76,.06);border-color:rgba(25,117,76,.28);color:var(--ok)}
+.rt-verdict.warn{background:rgba(143,93,15,.06);border-color:rgba(143,93,15,.28);color:var(--warn)}
+.rt-verdict.crit{background:rgba(178,60,50,.06);border-color:rgba(178,60,50,.28);color:var(--crit)}
+.rt-levers{margin-top:16px}
+.rt-real{margin-top:22px}
+.rt-real-n{display:grid;gap:4px;width:190px;padding:14px 16px;border-radius:var(--r-sm);
+  background:var(--wash);text-align:center}
+.rt-real-n b{font-family:var(--display);font-size:24px;font-weight:800;letter-spacing:-.03em;
+  color:var(--accent);line-height:1.1;font-variant-numeric:tabular-nums}
+.rt-real-n small{font-size:11px;line-height:1.35;color:var(--mute)}
+.rt-map{list-style:none;counter-reset:none;margin:0;padding:0;display:grid;gap:10px}
+.rt-mark{display:grid;grid-template-columns:70px 1fr 200px;gap:18px;align-items:center;
+  background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:16px clamp(16px,2vw,22px);
+  transition:border-color var(--t-ui) var(--ease-out),box-shadow var(--t-ui) var(--ease-out)}
+.rt-mark.is-goal{border-color:rgba(31,95,168,.34);background:var(--wash)}
+.rt-age{display:grid;gap:1px}
+.rt-age b{font-family:var(--display);font-size:26px;font-weight:800;letter-spacing:-.03em;
+  line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.rt-age small{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.rt-bar{display:block;height:8px;border-radius:var(--r-pill);background:var(--paper-3);overflow:hidden}
+.rt-bar i{display:block;height:100%;border-radius:inherit;background:var(--accent);
+  transition:width var(--t-enter) var(--ease-out)}
+.rt-val{display:grid;gap:2px;text-align:right}
+.rt-val b{font-family:var(--display);font-size:19px;font-weight:700;letter-spacing:-.02em;
+  color:var(--ink);font-variant-numeric:tabular-nums}
+.rt-val small{font-size:12px;line-height:1.4;color:var(--mute)}
+@media (max-width:1080px){.rt-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:760px){
+  .rt-heads{grid-template-columns:1fr}
+  .rt-mark{grid-template-columns:58px 1fr;gap:12px}
+  .rt-bar{grid-column:1/-1;order:3}
+  .rt-val{text-align:left}
+}
+/* .rt-adv .rt-grid tiene mas especificidad que .rt-grid, asi que la regla
+   de 1080px le ganaba a esta y los deslizadores de supuestos se quedaban
+   en dos columnas dentro de un telefono. Hay que nombrarlo aqui tambien. */
+@media (max-width:560px){.rt-grid{grid-template-columns:1fr}.rt-real-n{width:100%}}
+@media (hover:hover) and (pointer:fine){
+  .rt-mark:hover{border-color:rgba(31,95,168,.34);box-shadow:0 0 0 3px rgba(31,95,168,.10)}
+}
+@media (prefers-reduced-motion:reduce){.rt-bar i{transition:none}}
+
+/* ---------- los controles de la calculadora ----------
+   Deslizador para lo que se tantea -- edad, tasas -- y campo para el dinero:
+   nadie desliza hasta "$3,120". Los supuestos van plegados pero con su
+   resumen visible cerrado, porque esconderlos seria esconder justo lo que
+   diferencia a esta herramienta. */
+.rt-set{margin-bottom:22px}
+.rt-set-h{font-family:var(--display);font-size:12px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--mute);margin:0 0 12px}
+.rt-s{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:16px 18px 12px}
+.rt-s label{display:flex;align-items:baseline;justify-content:space-between;gap:12px;cursor:pointer}
+.rt-s label>span{font-family:var(--display);font-size:13px;font-weight:600;color:var(--ink-2)}
+.rt-s label>b{font-family:var(--display);font-size:19px;font-weight:800;letter-spacing:-.02em;
+  color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+.rt-ends{display:flex;justify-content:space-between;font-size:11px;color:var(--mute);margin-top:2px}
+.rt-s input[type=range]{-webkit-appearance:none;appearance:none;width:100%;margin:12px 0 0;
+  background:transparent;cursor:pointer}
+.rt-s input[type=range]:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:var(--r-pill)}
+.rt-s input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:var(--r-pill);
+  background:var(--paper-3)}
+.rt-s input[type=range]::-moz-range-track{height:6px;border-radius:var(--r-pill);background:var(--paper-3)}
+.rt-s input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
+  width:22px;height:22px;margin-top:-8px;border-radius:50%;background:var(--accent);
+  border:3px solid #fff;box-shadow:0 2px 8px -2px rgba(11,27,51,.45);
+  transition:transform var(--t-press) var(--ease-out)}
+.rt-s input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;
+  background:var(--accent);border:3px solid #fff;box-shadow:0 2px 8px -2px rgba(11,27,51,.45)}
+.rt-s input[type=range]:active::-webkit-slider-thumb{transform:scale(1.12)}
+.rt-m{display:grid;gap:7px}
+.rt-m>span{font-family:var(--display);font-size:13px;font-weight:600;color:var(--ink-2)}
+.rt-in{position:relative;display:block}
+.rt-in i{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-style:normal;
+  font-family:var(--display);font-weight:600;font-size:16px;color:var(--mute);pointer-events:none}
+.rt-in input{width:100%;padding:13px 14px 13px 30px;border-radius:var(--r-sm);
+  border:1px solid var(--line);background:var(--paper-2);color:var(--ink);
+  font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.01em;
+  font-variant-numeric:tabular-nums;
+  transition:border-color var(--t-fast) var(--ease-out),box-shadow var(--t-fast) var(--ease-out)}
+.rt-in input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(31,95,168,.14)}
+.rt-adv{border:1px solid var(--line);border-radius:var(--r-md);background:var(--paper-2);
+  padding:0 18px;margin-bottom:6px}
+.rt-adv summary{display:flex;align-items:center;gap:14px;padding:16px 0;cursor:pointer;
+  list-style:none;font-family:var(--display)}
+.rt-adv summary::-webkit-details-marker{display:none}
+.rt-adv summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r-xs)}
+.rt-adv summary>span{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mute)}
+.rt-adv summary>b{flex:1;font-size:14px;font-weight:600;color:var(--ink-2);
+  font-variant-numeric:tabular-nums}
+.rt-adv[open] summary>b{opacity:.45}
+.rt-adv[open] .faq-mark{transform:rotate(180deg);background:var(--wash);color:var(--accent)}
+/* Un campo solo en su fila se veia perdido a un cuarto de ancho, y es el
+   segundo dato mas importante de la herramienta. */
+.rt-set .rt-grid>.rt-m:only-child{grid-column:span 2}
+.rt-adv .rt-grid{padding-bottom:4px}
+.rt-adv-n{margin:14px 0 18px;font-size:13.5px;line-height:1.6;color:var(--mute);max-width:78ch}
+.rt-adv-n a{color:var(--accent)}
+@media (max-width:1080px){.rt-adv .rt-grid{grid-template-columns:repeat(2,1fr)}}
+@media (prefers-reduced-motion:reduce){
+  .rt-s input[type=range]:active::-webkit-slider-thumb{transform:none}
+}
+
+/* Va al final a proposito: `.rt-adv .rt-grid` de la regla de 1080px tiene la
+   misma especificidad que esta, asi que solo gana la que se declara despues. */
+@media (max-width:560px){
+  .rt-adv .rt-grid{grid-template-columns:1fr}
+  .rt-set .rt-grid>.rt-m:only-child{grid-column:span 1}
+  .rt-adv summary{flex-wrap:wrap;gap:8px 14px}
+  .rt-adv summary>b{flex:1 1 100%}
+}
+
+/* Las barras de la tarjeta de retiro crecen al revelarse, como los hitos de
+   la propia calculadora: la ilustracion dice lo que hace la herramienta. */
+.rt-art rect{fill:var(--accent);opacity:.18;transform-origin:50% 150px;
+  transform:scaleY(0);transition:transform 620ms var(--ease-out),opacity 620ms var(--ease-out)}
+.rt-art .b2{opacity:.3}
+.rt-art .b3{opacity:.42}
+.rt-art .b4{opacity:.62}
+.rv.in .rt-art rect{transform:scaleY(1)}
+.rv.in .rt-art .b1{transition-delay:70ms}
+.rv.in .rt-art .b2{transition-delay:140ms}
+.rv.in .rt-art .b3{transition-delay:210ms}
+.rv.in .rt-art .b4{transition-delay:280ms}
+@media (prefers-reduced-motion:reduce){
+  .rt-art rect{transform:none;transition:none}
+}
+
 </style>
 </head>
 <body>
