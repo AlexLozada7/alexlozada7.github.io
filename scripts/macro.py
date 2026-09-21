@@ -98,42 +98,42 @@ def serie_bccr(codigo, dias=20):
 US = [
     ("fed", "Tasa de fondos federales", "%", lambda: ultimo("FEDFUNDS"),
      "Es el precio del dinero en Estados Unidos. No le cobra a usted directamente, pero marca el piso "
-     "de casi todo lo demas: cuando sube, sube el costo de prestar en dolares y bajan las valoraciones "
+     "de casi todo lo demás: cuando sube, sube el costo de prestar en dólares y bajan las valoraciones "
      "de lo que promete ganancias lejanas."),
-    ("cpi", "Inflacion interanual de Estados Unidos", "%", inflacion_interanual,
-     "Cuanto subieron los precios alla en doce meses. Importa aqui porque si usted ahorra en dolares, "
-     "esta es la tasa a la que ese ahorro pierde poder de compra mientras esta quieto."),
+    ("cpi", "Inflación interanual de Estados Unidos", "%", inflacion_interanual,
+     "Cuánto subieron los precios allá en doce meses. Importa aquí porque si usted ahorra en dólares, "
+     "esta es la tasa a la que ese ahorro pierde poder de compra mientras está quieto."),
     ("unrate", "Desempleo en Estados Unidos", "%", lambda: ultimo("UNRATE"),
-     "Un desempleo muy bajo sostiene el consumo pero presiona salarios y precios. Uno que sube rapido "
+     "Un desempleo muy bajo sostiene el consumo pero presiona salarios y precios. Uno que sube rápido "
      "suele anticipar menos demanda, y en Costa Rica eso se siente primero en zona franca y turismo."),
-    ("dgs10", "Tesoro a 10 anos", "%", lambda: ultimo("DGS10"),
-     "El rendimiento de referencia a largo plazo. Es el numero contra el que se compara cualquier "
-     "inversion: si un bono del gobierno mas seguro del mundo paga esto, cualquier otra cosa tiene que "
-     "pagar mas para compensar su riesgo."),
-    ("dgs2", "Tesoro a 2 anos", "%", lambda: ultimo("DGS2"),
-     "Refleja lo que el mercado espera de la politica monetaria en el corto plazo. Cuando supera al de "
-     "10 anos, la curva se invierte, que historicamente ha precedido recesiones sin ser una garantia."),
+    ("dgs10", "Tesoro a 10 años", "%", lambda: ultimo("DGS10"),
+     "El rendimiento de referencia a largo plazo. Es el número contra el que se compara cualquier "
+     "inversión: si el bono del gobierno más seguro del mundo paga esto, cualquier otra cosa tiene que "
+     "pagar más para compensar su riesgo."),
+    ("dgs2", "Tesoro a 2 años", "%", lambda: ultimo("DGS2"),
+     "Refleja lo que el mercado espera de la política monetaria en el corto plazo. Cuando supera al de "
+     "10 años, la curva se invierte, algo que históricamente ha precedido recesiones sin ser una garantía."),
     ("vix", "VIX", "indice", lambda: ultimo("VIXCLS"),
-     "La volatilidad que el mercado espera para los proximos treinta dias. Bajo 15 es calma; sobre 30 "
+     "La volatilidad que el mercado espera para los próximos treinta días. Bajo 15 es calma; sobre 30 "
      "es miedo. Sirve para entender el ambiente, no para decidir: a nadie le ha ido bien cronometrando "
-     "el mercado con este numero."),
+     "el mercado con este número."),
 ]
 
 # Codigos del catalogo del BCCR. 317 compra y 318 venta del dolar; los demas
 # quedan declarados para cuando exista el token y se puedan verificar.
 CR = [
     ("tc_compra", "Tipo de cambio, compra", "CRC", 317,
-     "El precio al que le compran sus dolares. Si usted gana en dolares y gasta en colones, este numero "
+     "El precio al que le compran sus dólares. Si usted gana en dólares y gasta en colones, este número "
      "le cambia el salario real todos los meses sin que usted haga nada."),
     ("tc_venta", "Tipo de cambio, venta", "CRC", 318,
-     "El precio al que usted compra dolares. La diferencia con el de compra es el margen del banco, y "
+     "El precio al que usted compra dólares. La diferencia con el de compra es el margen del banco, y "
      "sobre montos grandes deja de ser un detalle."),
-    ("tpm", "Tasa de politica monetaria", "%", 3541,
-     "La tasa con la que el Banco Central mueve el resto. Cuando sube, suben las tasas de sus creditos "
-     "en colones, y con retraso tambien lo que le pagan por ahorrar."),
-    ("tbp", "Tasa basica pasiva", "%", 423,
-     "El referente al que estan atados muchos creditos en colones en Costa Rica. Si su hipoteca dice "
-     "'TBP mas tres puntos', este es el numero que decide su cuota."),
+    ("tpm", "Tasa de política monetaria", "%", 3541,
+     "La tasa con la que el Banco Central mueve el resto. Cuando sube, suben las tasas de sus créditos "
+     "en colones, y con retraso también lo que le pagan por ahorrar."),
+    ("tbp", "Tasa básica pasiva", "%", 423,
+     "El referente al que están atados muchos créditos en colones en Costa Rica. Si su hipoteca dice "
+     "«TBP más tres puntos», este es el número que decide su cuota."),
 ]
 
 
