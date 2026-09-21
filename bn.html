@@ -1913,6 +1913,37 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
   .plan-who{order:8;width:100%;text-align:left}
 }
 
+/* ---------- contexto macro ----------
+   La fecha de corte va en cada tarjeta, no solo arriba: un dato macro sin
+   fecha invita a leerlo como si fuera de hoy, y a veces tiene tres meses.
+   Lo que no se pudo actualizar se marca en ambar en vez de desaparecer. */
+.mc-stamp{margin:22px 0 0;font-size:13.5px;color:var(--mute)}
+.mc-pending{margin:8px 0 0;font-size:13.5px;line-height:1.55;color:var(--warn);max-width:74ch}
+.mc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mc-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:clamp(20px,2.4vw,26px);display:grid;align-content:start;gap:2px;
+  transition:border-color var(--t-ui) var(--ease-out),box-shadow var(--t-ui) var(--ease-out)}
+.mc-card.is-stale{border-color:rgba(143,93,15,.34);background:rgba(143,93,15,.04)}
+.mc-n{margin:0;font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:.02em;
+  color:var(--ink-2);line-height:1.3}
+.mc-v{margin:6px 0 0;font-family:var(--display);font-weight:800;
+  font-size:clamp(28px,3.4vw,40px);letter-spacing:-.04em;line-height:1;color:var(--accent);
+  font-variant-numeric:tabular-nums}
+.mc-card.is-stale .mc-v{color:var(--warn)}
+.mc-f{margin:8px 0 0;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute)}
+.mc-d{margin:12px 0 0;padding-top:12px;border-top:1px solid var(--line-2);
+  font-size:13.5px;line-height:1.55;color:var(--ink-2)}
+.mc-art .m-grid{fill:none;stroke:var(--line);stroke-width:1}
+.mc-art .m-line{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;
+  stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1100ms var(--ease-out) 150ms}
+.mc-art .m-dot{fill:var(--accent)}
+.rv.in .mc-art .m-line{stroke-dashoffset:0}
+@media (max-width:980px){.mc-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.mc-grid{grid-template-columns:1fr}}
+@media (hover:hover) and (pointer:fine){
+  .mc-card:hover{border-color:rgba(31,95,168,.34);box-shadow:0 0 0 3px rgba(31,95,168,.10)}
+}
+
 </style>
 </head>
 <body>

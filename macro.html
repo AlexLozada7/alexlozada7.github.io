@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Calculadora de plan de retiro - Alexandre Lozada</title>
-<meta name="description" content="Calculadora de retiro que descuenta la inflacion tambien durante el retiro: capital objetivo, aporte mensual despejado de su meta y hoja de ruta por edades. Gratuita, en espanol.">
+<title>Contexto macroeconomico para Costa Rica - Alexandre Lozada</title>
+<meta name="description" content="Tasa de politica monetaria, tasa basica pasiva, tipo de cambio e indicadores de Estados Unidos, cada uno explicado en terminos de lo que le cambia a quien gana un salario.">
 <meta name="theme-color" content="#F6F8FB">
-<link rel="canonical" href="https://alexlozada7.github.io/retiro.html">
+<link rel="canonical" href="https://alexlozada7.github.io/macro.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B1B33'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='13' fill='white' text-anchor='middle'%3EAL%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alexandre Lozada">
-<meta property="og:url" content="https://alexlozada7.github.io/retiro.html">
-<meta property="og:title" content="Calculadora de plan de retiro - Alexandre Lozada">
-<meta property="og:description" content="Calculadora de retiro que descuenta la inflacion tambien durante el retiro: capital objetivo, aporte mensual despejado de su meta y hoja de ruta por edades. Gratuita, en espanol.">
+<meta property="og:url" content="https://alexlozada7.github.io/macro.html">
+<meta property="og:title" content="Contexto macroeconomico para Costa Rica - Alexandre Lozada">
+<meta property="og:description" content="Tasa de politica monetaria, tasa basica pasiva, tipo de cambio e indicadores de Estados Unidos, cada uno explicado en terminos de lo que le cambia a quien gana un salario.">
 <meta property="og:image" content="https://alexlozada7.github.io/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -1959,142 +1959,65 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
   <div class="wrap bn-wrap">
 
     <section class="bn-hero">
-      <p class="lbl">Herramienta de planificación</p>
-      <h1 class="bn-h1">Cuánto necesita para retirarse, en dinero de hoy.</h1>
-      <p class="lede bn-lede">La mayoría de estas calculadoras le dicen que necesita menos de lo que
-        necesita, porque suponen que usted puede retirar todo el rendimiento para siempre. Esta no.
-        Aquí la renta se ajusta por inflación cada año, y el aporte mensual se despeja de su meta
-        — no de una regla de oro.</p>
+      <p class="lbl">Contexto</p>
+      <h1 class="bn-h1">Los números que mueven su plata, explicados.</h1>
+      <p class="lede bn-lede">No es un pronóstico ni una recomendación: es el tablero de fondo. Cada
+        indicador viene con lo único que suele faltar, que es qué significa para alguien que gana un
+        salario en Costa Rica. Se actualiza todos los días y cada cifra dice de cuándo es.</p>
+      <p class="mc-stamp" id="mcStamp">Cargando la última lectura…</p>
     </section>
 
-    <section class="bn-sec" aria-labelledby="rtFormH">
-      <h2 class="sr" id="rtFormH">Sus datos</h2>
-      <form class="rt-form" id="rtF" novalidate>
-        <div class="rt-set">
-          <p class="rt-set-h">Usted, hoy</p>
-          <div class="rt-grid">
-          <div class="rt-s">
-            <label for="rtAge"><span>Su edad</span><b id="rtAgeV">35 años</b></label>
-            <input id="rtAge" type="range" min="18" max="75" step="1" value="35">
-            <span class="rt-ends" aria-hidden="true"><i>18 años</i><i>75 años</i></span>
-          </div>
-          <div class="rt-s">
-            <label for="rtRet"><span>Quiere retirarse a los</span><b id="rtRetV">65 años</b></label>
-            <input id="rtRet" type="range" min="45" max="85" step="1" value="65">
-            <span class="rt-ends" aria-hidden="true"><i>45 años</i><i>85 años</i></span>
-          </div>
-          <label class="rt-m"><span>Ingreso mensual neto</span>
-            <span class="rt-in"><i aria-hidden="true">$</i><input id="rtInc" type="number" inputmode="decimal" min="0" step="50" value="3000"></span></label>
-          <label class="rt-m"><span>Lo que ya tiene ahorrado e invertido</span>
-            <span class="rt-in"><i aria-hidden="true">$</i><input id="rtNow" type="number" inputmode="decimal" min="0" step="500" value="5000"></span></label>
-          </div>
-        </div>
-
-        <div class="rt-set">
-          <p class="rt-set-h">El retiro que quiere</p>
-          <div class="rt-grid">
-          <label class="rt-m"><span>Gasto mensual a cubrir, en dinero de hoy</span>
-            <span class="rt-in"><i aria-hidden="true">$</i><input id="rtSpend" type="number" inputmode="decimal" min="0" step="50" value="2000"></span></label>
-          </div>
-        </div>
-
-        <details class="rt-adv">
-          <summary><span>Supuestos</span><b id="rtAdvSum">7% de rendimiento · 3% de inflación · 4% de retiro</b><i class="faq-mark" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i></summary>
-          <div class="rt-grid">
-          <div class="rt-s">
-            <label for="rtRate"><span>Rendimiento anual esperado</span><b id="rtRateV">7%</b></label>
-            <input id="rtRate" type="range" min="0" max="15" step="0.5" value="7">
-            <span class="rt-ends" aria-hidden="true"><i>0%</i><i>15%</i></span>
-          </div>
-          <div class="rt-s">
-            <label for="rtInfl"><span>Inflación anual</span><b id="rtInflV">3%</b></label>
-            <input id="rtInfl" type="range" min="0" max="10" step="0.5" value="3">
-            <span class="rt-ends" aria-hidden="true"><i>0%</i><i>10%</i></span>
-          </div>
-          <div class="rt-s">
-            <label for="rtWd"><span>Tasa de retiro anual</span><b id="rtWdV">4%</b></label>
-            <input id="rtWd" type="range" min="2" max="8" step="0.25" value="4">
-            <span class="rt-ends" aria-hidden="true"><i>2%</i><i>8%</i></span>
-          </div>
-          </div>
-          <p class="rt-adv-n">La tasa de retiro es la que separa esta calculadora de las demás. No es el rendimiento: es cuánto puede sacar cada año subiéndolo con la inflación sin que el capital se agote. <a href="#rt-porque">Por qué 4%</a>.</p>
-        </details>
-        <p class="bn-err" id="rtErr" role="alert" hidden></p>
-      </form>
+    <section class="bn-sec" id="mcCR" aria-labelledby="mcCRH" hidden>
+      <p class="lbl">Costa Rica</p>
+      <h2 class="bn-h2" id="mcCRH">Lo que decide su cuota y su salario real.</h2>
+      <div class="mc-grid" id="mcCRList"></div>
     </section>
 
-    <section class="bn-sec" id="rtOut" aria-labelledby="rtOutH" aria-live="polite">
-      <p class="lbl">Su plan</p>
-      <h2 class="bn-h2" id="rtOutH">Lo que dicen sus números.</h2>
-
-      <div class="rt-heads">
-        <div class="rt-head">
-          <b id="rtCap">—</b>
-          <span>Capital objetivo al retirarse</span>
-          <p id="rtCapD">—</p>
-        </div>
-        <div class="rt-head">
-          <b id="rtPmt">—</b>
-          <span>Aporte mensual necesario</span>
-          <p id="rtPmtD">—</p>
-        </div>
-      </div>
-
-      <p class="rt-verdict" id="rtVerdict" hidden></p>
-
-      <div class="bn-partner rt-real">
-        <div class="rt-real-n"><b id="rtIncome">—</b><small>renta mensual al retirarse</small></div>
-        <p class="bn-partner-t"><b>Y qué compra eso de verdad</b><span id="rtRealD">—</span></p>
-      </div>
+    <section class="bn-sec" id="mcUS" aria-labelledby="mcUSH" hidden>
+      <p class="lbl">Estados Unidos</p>
+      <h2 class="bn-h2" id="mcUSH">Lo que fija el precio del dinero en dólares.</h2>
+      <div class="mc-grid" id="mcUSList"></div>
     </section>
 
-    <section class="bn-sec" aria-labelledby="rtMapH">
-      <p class="lbl">Hoja de ruta</p>
-      <h2 class="bn-h2" id="rtMapH">Dónde debería ir cada cinco años.</h2>
-      <p class="lede bn-lede">Estas cifras salen del aporte que la herramienta acaba de despejar, no de
-        una curva aparte. Si usted mantiene ese aporte, esto es lo que debería tener acumulado en cada
-        marca — y si se queda corto, lo sabe temprano, que es cuando todavía se puede corregir.</p>
-      <ol class="rt-map" id="rtMap"></ol>
-    </section>
+    <p class="bn-err" id="mcErr" role="alert" hidden></p>
 
-    <section class="bn-sec" id="rt-porque" aria-labelledby="rtWhyH">
-      <p class="lbl">Por qué esta calculadora da un número más alto</p>
-      <h2 class="bn-h2" id="rtWhyH">La trampa de retirar el rendimiento completo.</h2>
+    <section class="bn-sec" aria-labelledby="mcUseH">
+      <p class="lbl">Cómo se usa esto</p>
+      <h2 class="bn-h2" id="mcUseH">Para entender, no para cronometrar.</h2>
       <ul class="bn-list">
-        <li><b>Retirar todo el rendimiento no conserva el capital.</b> Si su portafolio rinde 7% y usted
-          saca el 7% cada año, el principal nunca crece — y la inflación le quita poder de compra a ese
-          principal y a su renta, todos los años, hasta el final.</li>
-        <li><b>La tasa de retiro no es el rendimiento.</b> El 4% es la referencia habitual porque supone
-          que usted sube el retiro con la inflación cada año y aun así el capital aguanta tres décadas.
-          Es una tasa <i>real</i>, no nominal.</li>
-        <li><b>La diferencia es de dos veces.</b> Con los mismos datos, una calculadora que use el
-          rendimiento nominal como tasa de retiro le va a pedir cerca de la mitad del capital. No es que
-          sea optimista: es que está respondiendo otra pregunta.</li>
+        <li><b>Ningún número de aquí le dice qué comprar ni cuándo.</b> Sirven para entender por qué su
+          cuota subió, por qué su ahorro en dólares rinde distinto este año, o por qué el tipo de cambio
+          le cambió el salario real sin que usted hiciera nada.</li>
+        <li><b>Intentar cronometrar el mercado con el VIX es la trampa clásica.</b> La volatilidad
+          esperada describe el ambiente de hoy; no anticipa el de mañana. Quien entra y sale siguiendo
+          ese número casi siempre termina con menos que quien no lo miró.</li>
+        <li><b>Lo que sí cambia decisiones es la tasa básica pasiva.</b> Si su crédito está atado a ella,
+          ese número es su cuota. Saber que va subiendo antes de que llegue el recibo es la diferencia
+          entre ajustar y reaccionar.</li>
+        <li><b>Y la fecha importa tanto como la cifra.</b> Un dato macro de hace tres meses puede haber
+          cambiado de dirección. Por eso cada indicador dice de cuándo es, y los que no se pudieron
+          actualizar quedan marcados.</li>
       </ul>
-      <p class="bn-note" id="rtCompare">—</p>
     </section>
 
     <div class="cp-next">
       <div class="cp-next-copy">
-        <h2>¿Y cómo se llega a ese aporte?</h2>
-        <p>La cifra de arriba es aritmética. Sostenerla treinta años es lo difícil, y ahí es donde
-          entra el orden previo: el flujo de caja, la deuda cara y el fondo de emergencia. El
-          diagnóstico son seis preguntas y treinta minutos de llamada, sin costo.</p>
+        <h2>¿Y qué hace usted con esto?</h2>
+        <p>El contexto no ordena un presupuesto ni saca a nadie de una deuda. Si quiere ver qué de esto
+          le afecta de verdad, el diagnóstico son seis preguntas y treinta minutos de llamada.</p>
       </div>
       <div class="row">
-        <a class="btn btn-solid" href="signup.html"><span>Agendar sesión gratis</span></a>
-        <a class="btn btn-ghost" href="index.html#tools"><span>Hacer el diagnóstico</span></a>
+        <a class="btn btn-solid" href="diagnostico.html"><span>Hacer el diagnóstico</span></a>
+        <a class="btn btn-ghost" href="plans.html"><span>Ver los planes</span></a>
       </div>
     </div>
 
-    <p class="bn-disc">Esta herramienta es una autoevaluación con resultados direccionales, no un plan de
-      inversión ni una recomendación personalizada. Las proyecciones suponen un rendimiento y una
-      inflación constantes, lo cual no ocurre en la realidad: los mercados no entregan el mismo número
-      cada año, y el orden en que llegan los años buenos y malos cambia el resultado. No incluye
-      impuestos, comisiones, ni la pensión del régimen costarricense (IVM) ni el régimen voluntario, que
-      pueden reducir el capital que usted necesita reunir por su cuenta. Alexandre Lozada no es asesor de
-      inversión registrado ni puesto de bolsa, no recomienda instrumentos y no administra dinero de
-      terceros. El desempeño pasado no garantiza resultados futuros.</p>
+    <p class="bn-disc">Información de referencia con fines educativos. No constituye asesoría de
+      inversión, fiscal ni legal, ni una recomendación de compra o venta de ningún valor. Las cifras de
+      Estados Unidos provienen de la Reserva Federal de St. Louis (FRED) y las de Costa Rica del Banco
+      Central de Costa Rica; cada una indica su fecha de corte y puede haber cambiado desde entonces.
+      Alexandre Lozada no es asesor de inversión registrado ni puesto de bolsa, no recomienda
+      instrumentos y no administra dinero de terceros.</p>
   </div>
 </main>
 
@@ -2105,192 +2028,75 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 </footer>
 
 <script>
-  /* ═══════════════ CALCULADORA DE RETIRO ═══════════════
-     La diferencia con las calculadoras que circulan no es de diseño, es
-     aritmetica, y esta en dos lugares:
-
-     1. La tasa de retiro no es el rendimiento. Retirar el rendimiento
-        nominal completo deja el principal congelado y la inflacion se
-        come la renta. Aqui el capital objetivo sale de una tasa de
-        retiro REAL -- 4% por defecto -- que supone que el retiro sube
-        con la inflacion cada anio.
-     2. El aporte mensual se DESPEJA de la meta. No es "el 10% de su
-        ingreso": es lo que hace falta. Si esa cifra resulta impagable,
-        la herramienta lo dice en vez de maquillarla.
-
-     Y los hitos salen del mismo aporte despejado, asi que la hoja de
-     ruta describe el camino que el plan si recorre.
-
-     Todo vive dentro de este cierre: el guardia de declaraciones
-     duplicadas del build solo lee nombres con dos espacios de sangria. */
+  /* ═══════════════ CONTEXTO MACRO ═══════════════
+     La pagina es estatica; los datos viven en macro-data.json, que un
+     trabajo diario de GitHub Actions reescribe. Separarlos asi tiene una
+     razon concreta: si un dia una fuente falla, el generador conserva la
+     lectura anterior y la marca, y esta pagina la muestra con su fecha en
+     vez de quedarse en blanco. Un tablero vacio es peor que uno viejo, y
+     uno viejo sin fecha es peor que los dos. */
   (() => {
     const $ = id => document.getElementById(id);
-    const form = $("rtF");
-    if (!form) return;
+    if (!$("mcStamp")) return;
 
-    const IDS = ["rtAge", "rtRet", "rtInc", "rtNow", "rtSpend", "rtRate", "rtInfl", "rtWd"];
-    const err = $("rtErr");
+    const MES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
+                 "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
 
-    const money = n => "$" + Math.round(n).toLocaleString("en-US");
-    const pct = n => (n * 100).toFixed(n < 0.1 ? 1 : 0) + "%";
-
-    const num = id => {
-      const v = parseFloat($(id).value);
-      return isFinite(v) ? v : NaN;
-    };
-
-    // Valor futuro de una serie de aportes iguales, al final de cada mes.
-    const annuity = (r, n) => r === 0 ? n : ((Math.pow(1 + r, n) - 1) / r);
-    const balanceAt = (now, pmt, r, m) => now * Math.pow(1 + r, m) + pmt * annuity(r, m);
-
-    function fail(msg){
-      err.textContent = msg;
-      err.hidden = false;
-      $("rtOut").classList.add("is-stale");
+    function fecha(iso){
+      const p = String(iso).slice(0, 10).split("-");
+      if (p.length !== 3) return iso;
+      return parseInt(p[2], 10) + " de " + MES[parseInt(p[1], 10) - 1] + " de " + p[0];
     }
 
-    function run(){
-      const age = num("rtAge"), ret = num("rtRet"), inc = num("rtInc"),
-            now = num("rtNow"), spend = num("rtSpend"),
-            rate = num("rtRate"), infl = num("rtInfl"), wd = num("rtWd");
+    function valor(i){
+      const n = i.v.toLocaleString("es-CR", { maximumFractionDigits: 2 });
+      if (i.u === "%") return n + "%";
+      if (i.u === "CRC") return "₡" + n;
+      return n;
+    }
 
-      // Los deslizadores muestran su propio valor, y el resumen de supuestos
-      // lo repite cerrado, para no obligar a abrirlo solo para leerlo.
-      const put = (id, v) => { const n = $(id + "V"); if (n) n.textContent = v; };
-      put("rtAge", age + " años");
-      put("rtRet", ret + " años");
-      put("rtRate", rate + "%");
-      put("rtInfl", infl + "%");
-      put("rtWd", wd + "%");
-      $("rtAdvSum").textContent = rate + "% de rendimiento · " + infl
-        + "% de inflación · " + wd + "% de retiro";
+    function tarjeta(i){
+      const el = document.createElement("article");
+      el.className = "mc-card" + (i.stale ? " is-stale" : "");
+      el.innerHTML =
+        '<p class="mc-n">' + i.n + "</p>"
+        + '<p class="mc-v">' + valor(i) + "</p>"
+        + '<p class="mc-f">' + (i.stale ? "Sin actualizar · última lectura del " : "Al ")
+        + fecha(i.f) + "</p>"
+        + '<p class="mc-d">' + i.d + "</p>";
+      return el;
+    }
 
-      if (IDS.some(id => isNaN(num(id)))) return fail("Complete todos los campos con números.");
-      if (ret <= age) return fail("La edad de retiro tiene que ser mayor que su edad actual.");
-      if (inc <= 0) return fail("Su ingreso mensual tiene que ser mayor que cero.");
-      if (spend <= 0) return fail("El gasto que quiere cubrir tiene que ser mayor que cero.");
-      if (wd <= 0) return fail("La tasa de retiro tiene que ser mayor que cero.");
-      err.hidden = true;
-      $("rtOut").classList.remove("is-stale");
-
-      const years = ret - age, n = years * 12;
-      const r = rate / 100 / 12, i = infl / 100, w = wd / 100;
-
-      // El gasto de hoy, llevado a colones de la fecha de retiro.
-      const spendAtRet = spend * Math.pow(1 + i, years);
-      const target = spendAtRet * 12 / w;
-      const fvNow = now * Math.pow(1 + r, n);
-      const f = annuity(r, n);
-      const need = Math.max(0, target - fvNow);
-      const pmt = need / f;
-      const sr = pmt / inc;
-
-      $("rtCap").textContent = money(target);
-      $("rtCapD").textContent = "Su gasto de " + money(spend) + " de hoy equivale a "
-        + money(spendAtRet) + " al mes dentro de " + years + " años con una inflación del "
-        + infl + "%. Ese es el gasto que el capital tiene que sostener.";
-
-      $("rtPmt").textContent = need === 0 ? "Ya lo tiene" : money(pmt);
-      $("rtPmtD").textContent = need === 0
-        ? "Lo que ya tiene ahorrado, creciendo al " + rate + "% durante " + years
-          + " años, supera la meta por sí solo."
-        : "El " + pct(sr) + " de su ingreso, cada mes, durante " + years
-          + " años. Esta cifra se despeja de su meta: no es una regla de oro.";
-
-      // El veredicto. Una calculadora que siempre da una cifra comoda no sirve.
-      const v = $("rtVerdict");
-      // run() corre en cada tecla: sin esto las palancas se apilarian.
-      const vieja = document.querySelector(".rt-levers");
-      if (vieja) vieja.remove();
-      v.hidden = false;
-      v.className = "rt-verdict";
-      if (need === 0){
-        v.classList.add("ok");
-        v.textContent = "Su plan ya cierra con lo que tiene acumulado. De aquí en adelante la pregunta "
-          + "deja de ser cuánto ahorrar y pasa a ser cómo proteger lo que ya reunió.";
-      } else if (sr <= 0.20){
-        v.classList.add("ok");
-        v.textContent = "Ese aporte cabe dentro de un presupuesto sano. La tasa de ahorro que exige está "
-          + "dentro del rango que la mayoría puede sostener sin que el plan dependa de la fuerza de voluntad.";
-      } else if (sr <= 0.35){
-        v.classList.add("warn");
-        v.textContent = "Ese aporte es exigente: " + pct(sr) + " del ingreso es sostenible por temporadas, "
-          + "pero rara vez durante " + years + " años seguidos. Conviene revisar las tres palancas de abajo "
-          + "antes de comprometerse con esta cifra.";
-      } else {
-        v.classList.add("crit");
-        v.textContent = "Con estos números el plan no cierra. " + pct(sr) + " del ingreso no se sostiene "
-          + "durante " + years + " años, y un plan que se abandona en el año tres no era un plan. "
-          + "Las tres palancas de abajo dicen qué tendría que cambiar.";
-      }
-
-      // Las tres palancas, resueltas contra un 20% del ingreso.
-      const LIM = 0.20;
-      if (sr > LIM){
-        const cap20 = LIM * inc * f + fvNow;              // capital alcanzable al 20%
-        const spend20 = (cap20 * w / 12) / Math.pow(1 + i, years);
-        let retAge = ret;
-        for (let a = ret + 1; a <= 85; a++){
-          const yy = a - age, nn = yy * 12;
-          const t2 = spend * Math.pow(1 + i, yy) * 12 / w;
-          const p2 = Math.max(0, t2 - now * Math.pow(1 + r, nn)) / annuity(r, nn);
-          if (p2 / inc <= LIM){ retAge = a; break; }
-          retAge = 0;
+    fetch("macro-data.json", { cache: "no-cache" })
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(d => {
+        const todos = d.indicadores || [];
+        [["cr", "mcCR", "mcCRList"], ["us", "mcUS", "mcUSList"]].forEach(([z, sec, lista]) => {
+          const míos = todos.filter(i => i.z === z);
+          if (!míos.length) return;
+          const caja = $(lista);
+          míos.forEach(i => caja.append(tarjeta(i)));
+          $(sec).hidden = false;
+        });
+        $("mcStamp").textContent = todos.length
+          ? "Última revisión: " + fecha(d.generado) + "."
+          : "Todavía no hay lecturas que mostrar.";
+        // Que falten fuentes no es un error de la pagina, pero tampoco se
+        // esconde: quien lee un tablero merece saber que no esta completo.
+        if (!todos.some(i => i.z === "cr")){
+          const n = document.createElement("p");
+          n.className = "mc-pending";
+          n.textContent = "Los indicadores del Banco Central de Costa Rica se publican aquí en cuanto "
+            + "la suscripción al servicio esté activa.";
+          $("mcStamp").after(n);
         }
-        v.insertAdjacentHTML("afterend",
-          '<ul class="bn-list rt-levers">'
-          + "<li><b>Retirarse más tarde.</b> "
-          + (retAge ? "A los " + retAge + " años el aporte baja al " + pct(LIM) + " del ingreso."
-                    : "Ni retrasándolo hasta los 85 años el aporte baja al " + pct(LIM) + " de su ingreso.")
-          + "</li>"
-          + "<li><b>Gastar menos en el retiro.</b> Con " + money(spend20)
-          + " al mes en dinero de hoy, en vez de " + money(spend) + ", el aporte cabe en el "
-          + pct(LIM) + " del ingreso.</li>"
-          + "<li><b>Ganar más.</b> Para que " + money(pmt) + " sea el " + pct(LIM)
-          + " del ingreso, ese ingreso tendría que ser " + money(pmt / LIM) + " al mes.</li>"
-          + "</ul>");
-      }
-
-      // La renta y lo que de verdad compra.
-      $("rtIncome").textContent = money(spendAtRet);
-      $("rtRealD").textContent = " — que son exactamente los " + money(spend)
-        + " de hoy, porque el retiro sube con la inflación cada año. Ese es el punto de usar una tasa de "
-        + "retiro del " + wd + "% y no el rendimiento completo: la renta conserva su poder de compra "
-        + "durante todo el retiro, no solo el primer año.";
-
-      // El contraste con la calculadora que usa el rendimiento como tasa de retiro.
-      const capNominal = spendAtRet * 12 / (rate / 100);
-      const erosion30 = spendAtRet / Math.pow(1 + i, 30);
-      $("rtCompare").textContent = "Con sus mismos datos, una calculadora que use el " + rate
-        + "% de rendimiento como tasa de retiro le pediría " + money(capNominal) + " — "
-        + (target / capNominal).toFixed(1) + " veces menos que " + money(target)
-        + ". A cambio, esa renta de " + money(spendAtRet)
-        + " compraría " + money(erosion30) + " a los treinta años de retiro.";
-
-      // La hoja de ruta, calculada con el aporte que se acaba de despejar.
-      const map = $("rtMap");
-      map.textContent = "";
-      const marks = [];
-      for (let a = age + 5; a < ret; a += 5) marks.push(a);
-      marks.push(ret);
-      marks.forEach(a => {
-        const m = (a - age) * 12;
-        const bal = balanceAt(now, pmt, r, m);
-        const share = target === 0 ? 0 : bal / target;
-        const li = document.createElement("li");
-        li.className = "rt-mark" + (a === ret ? " is-goal" : "");
-        li.innerHTML = '<span class="rt-age"><b>' + a + '</b><small>años</small></span>'
-          + '<span class="rt-bar" aria-hidden="true"><i style="clip-path:inset(0 '
-          + (100 - Math.max(2, Math.min(100, share * 100))).toFixed(1) + '% 0 0)"></i></span>'
-          + '<span class="rt-val"><b>' + money(bal) + "</b><small>"
-          + pct(share) + " de la meta" + (a === ret ? " · edad de retiro" : "") + "</small></span>";
-        map.append(li);
+      })
+      .catch(() => {
+        $("mcStamp").textContent = "";
+        const e = $("mcErr");
+        e.textContent = "No se pudo cargar la última lectura. Vuelva a intentarlo en un momento.";
+        e.hidden = false;
       });
-    }
-
-    IDS.forEach(id => { $(id).addEventListener("input", run); $(id).addEventListener("change", run); });
-    form.addEventListener("submit", ev => { ev.preventDefault(); run(); });
-    run();
   })();
 
 </script>

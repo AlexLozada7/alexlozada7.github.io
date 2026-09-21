@@ -1,0 +1,65 @@
+{
+ "generado": "2026-09-21T19:50:24+00:00",
+ "indicadores": [
+  {
+   "id": "fed",
+   "n": "Tasa de fondos federales",
+   "u": "%",
+   "v": 3.63,
+   "f": "2026-08-01",
+   "z": "us",
+   "d": "Es el precio del dinero en Estados Unidos. No le cobra a usted directamente, pero marca el piso de casi todo lo demas: cuando sube, sube el costo de prestar en dolares y bajan las valoraciones de lo que promete ganancias lejanas."
+  },
+  {
+   "id": "cpi",
+   "n": "Inflacion interanual de Estados Unidos",
+   "u": "%",
+   "v": 3.71,
+   "f": "2026-08-01",
+   "z": "us",
+   "d": "Cuanto subieron los precios alla en doce meses. Importa aqui porque si usted ahorra en dolares, esta es la tasa a la que ese ahorro pierde poder de compra mientras esta quieto."
+  },
+  {
+   "id": "unrate",
+   "n": "Desempleo en Estados Unidos",
+   "u": "%",
+   "v": 4.1,
+   "f": "2026-08-01",
+   "z": "us",
+   "d": "Un desempleo muy bajo sostiene el consumo pero presiona salarios y precios. Uno que sube rapido suele anticipar menos demanda, y en Costa Rica eso se siente primero en zona franca y turismo."
+  },
+  {
+   "id": "dgs10",
+   "n": "Tesoro a 10 anos",
+   "u": "%",
+   "v": 4.94,
+   "f": "2026-09-17",
+   "z": "us",
+   "d": "El rendimiento de referencia a largo plazo. Es el numero contra el que se compara cualquier inversion: si un bono del gobierno mas seguro del mundo paga esto, cualquier otra cosa tiene que pagar mas para compensar su riesgo."
+  },
+  {
+   "id": "dgs2",
+   "n": "Tesoro a 2 anos",
+   "u": "%",
+   "v": 4.67,
+   "f": "2026-09-17",
+   "z": "us",
+   "d": "Refleja lo que el mercado espera de la politica monetaria en el corto plazo. Cuando supera al de 10 anos, la curva se invierte, que historicamente ha precedido recesiones sin ser una garantia."
+  },
+  {
+   "id": "vix",
+   "n": "VIX",
+   "u": "indice",
+   "v": 14.81,
+   "f": "2026-09-18",
+   "z": "us",
+   "d": "La volatilidad que el mercado espera para los proximos treinta dias. Bajo 15 es calma; sobre 30 es miedo. Sirve para entender el ambiente, no para decidir: a nadie le ha ido bien cronometrando el mercado con este numero."
+  }
+ ],
+ "fallos": [
+  "tc_compra: sin BCCR_EMAIL / BCCR_TOKEN",
+  "tc_venta: sin BCCR_EMAIL / BCCR_TOKEN",
+  "tpm: sin BCCR_EMAIL / BCCR_TOKEN",
+  "tbp: sin BCCR_EMAIL / BCCR_TOKEN"
+ ]
+}
