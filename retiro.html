@@ -1820,24 +1820,27 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 .dg-art .d-bar.is-ok{fill:var(--ok)}
 .rv.in .dg-art .d-bar{transform:scaleX(1)}
 
-/* ---------- la alcancia ----------
-   Las barras que habia antes decian "crecimiento", que es lo mismo que dice
-   la curva de la tarjeta de arriba. Una alcancia dice "guardar para
-   despues". El cuerpo lleva un relleno tenue para que tenga presencia al
-   lado del grafico, que es puro trazo. */
-.pig-art .p-body{fill:var(--wash);stroke:var(--accent);stroke-width:3}
-.pig-art .p-snout,.pig-art .p-ear,.pig-art .p-leg{fill:var(--wash);stroke:var(--accent);stroke-width:2.6;
-  stroke-linejoin:round}
-.pig-art .p-tail{fill:none;stroke:var(--accent);stroke-width:2.6;stroke-linecap:round}
-.pig-art .p-slot{fill:var(--accent)}
-.pig-art .p-eye{fill:var(--accent)}
-.pig-art .p-nose{fill:var(--accent);opacity:.5}
-.pig-art .p-coin{fill:var(--accent);transform:translateY(-12px);
-  transition:opacity 260ms var(--ease-out) 620ms,transform 460ms var(--ease-out) 620ms}
-.rv.in .pig-art .p-coin{transform:translateY(0)}
+/* ---------- el plan de retiro: barras y moneda ----------
+   Las barras van en navy y no en azul acento a proposito: la tarjeta de
+   arriba ya tiene una curva azul delgada, y con el mismo color las dos se
+   leerian como el mismo objeto. Navy solido contra trazo azul las separa
+   aunque ambas sean graficos.
+   El anillo blanco detras de la moneda la despega de la ultima barra, que
+   es lo que hace legible la superposicion. */
+.inv-art .b-bar{fill:var(--ink);transform-origin:center 132px;transform:scaleY(0);
+  transition:transform 460ms var(--ease-out);transition-delay:calc(var(--i)*80ms + 100ms)}
+.rv.in .inv-art .b-bar{transform:scaleY(1)}
+.inv-art .b-ring{fill:var(--paper-2)}
+.inv-art .b-disc{fill:var(--accent)}
+.inv-art .b-sign{fill:none;stroke:#fff;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
+.inv-art .b-ring,.inv-art .b-disc,.inv-art .b-sign{opacity:0;transform:scale(.7);
+  transform-origin:212px 112px;
+  transition:opacity 260ms var(--ease-out) 520ms,transform 420ms var(--ease-out) 520ms}
+.rv.in .inv-art .b-ring,.rv.in .inv-art .b-disc,.rv.in .inv-art .b-sign{opacity:1;transform:scale(1)}
 @media (prefers-reduced-motion:reduce){
   .dg-art .d-bar{transform:none;transition:none}
-  .pig-art .p-coin{transform:none;transition:opacity 160ms linear}
+  .inv-art .b-bar{transform:none;transition:none}
+  .inv-art .b-ring,.inv-art .b-disc,.inv-art .b-sign{transform:none;transition:opacity 160ms linear}
 }
 
 </style>

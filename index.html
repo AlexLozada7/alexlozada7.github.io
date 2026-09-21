@@ -1820,24 +1820,27 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 .dg-art .d-bar.is-ok{fill:var(--ok)}
 .rv.in .dg-art .d-bar{transform:scaleX(1)}
 
-/* ---------- la alcancia ----------
-   Las barras que habia antes decian "crecimiento", que es lo mismo que dice
-   la curva de la tarjeta de arriba. Una alcancia dice "guardar para
-   despues". El cuerpo lleva un relleno tenue para que tenga presencia al
-   lado del grafico, que es puro trazo. */
-.pig-art .p-body{fill:var(--wash);stroke:var(--accent);stroke-width:3}
-.pig-art .p-snout,.pig-art .p-ear,.pig-art .p-leg{fill:var(--wash);stroke:var(--accent);stroke-width:2.6;
-  stroke-linejoin:round}
-.pig-art .p-tail{fill:none;stroke:var(--accent);stroke-width:2.6;stroke-linecap:round}
-.pig-art .p-slot{fill:var(--accent)}
-.pig-art .p-eye{fill:var(--accent)}
-.pig-art .p-nose{fill:var(--accent);opacity:.5}
-.pig-art .p-coin{fill:var(--accent);transform:translateY(-12px);
-  transition:opacity 260ms var(--ease-out) 620ms,transform 460ms var(--ease-out) 620ms}
-.rv.in .pig-art .p-coin{transform:translateY(0)}
+/* ---------- el plan de retiro: barras y moneda ----------
+   Las barras van en navy y no en azul acento a proposito: la tarjeta de
+   arriba ya tiene una curva azul delgada, y con el mismo color las dos se
+   leerian como el mismo objeto. Navy solido contra trazo azul las separa
+   aunque ambas sean graficos.
+   El anillo blanco detras de la moneda la despega de la ultima barra, que
+   es lo que hace legible la superposicion. */
+.inv-art .b-bar{fill:var(--ink);transform-origin:center 132px;transform:scaleY(0);
+  transition:transform 460ms var(--ease-out);transition-delay:calc(var(--i)*80ms + 100ms)}
+.rv.in .inv-art .b-bar{transform:scaleY(1)}
+.inv-art .b-ring{fill:var(--paper-2)}
+.inv-art .b-disc{fill:var(--accent)}
+.inv-art .b-sign{fill:none;stroke:#fff;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
+.inv-art .b-ring,.inv-art .b-disc,.inv-art .b-sign{opacity:0;transform:scale(.7);
+  transform-origin:212px 112px;
+  transition:opacity 260ms var(--ease-out) 520ms,transform 420ms var(--ease-out) 520ms}
+.rv.in .inv-art .b-ring,.rv.in .inv-art .b-disc,.rv.in .inv-art .b-sign{opacity:1;transform:scale(1)}
 @media (prefers-reduced-motion:reduce){
   .dg-art .d-bar{transform:none;transition:none}
-  .pig-art .p-coin{transform:none;transition:opacity 160ms linear}
+  .inv-art .b-bar{transform:none;transition:none}
+  .inv-art .b-ring,.inv-art .b-disc,.inv-art .b-sign{transform:none;transition:opacity 160ms linear}
 }
 
 </style>
@@ -2077,18 +2080,14 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
             <p data-i18n="tools.retP"></p>
             <span class="btn btn-solid"><span data-i18n="tools.retCta"></span></span>
           </div>
-          <svg class="calc-link-art pig-art" viewBox="0 0 300 160" aria-hidden="true">
-            <circle class="p-coin" cx="150" cy="22" r="12"/>
-            <rect class="p-leg" x="116" y="122" width="15" height="24" rx="7.5"/>
-            <rect class="p-leg" x="170" y="122" width="15" height="24" rx="7.5"/>
-            <path class="p-ear" d="M168 60c4-14 14-21 24-17 3 12 0 22-6 29Z"/>
-            <path class="p-tail" d="M97 82c-11-3-14 9-5 12"/>
-            <ellipse class="p-body" cx="150" cy="94" rx="54" ry="40"/>
-            <rect class="p-snout" x="192" y="82" width="34" height="24" rx="12"/>
-            <circle class="p-nose" cx="214" cy="89" r="2.2"/>
-            <circle class="p-nose" cx="214" cy="99" r="2.2"/>
-            <circle class="p-eye" cx="180" cy="80" r="3.8"/>
-            <rect class="p-slot" x="129" y="52" width="42" height="9" rx="4.5" transform="rotate(-5 150 56)"/>
+          <svg class="calc-link-art inv-art" viewBox="0 0 300 160" aria-hidden="true">
+            <rect class="b-bar" x="58" y="96" width="30" height="36" rx="5" style="--i:0"/>
+            <rect class="b-bar" x="102" y="74" width="30" height="58" rx="5" style="--i:1"/>
+            <rect class="b-bar" x="146" y="52" width="30" height="80" rx="5" style="--i:2"/>
+            <rect class="b-bar" x="190" y="28" width="30" height="104" rx="5" style="--i:3"/>
+            <circle class="b-ring" cx="212" cy="112" r="34"/>
+            <circle class="b-disc" cx="212" cy="112" r="29"/>
+            <path class="b-sign" d="M212 96v32M221 104c0-4.4-4-7-9-7s-9 2.6-9 6.4 4 5.6 9 6.6 9 2.6 9 6.4-4 6.6-9 6.6-9-2.6-9-6.6"/>
           </svg>
         </a>
       </div>
