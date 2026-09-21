@@ -1762,42 +1762,6 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 }
 
 
-/* ---------- las tarjetas de herramientas ----------
-   Las tres vivian dentro de un mismo .rv sin rejilla, asi que se tocaban.
-   Y el semaforo de la tarjeta del diagnostico usa los mismos tres colores
-   que el panel, porque es lo que la herramienta devuelve. */
-.tool-cards{display:grid;gap:clamp(18px,2.4vw,30px)}
-.dg-art circle{opacity:0;transform:scale(.6);transform-origin:center;
-  transition:opacity 520ms var(--ease-out),transform 520ms var(--ease-out)}
-.dg-art .s0{fill:var(--crit)}
-.dg-art .s1{fill:var(--warn)}
-.dg-art .s2{fill:var(--ok)}
-.rv.in .dg-art circle{opacity:.85;transform:scale(1)}
-.rv.in .dg-art .s1{transition-delay:90ms}
-.rv.in .dg-art .s2{transition-delay:180ms}
-.dg-wrap .tools{margin-top:0}
-@media (prefers-reduced-motion:reduce){
-  .dg-art circle{transform:none;transition:none;opacity:.85}
-}
-
-/* ---------- la alcancia de la tarjeta de retiro ----------
-   Las barras decian "crecimiento", que es lo mismo que dice la curva de la
-   tarjeta de arriba: dos iconos contando la misma historia. Una alcancia
-   dice "guardar para despues", que es de lo que trata un plan de retiro, y
-   se reconoce sin leer el titulo.
-   La opacidad de los circulos la gobierna .calc-link-art; aqui solo se
-   agrega la caida de la moneda. */
-.pig-art .p-body,.pig-art .p-slot,.pig-art .p-tail{
-  fill:none;stroke:var(--accent);stroke-linecap:round;stroke-linejoin:round}
-.pig-art .p-body{stroke-width:3}
-.pig-art .p-slot,.pig-art .p-tail{stroke-width:2.6}
-.pig-art .p-eye,.pig-art .p-nose{fill:var(--accent);stroke:none}
-.pig-art .p-nose{opacity:.55}
-.pig-art .p-coin{fill:var(--accent);stroke:none;transform:translateY(-12px);
-  transition:opacity 260ms var(--ease-out) 620ms,transform 460ms var(--ease-out) 620ms}
-.rv.in .pig-art .p-coin{transform:translateY(0)}
-@media (prefers-reduced-motion:reduce){
-  .pig-art .p-coin{transform:none;transition:opacity 160ms linear}
 }
 
 /* ---------- los escenarios, rehechos ----------
@@ -1837,6 +1801,43 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 @media (max-width:560px){
   .case-top{flex-direction:column;align-items:flex-start;gap:8px}
   .case-illus{text-align:left}
+}
+
+/* ---------- las tarjetas de herramientas ----------
+   Las tres vivian dentro de un mismo .rv sin rejilla, asi que se tocaban. */
+.tool-cards{display:grid;gap:clamp(18px,2.4vw,30px)}
+
+/* ---------- el diagnostico: lo que la herramienta devuelve ----------
+   Eran tres circulos planos que no decian nada. Ahora son las cinco
+   dimensiones en barras, con los mismos tres colores del semaforo y la
+   misma forma que el resultado real: la ilustracion adelanta el producto
+   en vez de decorarlo. */
+.dg-art .d-tr{fill:var(--paper-3)}
+.dg-art .d-bar{transform-origin:46px 0;transform:scaleX(0);
+  transition:transform 640ms var(--ease-out);transition-delay:calc(var(--i)*90ms + 120ms)}
+.dg-art .d-bar.is-crit{fill:var(--crit)}
+.dg-art .d-bar.is-warn{fill:var(--warn)}
+.dg-art .d-bar.is-ok{fill:var(--ok)}
+.rv.in .dg-art .d-bar{transform:scaleX(1)}
+
+/* ---------- la alcancia ----------
+   Las barras que habia antes decian "crecimiento", que es lo mismo que dice
+   la curva de la tarjeta de arriba. Una alcancia dice "guardar para
+   despues". El cuerpo lleva un relleno tenue para que tenga presencia al
+   lado del grafico, que es puro trazo. */
+.pig-art .p-body{fill:var(--wash);stroke:var(--accent);stroke-width:3}
+.pig-art .p-snout,.pig-art .p-ear,.pig-art .p-leg{fill:var(--wash);stroke:var(--accent);stroke-width:2.6;
+  stroke-linejoin:round}
+.pig-art .p-tail{fill:none;stroke:var(--accent);stroke-width:2.6;stroke-linecap:round}
+.pig-art .p-slot{fill:var(--accent)}
+.pig-art .p-eye{fill:var(--accent)}
+.pig-art .p-nose{fill:var(--accent);opacity:.5}
+.pig-art .p-coin{fill:var(--accent);transform:translateY(-12px);
+  transition:opacity 260ms var(--ease-out) 620ms,transform 460ms var(--ease-out) 620ms}
+.rv.in .pig-art .p-coin{transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){
+  .dg-art .d-bar{transform:none;transition:none}
+  .pig-art .p-coin{transform:none;transition:opacity 160ms linear}
 }
 
 </style>
@@ -2039,9 +2040,16 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
             <span class="btn btn-solid"><span data-i18n="tools.diagCta"></span></span>
           </div>
           <svg class="calc-link-art dg-art" viewBox="0 0 300 160" aria-hidden="true">
-            <circle class="s0" cx="90" cy="80" r="26"/>
-            <circle class="s1" cx="150" cy="80" r="26"/>
-            <circle class="s2" cx="210" cy="80" r="26"/>
+            <rect class="d-tr" x="46" y="26" width="228" height="11" rx="5.5"/>
+            <rect class="d-bar is-crit" x="46" y="26" width="78" height="11" rx="5.5" style="--i:0"/>
+            <rect class="d-tr" x="46" y="54" width="228" height="11" rx="5.5"/>
+            <rect class="d-bar is-warn" x="46" y="54" width="132" height="11" rx="5.5" style="--i:1"/>
+            <rect class="d-tr" x="46" y="82" width="228" height="11" rx="5.5"/>
+            <rect class="d-bar is-warn" x="46" y="82" width="115" height="11" rx="5.5" style="--i:2"/>
+            <rect class="d-tr" x="46" y="110" width="228" height="11" rx="5.5"/>
+            <rect class="d-bar is-ok" x="46" y="110" width="188" height="11" rx="5.5" style="--i:3"/>
+            <rect class="d-tr" x="46" y="138" width="228" height="11" rx="5.5"/>
+            <rect class="d-bar is-ok" x="46" y="138" width="214" height="11" rx="5.5" style="--i:4"/>
           </svg>
         </a>
         <a class="panel calc-link" href="calculator.html">
@@ -2070,13 +2078,17 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
             <span class="btn btn-solid"><span data-i18n="tools.retCta"></span></span>
           </div>
           <svg class="calc-link-art pig-art" viewBox="0 0 300 160" aria-hidden="true">
-            <circle class="p-coin" cx="151" cy="24" r="12"/>
-            <path class="p-body" d="M106 118c-12-12-12-32 0-44 14-14 38-20 58-18 14-10 24-12 28-10 2 4 0 12-4 20 10 6 18 16 20 26l12 2v14l-12 0c-3 9-10 16-18 20l2 14h-14l-3-9c-12 3-26 3-38 0l-3 9h-14l-3-13c-5-3-9-7-11-11Z"/>
-            <path class="p-slot" d="M139 65l28-3"/>
-            <circle class="p-eye" cx="186" cy="84" r="3.6"/>
-            <circle class="p-nose" cx="212" cy="97" r="1.9"/>
-            <circle class="p-nose" cx="212" cy="104" r="1.9"/>
-            <path class="p-tail" d="M104 96c-10-4-12 8-4 10"/>
+            <circle class="p-coin" cx="150" cy="22" r="12"/>
+            <rect class="p-leg" x="116" y="122" width="15" height="24" rx="7.5"/>
+            <rect class="p-leg" x="170" y="122" width="15" height="24" rx="7.5"/>
+            <path class="p-ear" d="M168 60c4-14 14-21 24-17 3 12 0 22-6 29Z"/>
+            <path class="p-tail" d="M97 82c-11-3-14 9-5 12"/>
+            <ellipse class="p-body" cx="150" cy="94" rx="54" ry="40"/>
+            <rect class="p-snout" x="192" y="82" width="34" height="24" rx="12"/>
+            <circle class="p-nose" cx="214" cy="89" r="2.2"/>
+            <circle class="p-nose" cx="214" cy="99" r="2.2"/>
+            <circle class="p-eye" cx="180" cy="80" r="3.8"/>
+            <rect class="p-slot" x="129" y="52" width="42" height="9" rx="4.5" transform="rotate(-5 150 56)"/>
           </svg>
         </a>
       </div>

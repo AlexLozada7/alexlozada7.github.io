@@ -1762,42 +1762,6 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 }
 
 
-/* ---------- las tarjetas de herramientas ----------
-   Las tres vivian dentro de un mismo .rv sin rejilla, asi que se tocaban.
-   Y el semaforo de la tarjeta del diagnostico usa los mismos tres colores
-   que el panel, porque es lo que la herramienta devuelve. */
-.tool-cards{display:grid;gap:clamp(18px,2.4vw,30px)}
-.dg-art circle{opacity:0;transform:scale(.6);transform-origin:center;
-  transition:opacity 520ms var(--ease-out),transform 520ms var(--ease-out)}
-.dg-art .s0{fill:var(--crit)}
-.dg-art .s1{fill:var(--warn)}
-.dg-art .s2{fill:var(--ok)}
-.rv.in .dg-art circle{opacity:.85;transform:scale(1)}
-.rv.in .dg-art .s1{transition-delay:90ms}
-.rv.in .dg-art .s2{transition-delay:180ms}
-.dg-wrap .tools{margin-top:0}
-@media (prefers-reduced-motion:reduce){
-  .dg-art circle{transform:none;transition:none;opacity:.85}
-}
-
-/* ---------- la alcancia de la tarjeta de retiro ----------
-   Las barras decian "crecimiento", que es lo mismo que dice la curva de la
-   tarjeta de arriba: dos iconos contando la misma historia. Una alcancia
-   dice "guardar para despues", que es de lo que trata un plan de retiro, y
-   se reconoce sin leer el titulo.
-   La opacidad de los circulos la gobierna .calc-link-art; aqui solo se
-   agrega la caida de la moneda. */
-.pig-art .p-body,.pig-art .p-slot,.pig-art .p-tail{
-  fill:none;stroke:var(--accent);stroke-linecap:round;stroke-linejoin:round}
-.pig-art .p-body{stroke-width:3}
-.pig-art .p-slot,.pig-art .p-tail{stroke-width:2.6}
-.pig-art .p-eye,.pig-art .p-nose{fill:var(--accent);stroke:none}
-.pig-art .p-nose{opacity:.55}
-.pig-art .p-coin{fill:var(--accent);stroke:none;transform:translateY(-12px);
-  transition:opacity 260ms var(--ease-out) 620ms,transform 460ms var(--ease-out) 620ms}
-.rv.in .pig-art .p-coin{transform:translateY(0)}
-@media (prefers-reduced-motion:reduce){
-  .pig-art .p-coin{transform:none;transition:opacity 160ms linear}
 }
 
 /* ---------- los escenarios, rehechos ----------
@@ -1837,6 +1801,43 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 @media (max-width:560px){
   .case-top{flex-direction:column;align-items:flex-start;gap:8px}
   .case-illus{text-align:left}
+}
+
+/* ---------- las tarjetas de herramientas ----------
+   Las tres vivian dentro de un mismo .rv sin rejilla, asi que se tocaban. */
+.tool-cards{display:grid;gap:clamp(18px,2.4vw,30px)}
+
+/* ---------- el diagnostico: lo que la herramienta devuelve ----------
+   Eran tres circulos planos que no decian nada. Ahora son las cinco
+   dimensiones en barras, con los mismos tres colores del semaforo y la
+   misma forma que el resultado real: la ilustracion adelanta el producto
+   en vez de decorarlo. */
+.dg-art .d-tr{fill:var(--paper-3)}
+.dg-art .d-bar{transform-origin:46px 0;transform:scaleX(0);
+  transition:transform 640ms var(--ease-out);transition-delay:calc(var(--i)*90ms + 120ms)}
+.dg-art .d-bar.is-crit{fill:var(--crit)}
+.dg-art .d-bar.is-warn{fill:var(--warn)}
+.dg-art .d-bar.is-ok{fill:var(--ok)}
+.rv.in .dg-art .d-bar{transform:scaleX(1)}
+
+/* ---------- la alcancia ----------
+   Las barras que habia antes decian "crecimiento", que es lo mismo que dice
+   la curva de la tarjeta de arriba. Una alcancia dice "guardar para
+   despues". El cuerpo lleva un relleno tenue para que tenga presencia al
+   lado del grafico, que es puro trazo. */
+.pig-art .p-body{fill:var(--wash);stroke:var(--accent);stroke-width:3}
+.pig-art .p-snout,.pig-art .p-ear,.pig-art .p-leg{fill:var(--wash);stroke:var(--accent);stroke-width:2.6;
+  stroke-linejoin:round}
+.pig-art .p-tail{fill:none;stroke:var(--accent);stroke-width:2.6;stroke-linecap:round}
+.pig-art .p-slot{fill:var(--accent)}
+.pig-art .p-eye{fill:var(--accent)}
+.pig-art .p-nose{fill:var(--accent);opacity:.5}
+.pig-art .p-coin{fill:var(--accent);transform:translateY(-12px);
+  transition:opacity 260ms var(--ease-out) 620ms,transform 460ms var(--ease-out) 620ms}
+.rv.in .pig-art .p-coin{transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){
+  .dg-art .d-bar{transform:none;transition:none}
+  .pig-art .p-coin{transform:none;transition:opacity 160ms linear}
 }
 
 </style>
