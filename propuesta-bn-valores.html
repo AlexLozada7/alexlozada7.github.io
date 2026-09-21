@@ -1903,6 +1903,16 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
   .q-row-v{flex:1 1 100%}
 }
 
+/* La linea de "para quien es" cierra la tarjeta: va despues de las
+   caracteristicas porque primero se mira que incluye y despues si a uno le
+   corresponde. En el telefono la tarjeta reordena, asi que tambien va al
+   final ahi. */
+.plan-who{margin:16px 0 0;padding-top:14px;border-top:1px solid var(--line-2);
+  font-size:13.5px;line-height:1.55;color:var(--mute)}
+@media (max-width:880px){
+  .plan-who{order:8;width:100%;text-align:left}
+}
+
 </style>
 </head>
 <body>
