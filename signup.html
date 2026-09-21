@@ -1761,21 +1761,6 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
   .rt-adv summary>b{flex:1 1 100%}
 }
 
-/* Las barras de la tarjeta de retiro crecen al revelarse, como los hitos de
-   la propia calculadora: la ilustracion dice lo que hace la herramienta. */
-.rt-art rect{fill:var(--accent);opacity:.18;transform-origin:50% 150px;
-  transform:scaleY(0);transition:transform 620ms var(--ease-out),opacity 620ms var(--ease-out)}
-.rt-art .b2{opacity:.3}
-.rt-art .b3{opacity:.42}
-.rt-art .b4{opacity:.62}
-.rv.in .rt-art rect{transform:scaleY(1)}
-.rv.in .rt-art .b1{transition-delay:70ms}
-.rv.in .rt-art .b2{transition-delay:140ms}
-.rv.in .rt-art .b3{transition-delay:210ms}
-.rv.in .rt-art .b4{transition-delay:280ms}
-@media (prefers-reduced-motion:reduce){
-  .rt-art rect{transform:none;transition:none}
-}
 
 /* ---------- las tarjetas de herramientas ----------
    Las tres vivian dentro de un mismo .rv sin rejilla, asi que se tocaban.
