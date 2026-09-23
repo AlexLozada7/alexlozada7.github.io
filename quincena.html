@@ -174,7 +174,6 @@ h3{font-size:clamp(20px,2vw,24px);letter-spacing:-.02em;line-height:1.15}
   transition:transform var(--t-press) var(--ease-out),background var(--t-fast) ease,color var(--t-fast) ease}
 .lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
 .lang button:active{transform:scale(.96)}
-@media (max-width:1080px){.links{display:none}}
 
 /* ---------- buttons ----------
    Press feedback is the one animation every pressable element owes the
@@ -1351,15 +1350,6 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
   .hero-plans{transition:color var(--t-fast) var(--ease-out)}
 }
 
-/* Solo donde el menu esta oculto: arriba de 1080px el enlace ya vive en .links
-   y repetirlo seria ruido. Abajo, es la unica via rapida a los precios. */
-.nav-plans{display:none;font-family:var(--display);font-weight:600;font-size:14px;
-  color:var(--ink-2);text-decoration:none;white-space:nowrap;
-  transition:color var(--t-fast) var(--ease-out)}
-.nav-plans:active{opacity:.6}
-@media (max-width:1080px){ .nav-plans{display:inline-block} }
-@media (max-width:420px){ .nav-plans{font-size:13px} }
-@media (hover:hover) and (pointer:fine){ .nav-plans:hover{color:var(--accent)} }
 
 
 /* ---------- preguntas frecuentes ----------
@@ -1941,6 +1931,159 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 @media (max-width:620px){.mc-grid{grid-template-columns:1fr}}
 @media (hover:hover) and (pointer:fine){
   .mc-card:hover{border-color:rgba(31,95,168,.34);box-shadow:0 0 0 3px rgba(31,95,168,.10)}
+}
+
+/* ══════════════ EL MENU ══════════════
+   Un solo arbol de marcado sirve las dos formas del menu. Arriba de 1080px
+   .links es la fila de siempre y cada .nd-p flota debajo de su disparador;
+   abajo, .links es un panel que abre la hamburguesa y cada .nd-p se vuelve
+   acordeon. Todo el bloque del telefono vive al final de la hoja a proposito:
+   este archivo ya perdio dos veces una anulacion de columnas por
+   especificidad, y lo ultimo que se declara es lo que gana. */
+.nl{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-weight:500;
+  font-size:14px;line-height:1.4;color:var(--ink-2);text-decoration:none;
+  background:none;border:0;padding:0;margin:0;cursor:pointer;position:relative;
+  transition:color var(--t-fast) ease}
+.nd{position:relative}
+.nd-car{width:11px;height:8px;flex:none;transition:transform var(--t-fast) var(--ease-out)}
+.nd.is-open>.nd-t .nd-car{transform:rotate(180deg)}
+/* El subrayado de .links a se dibuja sobre cada enlace del panel, que no lo
+   quiere: ahi el resaltado es el fondo de la fila. */
+.nd-in a::after{display:none}
+
+.burger{display:none;align-items:center;justify-content:center;width:38px;height:38px;
+  padding:0;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--paper-2);
+  color:var(--ink);cursor:pointer;
+  transition:transform var(--t-press) var(--ease-out),border-color var(--t-fast) ease}
+.burger:active{transform:scale(.94)}
+.burger-b{display:grid;gap:4px;width:16px}
+.burger-b i{display:block;height:1.8px;border-radius:2px;background:currentColor;
+  transition:transform var(--t-fast) var(--ease-out),opacity var(--t-fast) var(--ease-out)}
+.burger[aria-expanded="true"] .burger-b i:nth-child(1){transform:translateY(5.8px) rotate(45deg)}
+.burger[aria-expanded="true"] .burger-b i:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] .burger-b i:nth-child(3){transform:translateY(-5.8px) rotate(-45deg)}
+
+/* ---------- escritorio: los grupos flotan ---------- */
+@media (min-width:1081px){
+  .nd-p{position:absolute;top:100%;left:-14px;z-index:60;padding-top:12px;
+    opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity var(--t-fast) var(--ease-out),transform var(--t-fast) var(--ease-out),
+      visibility 0s linear var(--t-fast)}
+  .nd.is-open>.nd-p{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+  .nd-in{min-width:296px;background:var(--ink);border-radius:var(--r-md);padding:8px;display:grid;gap:2px;
+    box-shadow:0 34px 76px -34px rgba(11,27,51,.66),0 0 0 1px rgba(255,255,255,.07)}
+  .nd-in a{display:block;padding:10px 12px;border-radius:var(--r-sm);text-decoration:none;
+    transition:background var(--t-fast) var(--ease-out)}
+  .nd-in b{display:block;font-family:var(--display);font-weight:600;font-size:14px;
+    letter-spacing:-.01em;color:#fff}
+  .nd-in small{display:block;margin-top:3px;font-size:12.5px;line-height:1.45;color:rgba(255,255,255,.64)}
+}
+@media (min-width:1081px) and (hover:hover) and (pointer:fine){
+  .nd:hover>.nd-p{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+  .nd-in a:hover{background:rgba(255,255,255,.11)}
+  .nl:hover{color:var(--ink)}
+}
+
+/* ---------- telefono: el panel y sus acordeones ---------- */
+@media (max-width:1080px){
+  .burger{display:inline-flex}
+  .links{display:grid;gap:2px;position:absolute;top:100%;left:0;right:0;z-index:55;
+    padding:10px 20px 18px;background:var(--paper-2);border-top:1px solid var(--line);
+    box-shadow:0 34px 64px -36px rgba(11,27,51,.5);
+    max-height:calc(100vh - 100%);overflow-y:auto;
+    opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity var(--t-fast) var(--ease-out),transform var(--t-fast) var(--ease-out),
+      visibility 0s linear var(--t-fast)}
+  .links.is-open{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+  .nl{width:100%;justify-content:space-between;padding:13px 4px;font-size:15.5px;color:var(--ink);
+    border-bottom:1px solid var(--line-2)}
+  .nd:last-child .nl,.links>.nl:last-child{border-bottom:0}
+  /* 0fr a 1fr es la unica manera de abrir un alto desconocido sin animar
+     height, que es exactamente lo que esta hoja tiene prohibido. */
+  .nd-p{display:grid;grid-template-rows:0fr;
+    transition:grid-template-rows var(--t-ui) var(--ease-out)}
+  .nd.is-open>.nd-p{grid-template-rows:1fr}
+  .nd-in{overflow:hidden;min-height:0;display:grid}
+  .nd-in a{display:block;padding:11px 4px 11px 16px;text-decoration:none;
+    border-left:2px solid var(--line-2)}
+  .nd-in b{display:block;font-family:var(--display);font-weight:600;font-size:14.5px;color:var(--ink)}
+  .nd-in small{display:block;margin-top:2px;font-size:12.5px;line-height:1.45;color:var(--mute)}
+  .nd-in a:active{background:var(--paper-3)}
+}
+@media (prefers-reduced-motion:reduce){
+  .links,.nd-p,.nd-car,.burger-b i{transition:none}
+}
+
+/* ══════════════ LOS TRES PLANES EN LA PORTADA ══════════════
+   Las tarjetas son las de plans.html, pero la rejilla no: alla la tarjeta
+   entera es un enlace y se hunde al tocarla. Aca la accion es el boton, asi
+   que la tarjeta no finge que responde. */
+.hplans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+@media (max-width:880px){.hplans{grid-template-columns:1fr}}
+@media (hover:hover) and (pointer:fine){
+  .hplans .plan:hover{border-color:var(--accent);
+    box-shadow:0 0 0 3px rgba(31,95,168,.13),0 26px 60px -44px rgba(11,27,51,.6)}
+}
+
+/* ══════════════ EL COSTO DE LA INACCION ══════════════ */
+.co-split{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:stretch}
+.co-c{position:relative;display:flex;flex-direction:column;gap:12px;
+  padding:clamp(20px,2.4vw,30px);background:var(--paper-2);
+  border:1px solid var(--line);border-radius:var(--r-lg);
+  transition:border-color var(--t-fast) var(--ease-out),box-shadow var(--t-fast) var(--ease-out)}
+.co-c::before{content:"";position:absolute;inset:0 0 auto;height:3px;
+  border-radius:var(--r-lg) var(--r-lg) 0 0}
+.co-c.is-bad::before{background:var(--crit)}
+.co-c.is-good::before{background:var(--ok)}
+.co-l{margin:0;font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase}
+.is-bad .co-l{color:var(--crit)}
+.is-good .co-l{color:var(--ok)}
+.co-h{margin:0;font-size:clamp(18px,2vw,21px);letter-spacing:-.02em;line-height:1.3}
+.co-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.co-list li{position:relative;padding-left:22px;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.co-list li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;
+  border-radius:50%;background:var(--line)}
+.co-big{margin:auto 0 0;padding-top:16px;border-top:1px solid var(--line-2);
+  font-family:var(--display);font-weight:800;font-size:clamp(34px,4.4vw,48px);
+  letter-spacing:-.04em;line-height:1}
+.is-bad .co-big{color:var(--crit)}
+.is-good .co-big{color:var(--ok)}
+.co-cap{margin:0;font-size:13.5px;line-height:1.55;color:var(--mute)}
+
+.co-gap{margin-top:16px;padding:clamp(18px,2.2vw,26px);border-radius:var(--r-lg);
+  background:var(--ink);color:#fff;display:grid;gap:6px;justify-items:center;text-align:center}
+.co-gap-l{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.6)}
+.co-gap-v{font-family:var(--display);font-weight:800;font-size:clamp(36px,5vw,56px);
+  letter-spacing:-.04em;line-height:1}
+.co-gap-c{margin:0;max-width:62ch;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.78)}
+.co-note{margin:14px 0 0;font-size:12.5px;line-height:1.65;color:var(--mute);max-width:88ch}
+@media (max-width:820px){.co-split{grid-template-columns:1fr}}
+@media (hover:hover) and (pointer:fine){
+  .co-c:hover{border-color:rgba(31,95,168,.34);box-shadow:0 0 0 3px rgba(31,95,168,.10)}
+}
+
+/* ══════════════ PAGINAS DE CONTENIDO ══════════════
+   Sobre mi, Herramientas y Casos son secciones que salieron de la portada.
+   Alla su encabezado era un <h2> dentro de una pagina; aca cada una es el
+   tema de su pagina y el <h1> le corresponde -- pero se ve igual, porque el
+   tamanio lo daba .sec-head, no la etiqueta. */
+.sec-head h1{font-size:clamp(34px,5.6vw,72px);max-width:16ch}
+/* La primera seccion trae su propio respiro; sumarle el de .sp-main dejaba
+   un hueco del alto de media pantalla debajo del encabezado. */
+.sp-secs{padding-top:0}
+.sp-secs>.sec:first-of-type{padding-top:calc(74px + clamp(30px,6vw,52px))}
+.sp-secs>.wrap:last-child{margin-top:clamp(8px,2vw,24px)}
+
+/* La fila que lleva al indice completo cierra el desplegable de herramientas:
+   va despues de una linea, porque no es una herramienta mas. */
+.nd-all{position:relative;margin-top:6px;padding-top:12px!important}
+.nd-all::before{content:"";position:absolute;top:2px;left:12px;right:12px;height:1px;
+  background:rgba(255,255,255,.14)}
+@media (max-width:1080px){
+  .nd-all{margin-top:4px;padding-top:13px!important}
+  .nd-all::before{left:16px;right:4px;background:var(--line)}
 }
 
 </style>
