@@ -73,9 +73,9 @@
   <div class="wrap">
     <div class="brand"><i>AL</i>Registros<small>Panel privado</small></div>
     <div class="actions" id="actions" hidden>
-      <button class="btn" id="refresh" type="button">Actualizar</button>
-      <button class="btn solid" id="export" type="button">Exportar CSV</button>
-      <button class="btn" id="logout" type="button">Salir</button>
+      <button class="btn" id="refresh" type="button"><span>Actualizar</span></button>
+      <button class="btn solid" id="export" type="button"><span>Exportar CSV</span></button>
+      <button class="btn" id="logout" type="button"><span>Salir</span></button>
     </div>
   </div>
 </header>
@@ -85,9 +85,10 @@
     <form class="card" id="lockForm" autocomplete="off">
       <h1>Panel de registros</h1>
       <p>Ingrese su clave de administrador. La genera la función <code>setup</code> de Apps Script.</p>
-      <input class="field" id="token" type="password" placeholder="Clave de administrador" autocomplete="current-password" required>
+      <input class="field" id="token" type="password" placeholder="Clave de administrador"
+             aria-label="Clave de administrador" autocomplete="current-password" required>
       <label class="check"><input type="checkbox" id="remember"> Recordar en este dispositivo</label>
-      <button class="btn solid" type="submit" id="unlock">Entrar</button>
+      <button class="btn solid" type="submit" id="unlock"><span>Entrar</span></button>
       <p class="err" id="lockErr" hidden></p>
       <p class="note">Los datos se leen directamente de su Google Sheet. Sin la clave, esta página no muestra nada.</p>
     </form>
@@ -101,7 +102,8 @@
       <div class="kpi"><b id="kScore">-</b><span>Puntaje promedio</span></div>
     </div>
     <div class="filters">
-      <input class="field" id="q" type="search" placeholder="Buscar nombre, correo, país o WhatsApp">
+      <input class="field" id="q" type="search" placeholder="Buscar nombre, correo, país o WhatsApp"
+             aria-label="Buscar en los registros">
       <select class="field" id="fGoal"><option value="">Todas las metas</option></select>
       <select class="field" id="fTime"><option value="">Cualquier horario</option></select>
       <select class="field" id="fCountry"><option value="">Todos los países</option></select>
