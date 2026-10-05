@@ -22,7 +22,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap"></noscript>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -54,6 +55,9 @@
  }
 }
 </script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de plan de retiro", "url": "https://alexlozada7.github.io/retiro.html", "description": "Calculadora de retiro que descuenta la inflación también durante el retiro: capital objetivo, aporte mensual y hoja de ruta por edades. Gratuita, en español.", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "inLanguage": ["es"], "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Person", "name": "Alexandre Lozada", "url": "https://alexlozada7.github.io/"}}
+</script>
 <style>
 /* ============================================================
    ALEXANDRE LOZADA - personal financial-freedom site
@@ -68,6 +72,12 @@
    comment wherever the value was chosen to clear WCAG AA.
    ============================================================ */
 
+/* Respaldos con las proporciones de Onest y Open Sans, medidas contra Arial:
+   la hoja de Google carga sin bloquear y el cambio de fuente no desplaza nada. */
+@font-face{font-family:'Onest Fallback';src:local('Arial');font-weight:100 550;size-adjust:103.22%;ascent-override:93.98%;descent-override:30.03%;line-gap-override:0%}
+@font-face{font-family:'Onest Fallback';src:local('Arial Bold'),local('Arial-BoldMT');font-weight:551 900;size-adjust:100.78%;ascent-override:96.25%;descent-override:30.76%;line-gap-override:0%}
+@font-face{font-family:'Open Sans Fallback';src:local('Arial');font-weight:100 550;size-adjust:101.92%;ascent-override:104.99%;descent-override:28.45%;line-gap-override:0%}
+@font-face{font-family:'Open Sans Fallback';src:local('Arial Bold'),local('Arial-BoldMT');font-weight:551 900;size-adjust:99.47%;ascent-override:107.57%;descent-override:29.15%;line-gap-override:0%}
 :root{
   /* surfaces and ink */
   --paper:#F6F8FB; --paper-2:#FFFFFF; --paper-3:#EDF1F7;
@@ -81,8 +91,8 @@
   --crit:#B23C32;          /* 5.86:1 on white. Was #C0453A: 5.06 */
 
   /* type */
-  --display:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --body:'Open Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --display:'Onest','Onest Fallback',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Open Sans','Open Sans Fallback',system-ui,-apple-system,'Segoe UI',sans-serif;
 
   /* layout */
   --pad:clamp(20px,5vw,72px); --maxw:1240px;
@@ -902,6 +912,19 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
   font-variant-numeric:tabular-nums}
 .plan-price span{font-size:15px;font-weight:600;color:var(--mute)}
 .plan-tax{margin-top:-6px;font-size:12.5px;color:var(--mute);letter-spacing:.02em}
+.plan-fd{margin-top:-2px;font-size:13px;font-weight:600;color:var(--accent)}
+/* Precio de fundador: un bloque, no un banner que grite. Las condiciones van
+   completas y a la vista, como pide la Ley 7472 para una promoción. */
+.fd{margin:clamp(28px,4vw,40px) 0 clamp(20px,3vw,28px);padding:clamp(20px,3vw,28px);background:var(--wash);
+  border:1px solid var(--accent);border-radius:var(--r-lg);display:grid;gap:10px;justify-items:start;scroll-margin-top:96px}
+.fd-h{font-family:var(--display);font-size:clamp(22px,2.6vw,28px);line-height:1.15;letter-spacing:-.025em;color:var(--ink);margin:0;max-width:32ch}
+.fd-d{color:var(--ink-2);max-width:62ch;margin:0}
+.fd-left{font-family:var(--display);font-weight:600;color:var(--accent-hi);margin:0}
+.fd .btn{margin-top:6px}
+.fd-terms{font-size:12.5px;line-height:1.55;color:var(--mute);max-width:72ch;margin:4px 0 0}
+.fd-home{margin:0 0 clamp(16px,2.4vw,22px);padding:12px 16px;background:var(--wash);border-radius:var(--r-sm);
+  font-size:14px;color:var(--ink-2)}
+.fd-home a{color:var(--accent-hi);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .plan-d{font-size:14.5px;color:var(--ink-2);line-height:1.55;min-height:3.1em}
 .plan-f{list-style:none;margin:4px 0 6px;padding:0;display:grid;gap:9px}
 .plan-f li{position:relative;padding-left:26px;font-size:14.5px;line-height:1.5}
@@ -1327,6 +1350,7 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
 @media (max-width:880px){
   .pl-wrap{display:flex;flex-direction:column}
   .pl-wrap .cp-head{order:1}
+  .pl-wrap .fd{order:1}   /* después del título (mismo orden, va después en el DOM) */
   .pl-wrap .per{order:2}
   .pl-wrap .plans{order:3}
   .pl-wrap .pl-all{order:4;margin-top:clamp(30px,5vw,44px)}
@@ -1476,12 +1500,11 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
   .mt-c:hover{border-color:rgba(31,95,168,.34);box-shadow:0 0 0 3px rgba(31,95,168,.10)}
 }
 
-/* ---------- Portafolio Global: la pagina de pre-calificacion ----------
-   Vive en el mismo sistema que el resto del sitio y no imita la marca del
-   puesto de bolsa: es la pagina de Alexandre nombrando a su socio, no una
-   pagina de BN Valores. Esa distincion protege a los dos.
-   El bloque .bn-kyc se lee mas fuerte que el resto del formulario a
-   proposito: que NO se pidan documentos es la promesa, no una nota. */
+/* ---------- sistema de maquetacion de las paginas de herramienta ----------
+   El prefijo .bn- es historico: nacio en una pagina de pre-calificacion que
+   se retiro el 4 de octubre de 2026. Las clases se quedaron porque macro,
+   quincena y retiro se construyeron sobre ellas. No las borre pensando que
+   son codigo muerto: tres paginas vivas dependen de este bloque. */
 .bn-wrap{padding-bottom:clamp(40px,6vw,72px)}
 .bn-hero{padding-top:clamp(24px,4vw,44px)}
 .bn-hero .lbl{margin:0 0 12px}
@@ -1565,11 +1588,10 @@ select.field,select.field:focus{appearance:none;-webkit-appearance:none;cursor:p
   .bn-steps li:hover .bn-n{color:var(--accent)}
 }
 
-/* ---------- el espacio de la marca del socio ----------
-   Queda vacio a proposito hasta que BN Valores autorice el uso del
-   logotipo por escrito. Ponerlo antes del acuerdo afirmaria un respaldo
-   que no existe. Cuando llegue la autorizacion, esto se reemplaza por un
-   <img> y el borde punteado se va con el. */
+/* ---------- caja de dos columnas con cifra destacada ----------
+   Nacio como el espacio reservado para el logotipo de un socio. Hoy la usa
+   retiro.html para el bloque de "que compra eso de verdad". El recuadro
+   punteado .bn-logo ya no lo usa ninguna pagina. */
 .bn-partner{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;
   margin:26px 0 0;padding:18px;border:1px solid var(--line);border-radius:var(--r-md);
   background:var(--paper-2);max-width:70ch}

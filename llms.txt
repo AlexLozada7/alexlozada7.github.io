@@ -1,0 +1,33 @@
+# Alexandre Lozada - Planeación financiera personal
+
+> Práctica de planeación financiera personal en Costa Rica. Traduce método
+> de planeación financiera corporativa (FP&A) a la economía de una casa:
+> margen de maniobra, posición de deuda, motor de crecimiento, resiliencia
+> y proceso de decisión.
+
+Alexandre Lozada **no es asesor de inversión registrado ni puesto de bolsa**.
+No recomienda valores, no ejecuta órdenes y no administra dinero de terceros.
+Las cuentas de inversión se abren a nombre del cliente en entidades reguladas
+por SUGEVAL. El sitio no promete rendimientos. Los escenarios de casos.html
+usan perfiles ficticios y lo dicen en cada tarjeta: no son clientes reales.
+
+## Páginas
+
+- [Planeación financiera personal](https://alexlozada7.github.io/): Punto de entrada. Las cinco dimensiones, los tres planes y el diagnóstico.
+- [Diagnóstico financiero en 6 preguntas](https://alexlozada7.github.io/diagnostico.html): Seis preguntas y un semáforo de cinco dimensiones. Corre en el navegador, sin registro.
+- [Calculadora de interés compuesto](https://alexlozada7.github.io/calculator.html): Compara efectivo, cuenta de ahorro e inversión con montos propios.
+- [Calculadora de plan de retiro](https://alexlozada7.github.io/retiro.html): Capital necesario, aporte mensual y asignación por tramos, con la inflación descontada.
+- [Planificador de quincena y aguinaldo](https://alexlozada7.github.io/quincena.html): Reparto del día de pago y del aguinaldo, con porcentajes ajustables.
+- [Contexto macroeconómico](https://alexlozada7.github.io/macro.html): Tasa básica pasiva, tipo de cambio y tasas en dólares, explicadas para quien gana un salario.
+- [Herramientas financieras](https://alexlozada7.github.io/herramientas.html): Índice de las cinco calculadoras del sitio.
+- [Escenarios](https://alexlozada7.github.io/casos.html): Tres perfiles tipo con las cifras calculadas. Ejemplos ilustrativos, no clientes reales.
+- [Planes y precios](https://alexlozada7.github.io/plans.html): Sistema, Acompañamiento y Directo, con precio publicado y sin permanencia.
+- [Sobre mí](https://alexlozada7.github.io/sobre-mi.html): Quién está detrás de la práctica y con qué método trabaja.
+- [Trayectoria](https://alexlozada7.github.io/trayectoria.html): Experiencia en planeación financiera corporativa y certificaciones.
+- [Registro](https://alexlozada7.github.io/signup.html): Formulario de contacto y agenda de la llamada de diagnóstico.
+
+## Notas
+
+- Idiomas: español (principal), inglés y francés.
+- Las calculadoras corren en el navegador. No hay conexión bancaria ni registro.
+- Actualizado: 2026-10-04
